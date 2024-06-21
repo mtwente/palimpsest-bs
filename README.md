@@ -1,6 +1,6 @@
 # The Urban Fabric as Palimpsest
 
-This project investigates the history of 20<sup>th</sup> century urban design paradigms in Basel, focusing on the impact of car-centered planning projects – the so-called *Korrektionspläne*. The data in this repository is openly available to everyone and is intended to support reproducible research.
+This project investigates the history of 20<sup>th</sup> century urban design paradigms in Basel, focusing on the impact of car-centered planning projects – the so-called _Korrektionspläne_. The data in this repository is openly available to everyone and is intended to support reproducible research.
 
 [![GitHub issues](https://img.shields.io/github/issues/mtwente/palimpsest-bs.svg)](https://github.com/mtwente/palimpsest-bs/issues)
 [![GitHub forks](https://img.shields.io/github/forks/mtwente/palimpsest-bs.svg)](https://github.com/mtwente/palimpsest-bs/network)
@@ -37,13 +37,13 @@ The structure of this repository follows the [Advanced Structure for Data Analys
 
 This project is maintained by [@mtwente](https://github.com/mtwente). Please understand that we can't provide individual support via email. We also believe that help is much more valuable when it's shared publicly, so more people can benefit from it.
 
-| Type                                   | Platforms                                                               |
-| -------------------------------------- | ----------------------------------------------------------------------- |
+| Type                                   | Platforms                                                                  |
+| -------------------------------------- | -------------------------------------------------------------------------- |
 | 🚨 **Bug Reports**                     | [GitHub Issue Tracker](https://github.com/mtwente/palimpsest-bs/issues)    |
 | 📊 **Report bad data**                 | [GitHub Issue Tracker](https://github.com/mtwente/palimpsest-bs/issues)    |
 | 📚 **Docs Issue**                      | [GitHub Issue Tracker](https://github.com/mtwente/palimpsest-bs/issues)    |
 | 🎁 **Feature Requests**                | [GitHub Issue Tracker](https://github.com/mtwente/palimpsest-bs/issues)    |
-| 🛡 **Report a security vulnerability** | See [SECURITY.md](SECURITY.md)                                          |
+| 🛡 **Report a security vulnerability** | See [SECURITY.md](SECURITY.md)                                             |
 | 💬 **General Questions**               | [GitHub Discussions](https://github.com/mtwente/palimpsest-bs/discussions) |
 
 ## Roadmap

@@ -3,7 +3,7 @@ project:
 
 manuscript:
   article: palimpsest-bs.qmd
-  meca-bundle: "palimpsest-basel.zip"
+  meca-bundle: 'palimpsest-basel.zip'
   #resources:
   #  - FIXME
   code-links:
