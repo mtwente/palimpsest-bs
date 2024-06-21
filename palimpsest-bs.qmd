@@ -1,0 +1,100 @@
+---
+title: The Urban Fabric as Palimpsest
+subtitle: Tracing Proposed Correction Plans in Basel
+authors:
+  - name: Moritz Twente
+    orcid: 0009-0005-7187-9774
+    email: moritz.twente@unibas.ch
+    affiliation: University of Basel
+    corresponding: true
+lang: en
+keywords:
+  - Basel
+  - History of Urban Design
+  - Automotive City
+  - Urban Planning Policies
+  - GIS
+  - Korrektionsplan
+abstract: |
+  Like most cities in Switzerland, present-day Basel was shaped particularly by urban planning decisions made between 1940 and 1970: With the underlying goal of modernization, new transport infrastructures were built to make cities more accessible to cars. To this end, several so-called 'Korrektionspläne' were drawn up for Basel that proposed the construction of automobile traffic axes through the Old Town. Overall, these plans were not fully executed, since urban planning that prioritized private cars was met with increasing criticism. Nevertheless, the planned road system left a mark and partial implementations can still be seen today. We use GIS to trace these fragments in the urban fabric. By reading the city structure as a palimpsest to expose the superimposition of temporal layers that each convey different sociopolitical ideas, we critically engage with narratives about the history of Basel.
+pagetitle: The Urban Fabric as Palimpsest. Tracing Proposed Correction Plans in Basel.
+description-meta: |
+  "The Urban Fabric as Palimpsest: Tracing Proposed Correction Plans in Basel" is a paper presentation by Moritz Twente for the conference "Historical Arguments and the Digital", held at the University of Luxembourg in June 2024.
+date: 2024-06-25
+bibliography: references.bib
+nocite: |
+  @*
+citation:
+  type: report
+  #doi: FIXME
+  url: https://mtwente.github.io/palimpsest-bs/
+number-sections: true
+---
+
+# The Urban Fabric as Palimpsest
+
+::: {.callout-warning}
+This document is a work in progress. Check back next week for more (any) content.
+:::
+
+... Manuscript to add ...
+
+# Marktplatz 5: Introduction
+
+## Tramèrscher Abrissplan
+
+...
+
+## Correction Plans, Building Lines and Planning Regulations
+
+...
+
+# Rümelinsplatz: Talentlastungsstrasse
+
+...
+
+# Schneidergasse 18: Stadthaus
+
+...
+
+# Spiegelhof: Schuhmacherplan
+
+...
+
+# Petersgraben 20: Heritage Conservation
+
+...
+
+# Spitalstrasse: Unhappy Doctors
+
+...
+
+```{mermaid}
+flowchart LR
+    A[Federal Statistical Office] -->|EGID| B(Building Footprint)
+    A2[Open Data Basel-Stadt] -->|Geometries| B
+    B --> C{QGIS Layer}
+    C -->|EGID| D[Construction Year]
+    C -->|EGID| E[Building Type]
+    C -->|Geometries| F[Building Area]
+```
+
+# Feldbergstrasse: City-Wide Implementation?
+
+...
+
+## GIS Analysis
+
+...
+
+# Aeschenvorstadt 68: Last Man Standing
+
+...
+
+## Current Situation
+
+...
+
+# Nauentunnel/Heuwaage-Viadukt
+
+Life after the Correction Plans

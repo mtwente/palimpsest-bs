@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.555">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2024-06-25">
+<meta name="keywords" content="Basel, History of Urban Design, Automotive City, Urban Planning Policies, GIS, Korrektionsplan">
+<meta name="description" content="<p>“The Urban Fabric as Palimpsest: Tracing Proposed Correction Plans in Basel” is a paper presentation by Moritz Twente for the conference “Historical Arguments and the Digital”, held at the University of Luxembourg in June 2024.</p>">
+
+<title>The Urban Fabric as Palimpsest. Tracing Proposed Correction Plans in Basel.</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="custom.css">
+<meta name="citation_title" content="The Urban Fabric as Palimpsest">
+<meta name="citation_abstract" content="Like most cities in Switzerland, present-day Basel was shaped particularly by urban planning decisions made between 1940 and 1970: With the underlying goal of modernization, new transport infrastructures were built to make cities more accessible to cars. To this end, several so-called &amp;amp;#039;Korrektionspläne' were drawn up for Basel that proposed the construction of automobile traffic axes through the Old Town. Overall, these plans were not fully executed, since urban planning that prioritized private cars was met with increasing criticism. Nevertheless, the planned road system left a mark and partial implementations can still be seen today. We use GIS to trace these fragments in the urban fabric. By reading the city structure as a palimpsest to expose the superimposition of temporal layers that each convey different sociopolitical ideas, we critically engage with narratives about the history of Basel.
+">
+<meta name="citation_keywords" content="Basel,History of Urban Design,Automotive City,Urban Planning Policies,GIS,Korrektionsplan">
+<meta name="citation_author" content="Moritz Twente">
+<meta name="citation_publication_date" content="2024-06-25">
+<meta name="citation_cover_date" content="2024-06-25">
+<meta name="citation_year" content="2024">
+<meta name="citation_online_date" content="2024-06-25">
+<meta name="citation_fulltext_html_url" content="https://mtwente.github.io/palimpsest-bs/">
+<meta name="citation_language" content="en">
+<meta name="citation_reference" content="citation_title=Ein neuer Plan für die Altstadt von Basel;,citation_author=Hans Bernoulli;,citation_author=A. Schuhmacher;,citation_publication_date=1933-11;,citation_cover_date=1933-11;,citation_year=1933;,citation_fulltext_html_url=https://www.e-periodica.ch/digbib/view?pid=wbw-002:1933:20::1775;,citation_doi=10.5169/SEALS-86439;">
+<meta name="citation_reference" content="citation_title=Die Baumgartnerhäuser: Basel 1926-1938;,citation_editor=Rebekka Brandenberger;,citation_editor=Ulrike Zophoniasson;,citation_editor=Marco Zünd;,citation_publication_date=2023-01;,citation_cover_date=2023-01;,citation_year=2023;,citation_fulltext_html_url=https://www.degruyter.com/document/doi/10.1515/9783035626940/html;,citation_doi=10.1515/9783035626940;,citation_isbn=978-3-0356-2694-0;">
+<meta name="citation_reference" content="citation_title=Die bauliche Entwicklung der Stadt Basel;,citation_author=Mirjam Brunner;,citation_editor=André Salvisberg;,citation_publication_date=1999;,citation_cover_date=1999;,citation_year=1999;,citation_inbook_title=Die Basler Strassennamen;">
+<meta name="citation_reference" content="citation_title=Achtung: Die Schweiz - Der Urtext von Lucius Burckhardt über die Idee einer neuen Stadt: Die Geschichte eines Buches von Lucius Burckhardt, Max Frisch &amp;amp;amp; Markus Kutter;,citation_author=Lucius Burckhardt;,citation_author=Max Frisch;,citation_author=Markus Kutter;,citation_editor=Markus Ritter;,citation_editor=Martin Schmitz;,citation_publication_date=2019;,citation_cover_date=2019;,citation_year=2019;,citation_isbn=978-3-927795-77-8;">
+<meta name="citation_reference" content="citation_title=Das Territorium als Palimpsest;,citation_author=André Corboz;,citation_publication_date=2001-12;,citation_cover_date=2001-12;,citation_year=2001;,citation_fulltext_html_url=https://www.degruyter.com/document/doi/10.1515/9783035602654.143/html;,citation_doi=10.1515/9783035602654.143;,citation_isbn=978-3-7643-6342-0;,citation_inbook_title=Die Kunst, Stadt und Land zum Sprechen zu bringen;">
+<meta name="citation_reference" content="citation_title=Die Geschichte des Städtebaus als Bedeutungsforschung;,citation_author=André Corboz;,citation_publication_date=2001-12;,citation_cover_date=2001-12;,citation_year=2001;,citation_fulltext_html_url=https://www.degruyter.com/document/doi/10.1515/9783035602654.55/html;,citation_doi=10.1515/9783035602654.55;,citation_isbn=978-3-7643-6342-0;,citation_inbook_title=Die Kunst, Stadt und Land zum Sprechen zu bringen;">
+<meta name="citation_reference" content="citation_title=Städte bauen: Städtebau und Stadtentwicklung in der Schweiz 1940-1970;,citation_author=Angelus Eisinger;,citation_publication_date=2004;,citation_cover_date=2004;,citation_year=2004;,citation_isbn=978-3-85676-148-6;">
+<meta name="citation_reference" content="citation_title=Die Stadt der Architekten: Anatomie einer Selbstdemontage;,citation_author=Angelus Eisinger;,citation_publication_date=2005;,citation_cover_date=2005;,citation_year=2005;,citation_fulltext_html_url=https://doi.org/10.1515/9783764376758;,citation_isbn=978-3-7643-7064-0;,citation_series_title=Bauwelt Fundamente;">
+<meta name="citation_reference" content="citation_title=Zeitgemässe Anachronismen: Die stadtplanerischen Schriften von Lucius Burckhardt, Markus Kutter und Max Frisch unter aktuellen Vorzeichen gesichtet;,citation_author=Angelus Eisinger;,citation_author=Reto Geiser;,citation_publication_date=2016;,citation_cover_date=2016;,citation_year=2016;,citation_isbn=978-3-03863-018-0;,citation_inbook_title=Achtung: Die Schriften: Wir selber bauen unsre Stadt, Achtung: Die Schweiz, Die neue Stadt;">
+<meta name="citation_reference" content="citation_title=Atlas of the functional city: CIAM 4 and comparative urban analysis;,citation_abstract=&amp;amp;amp;quot;The legendary fourth CIAM congress took place aboard a ship on the Mediterranean Sea in 1933. Led by Le Corbusier, Cornelis van Eesteren and Sigfried Giedion and themed ’The Functional City’, it is considered to be a pinnacle of urbanism. Participants analysed 34 cities on the basis of maps specially produced for the congress, and the results were shown at an exhibition in Amsterdam’s Stedelijk Museum in 1935. Plans for a publication were interrupted by the war, and the material has until now remained unpublished. This systematic overview of the CIAM 4 city maps offers new perspectives at a crucial moment for urbanism today&amp;quot;–Back cover;,citation_editor=Evelien Es;,citation_editor=Enrico Chapel;,citation_publication_date=2014;,citation_cover_date=2014;,citation_year=2014;,citation_isbn=978-90-6868-648-7 978-3-85676-338-1;">
+<meta name="citation_reference" content="citation_title=Bauten für Basel: 1979 - 1987;,citation_editor=Carl Fingerhuth;,citation_editor=undefined Basel-Stadt;,citation_publication_date=1988;,citation_cover_date=1988;,citation_year=1988;,citation_isbn=978-3-85977-095-9;">
+<meta name="citation_reference" content="citation_title=Morphologie von Stadtlandschaften: Geschichte, Analyse, Entwurf;,citation_editor=Andri Gerber;,citation_editor=Regula Iseli;,citation_editor=Stefan Kurath;,citation_editor=Urs Primas;,citation_publication_date=2021;,citation_cover_date=2021;,citation_year=2021;,citation_isbn=978-3-496-01647-2;">
+<meta name="citation_reference" content="citation_title=The Routledge Companion to Spatial History;,citation_editor=Ian Gregory;,citation_editor=Don DeBats;,citation_editor=Don Lafreniere;,citation_publication_date=2018-01;,citation_cover_date=2018-01;,citation_year=2018;,citation_fulltext_html_url=https://www.taylorfrancis.com/books/9781351584142;,citation_doi=10.4324/9781315099781;,citation_isbn=978-1-315-09978-1;">
+<meta name="citation_reference" content="citation_title=Kleinbasels Rückgrat: Die Clarastrasse und ihre Umgebung;,citation_author=Daniel Hagmann;,citation_author=Tilo Richter;,citation_editor=Tilo Richter;,citation_editor=Christoph Merian Stiftung;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_inbook_title=Basel ungebaut;">
+<meta name="citation_reference" content="citation_title=Architekturführer Basel: Die Baugeschichte der Stadt und ihrer Umgebung;,citation_author=Dorothee Huber;,citation_publication_date=2014;,citation_cover_date=2014;,citation_year=2014;,citation_isbn=978-3-85616-613-7;,citation_series_title=Eine Publikation der Christoph Merian Stiftung;">
+<meta name="citation_reference" content="citation_title=Goldene Jahre mit irritierenden Erfahrungen;,citation_author=Georg Kreis;,citation_publication_date=2000;,citation_cover_date=2000;,citation_year=2000;,citation_inbook_title=Basel – Geschichte einer städtischen Gesellschaft;">
+<meta name="citation_reference" content="citation_title=Fortwährendes Seilziehen: Die Heuwaage als neuralgischer Stadtort;,citation_author=Barbara Lenherr;,citation_editor=Tilo Richter;,citation_editor=Christoph Merian Stiftung;,citation_fulltext_html_url=https://basel.swisscovery.org/discovery/fulldisplay?docid=alma9972606264305504&amp;amp;amp;context=L&amp;vid=41SLSP_UBS:live&amp;lang=de&amp;search_scope=UBS&amp;adaptor=Local%20Search%20Engine&amp;tab=UBS&amp;query=any,contains,lenherr%20heuwaage&amp;offset=0;,citation_inbook_title=Basel ungebaut;">
+<meta name="citation_reference" content="citation_title=Die morphologische Betrachtungsweise von Stadt und Territorium;,citation_author=Sylvain Malfroy;,citation_author=Gianfranco Caniggia;,citation_publication_date=2018;,citation_cover_date=2018;,citation_year=2018;,citation_isbn=978-3-03863-037-1;">
+<meta name="citation_reference" content="citation_title=Profanes im Herzen der Stadt;,citation_author=Martin Möhle;,citation_publication_date=2016;,citation_cover_date=2016;,citation_year=2016;,citation_inbook_title=Kantonale Denkmalpflege Basel-Stadt: Jahresbericht 2016;">
+<meta name="citation_reference" content="citation_title=Der Kampf um den Korrektionsplan für Grossbasel;,citation_author=Redaktion der Schweizerischen Bauzeitung;,citation_author=Hans Bernoulli;,citation_publication_date=1949-12;,citation_cover_date=1949-12;,citation_year=1949;,citation_fulltext_html_url=https://www.e-periodica.ch/digbib/view?pid=sbz-002:1949:67::667;,citation_doi=10.5169/SEALS-84161;">
+<meta name="citation_reference" content="citation_title=Basler Plätze: Visitenkarten der Stadt;,citation_author=Ariane Russi;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_isbn=978-3-7245-2497-7;">
+<meta name="citation_reference" content="citation_title=Die Basler Strassennamen;,citation_editor=André Salvisberg;,citation_publication_date=1999;,citation_cover_date=1999;,citation_year=1999;,citation_isbn=978-3-85616-104-0;">
+<meta name="citation_reference" content="citation_title=Historischer Atlas der Region Basel: Geschichte der Grenzen;,citation_author=André Salvisberg;,citation_publication_date=2010;,citation_cover_date=2010;,citation_year=2010;,citation_isbn=978-3-85616-508-6;">
+<meta name="citation_reference" content="citation_title=Strategien gegen den drohenden Niedergang der Stadt : Ein Streitgespräch zwischen dem Basler Kantonsbaumeister Fritz Schumacher und der Geographieprofessorin Rita Schneider-Sliwa;,citation_author=Rita Schneider-Sliwa;,citation_author=Ulrike Zophoniasson-Baierl;,citation_author=Fritz Schumacher;,citation_publication_date=1998;,citation_cover_date=1998;,citation_year=1998;,citation_fulltext_html_url=https://edoc.unibas.ch/34707/;,citation_doi=10.5451/UNIBAS-EP34707;">
+<meta name="citation_reference" content="citation_title=Die Architekturkrise der 1970er-Jahre: Zur Jahresausstellung Architektur der Berner Hochschule für Architektur, Holz und Bau im Frühling 2013;,citation_editor=Dieter Schnell;,citation_editor=Berner Fachhochschule;,citation_publication_date=2013;,citation_cover_date=2013;,citation_year=2013;,citation_isbn=978-3-03919-284-7;">
+<meta name="citation_reference" content="citation_title=Der Basler Korrektionsplan;,citation_author=A. Schuhmacher;,citation_publication_date=1933-11;,citation_cover_date=1933-11;,citation_year=1933;,citation_fulltext_html_url=https://www.e-periodica.ch/digbib/view?pid=wbw-002:1933:20::1773;,citation_issue=11;,citation_doi=10.5169/SEALS-86438;,citation_volume=20;,citation_journal_title=Das Werk: Architektur und Kunst;">
+<meta name="citation_reference" content="citation_title=Metamorphosen und Visionen: Pläne und Projekte für den Marktplatz;,citation_author=Rose Marie Schulz-Rehberg;,citation_editor=Tilo Richter;,citation_editor=Christoph Merian Stiftung;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_inbook_title=Basel ungebaut;">
+<meta name="citation_reference" content="citation_title=Von der alten zur neuen Aeschenvorstadt;,citation_author=Rudolf Suter;,citation_editor=F. Hoffmann-La Roche AG;,citation_publication_date=1991;,citation_cover_date=1991;,citation_year=1991;,citation_isbn=978-3-907946-40-4;,citation_series_title=Editiones Roches;">
+<meta name="citation_reference" content="citation_title=Die neuen Ränder der alten Stadt. Modernisierung und ‹Altstadt-Konstruktion› im gründerzeitlichen Basel;,citation_author=Gerhard Vinken;,citation_editor=Vittorio Magnago Lampugnani;,citation_editor=Matthias Noell;,citation_publication_date=2005;,citation_cover_date=2005;,citation_year=2005;,citation_isbn=3-85676-160-8;,citation_inbook_title=Stadtformen. Die Architektur der Stadt zwischen Imagination und Konstruktion;">
+<meta name="citation_reference" content="citation_title=Ludwig Marings ‹Generalplan der Stadt Basel› von 1857;,citation_author=Hans-Jakob Wittwer;,citation_publication_date=1987;,citation_cover_date=1987;,citation_year=1987;,citation_fulltext_html_url=https://www.baslerstadtbuch.ch/.download/stadtbuch/aa331a19-6ec0-4db6-a68d-29f7a188b00f;,citation_volume=1987;,citation_journal_title=Basler Stadtbuch;">
+<meta name="citation_reference" content="citation_title=Stadtentwicklung Basels seit 1860;,citation_author=Roland Zaugg;,citation_editor=André Salvisberg;,citation_publication_date=2010;,citation_cover_date=2010;,citation_year=2010;,citation_inbook_title=Historischer Atlas der Region Basel: Geschichte der Grenzen;">
+<meta name="citation_reference" content="citation_title=Verschwundenes Basel: Historische Amateuraufnahmen von verschwundenen Gebäuden und Anlagen der Stadt Basel zwischen 1950-1970;,citation_publication_date=2018;,citation_cover_date=2018;,citation_year=2018;,citation_isbn=978-3-033-07019-6;">
+<meta name="citation_reference" content="citation_title=Der Heuwaage-Viadukt – eine gute städtebauliche Lösung;,citation_author=Max Wullschleger;,citation_publication_date=1965;,citation_cover_date=1965;,citation_year=1965;,citation_fulltext_html_url=http://www.baslerstadtbuch.ch/stadtbuch/1965/1965_1193.html;,citation_volume=1965;,citation_inbook_title=Basler Stadtbuch;">
+<meta name="citation_reference" content="citation_title=Altstadtsanierung und Cityring;,citation_author=Felix Schachenmann;,citation_publication_date=1973;,citation_cover_date=1973;,citation_year=1973;,citation_fulltext_html_url=https://www.baslerstadtbuch.ch/.permalink/stadtbuch/9fe10c2c-8b1b-46fa-b4fa-2a18144dcf2c;,citation_volume=1973;,citation_inbook_title=undefined;,citation_series_title=Basler Stadtbuch;">
+<meta name="citation_reference" content="citation_title=Der Platz, der keiner ist – oder: Holbein wurde übel;,citation_author=Benjamin Wieland;,citation_publication_date=2022-01;,citation_cover_date=2022-01;,citation_year=2022;,citation_fulltext_html_url=https://www.bzbasel.ch/basel/basel-stadt/basler-plaetze-der-platz-der-keiner-ist-oder-holbein-wuerde-uebel-ld.2392987;,citation_journal_title=bz;">
+<meta name="citation_reference" content="citation_title=Altes Basel und Neues Basel;,citation_author=Jakob Höflinger;,citation_publication_date=1954;,citation_cover_date=1954;,citation_year=1954;">
+<meta name="citation_reference" content="citation_title=Basel wächst, Korrektionsplan Ja;,citation_abstract=Plakat zur kant. Abstimmung BS, 11. Dez. 1949. Linolschnitt;,citation_author=Buchdruckerei VSK;,citation_publication_date=1949;,citation_cover_date=1949;,citation_year=1949;,citation_fulltext_html_url=https://www.recherche-plakatsammlungbasel.ch/objects/35580;">
+<meta name="citation_reference" content="citation_title=Die lebendige Stadt;,citation_author=Rudolf Kaufmann;,citation_publication_date=1954;,citation_cover_date=1954;,citation_year=1954;,citation_inbook_title=Altes Basel und Neues Basel;">
+<meta name="citation_reference" content="citation_title=Stadtplananalyse : Eine historisch-methodische Einführung;,citation_author=Martin Möhle;,citation_publication_date=2018;,citation_cover_date=2018;,citation_year=2018;,citation_fulltext_html_url=https://www.e-periodica.ch/digbib/view?pid=zak-003:2018:75::233;,citation_doi=10.5169/SEALS-787417;">
+</head>
+
+<body>
+
+<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-page-right">
+      <h1 class="title">The Urban Fabric as Palimpsest</h1>
+            <p class="subtitle lead">Tracing Proposed Correction Plans in Basel</p>
+          </div>
+
+    
+    <div class="quarto-title-meta-container">
+      <div class="quarto-title-meta-column-start">
+            <div class="quarto-title-meta-author column-page-right">
+          <div class="quarto-title-meta-heading">Author</div>
+          <div class="quarto-title-meta-heading">Affiliation</div>
+          
+                <div class="quarto-title-meta-contents">
+            <p class="author">Moritz Twente <a href="mailto:moritz.twente@unibas.ch" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0009-0005-7187-9774" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+          </div>
+                <div class="quarto-title-meta-contents">
+                    <p class="affiliation">
+                        University of Basel
+                      </p>
+                  </div>
+                    </div>
+        
+        <div class="quarto-title-meta column-page-right">
+
+                      
+                <div>
+            <div class="quarto-title-meta-heading">Published</div>
+            <div class="quarto-title-meta-contents">
+              <p class="date">June 25, 2024</p>
+            </div>
+          </div>
+          
+                <div>
+            <div class="quarto-title-meta-heading">Modified</div>
+            <div class="quarto-title-meta-contents">
+              <p class="date-modified">June 21, 2024</p>
+            </div>
+          </div>
+                
+              </div>
+      </div>
+      <div class="quarto-title-meta-column-end quarto-other-formats-target">
+      <div class="quarto-alternate-formats"><div class="quarto-title-meta-heading">Other Formats</div><div class="quarto-title-meta-contents"><p><a href="palimpsest-bs.pdf"><i class="bi bi-file-pdf"></i>PDF</a></p></div></div></div>
+    </div>
+
+    <div>
+      <div class="abstract">
+        <div class="block-title">Abstract</div>
+        <p>Like most cities in Switzerland, present-day Basel was shaped particularly by urban planning decisions made between 1940 and 1970: With the underlying goal of modernization, new transport infrastructures were built to make cities more accessible to cars. To this end, several so-called ‘Korrektionspläne’ were drawn up for Basel that proposed the construction of automobile traffic axes through the Old Town. Overall, these plans were not fully executed, since urban planning that prioritized private cars was met with increasing criticism. Nevertheless, the planned road system left a mark and partial implementations can still be seen today. We use GIS to trace these fragments in the urban fabric. By reading the city structure as a palimpsest to expose the superimposition of temporal layers that each convey different sociopolitical ideas, we critically engage with narratives about the history of Basel.</p>
+      </div>
+    </div>
+
+    <div>
+      <div class="keywords">
+        <div class="block-title">Keywords</div>
+        <p>Basel, History of Urban Design, Automotive City, Urban Planning Policies, GIS, Korrektionsplan</p>
+      </div>
+    </div>
+
+    <div class="quarto-other-links-text-target">
+    <div class="quarto-code-links"><div class="quarto-title-meta-heading">Code Links</div><div class="quarto-title-meta-contents"><span style="padding-right: 0.5em;"><a href="https://github.com/mtwente/palimpsest-bs"><i class="bi bi-github"></i>Source Code</a>,</span><span><a href="https://www.zotero.org/groups/5500966/palimpsest-bs"><i class="bi bi-book"></i>Bibliography (Zotero)</a></span></div></div></div>  </div>
+</header><div id="quarto-content" class="page-columns page-rows-contents page-layout-full toc-left">
+<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#the-urban-fabric-as-palimpsest" id="toc-the-urban-fabric-as-palimpsest" class="nav-link active" data-scroll-target="#the-urban-fabric-as-palimpsest"><span class="header-section-number">1</span> The Urban Fabric as Palimpsest</a></li>
+  <li><a href="#marktplatz-5-introduction" id="toc-marktplatz-5-introduction" class="nav-link" data-scroll-target="#marktplatz-5-introduction"><span class="header-section-number">2</span> Marktplatz 5: Introduction</a>
+  <ul class="collapse">
+  <li><a href="#tramèrscher-abrissplan" id="toc-tramèrscher-abrissplan" class="nav-link" data-scroll-target="#tramèrscher-abrissplan"><span class="header-section-number">2.1</span> Tramèrscher Abrissplan</a></li>
+  <li><a href="#correction-plans-building-lines-and-planning-regulations" id="toc-correction-plans-building-lines-and-planning-regulations" class="nav-link" data-scroll-target="#correction-plans-building-lines-and-planning-regulations"><span class="header-section-number">2.2</span> Correction Plans, Building Lines and Planning Regulations</a></li>
+  </ul></li>
+  <li><a href="#rümelinsplatz-talentlastungsstrasse" id="toc-rümelinsplatz-talentlastungsstrasse" class="nav-link" data-scroll-target="#rümelinsplatz-talentlastungsstrasse"><span class="header-section-number">3</span> Rümelinsplatz: Talentlastungsstrasse</a></li>
+  <li><a href="#schneidergasse-18-stadthaus" id="toc-schneidergasse-18-stadthaus" class="nav-link" data-scroll-target="#schneidergasse-18-stadthaus"><span class="header-section-number">4</span> Schneidergasse 18: Stadthaus</a></li>
+  <li><a href="#spiegelhof-schuhmacherplan" id="toc-spiegelhof-schuhmacherplan" class="nav-link" data-scroll-target="#spiegelhof-schuhmacherplan"><span class="header-section-number">5</span> Spiegelhof: Schuhmacherplan</a></li>
+  <li><a href="#petersgraben-20-heritage-conservation" id="toc-petersgraben-20-heritage-conservation" class="nav-link" data-scroll-target="#petersgraben-20-heritage-conservation"><span class="header-section-number">6</span> Petersgraben 20: Heritage Conservation</a></li>
+  <li><a href="#spitalstrasse-unhappy-doctors" id="toc-spitalstrasse-unhappy-doctors" class="nav-link" data-scroll-target="#spitalstrasse-unhappy-doctors"><span class="header-section-number">7</span> Spitalstrasse: Unhappy Doctors</a></li>
+  <li><a href="#feldbergstrasse-city-wide-implementation" id="toc-feldbergstrasse-city-wide-implementation" class="nav-link" data-scroll-target="#feldbergstrasse-city-wide-implementation"><span class="header-section-number">8</span> Feldbergstrasse: City-Wide Implementation?</a>
+  <ul class="collapse">
+  <li><a href="#gis-analysis" id="toc-gis-analysis" class="nav-link" data-scroll-target="#gis-analysis"><span class="header-section-number">8.1</span> GIS Analysis</a></li>
+  </ul></li>
+  <li><a href="#aeschenvorstadt-68-last-man-standing" id="toc-aeschenvorstadt-68-last-man-standing" class="nav-link" data-scroll-target="#aeschenvorstadt-68-last-man-standing"><span class="header-section-number">9</span> Aeschenvorstadt 68: Last Man Standing</a>
+  <ul class="collapse">
+  <li><a href="#current-situation" id="toc-current-situation" class="nav-link" data-scroll-target="#current-situation"><span class="header-section-number">9.1</span> Current Situation</a></li>
+  </ul></li>
+  <li><a href="#nauentunnelheuwaage-viadukt" id="toc-nauentunnelheuwaage-viadukt" class="nav-link" data-scroll-target="#nauentunnelheuwaage-viadukt"><span class="header-section-number">10</span> Nauentunnel/Heuwaage-Viadukt</a></li>
+  </ul>
+<div class="quarto-alternate-notebooks"><h2>Notebooks</h2><ul><li><a href="palimpsest-bs-preview.html"><i class="bi bi-journal-code"></i>Article Notebook</a></li></ul></div></nav>
+</div>
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+</div>
+<main class="content quarto-banner-title-block column-page-right" id="quarto-document-content">
+
+
+
+  
+
+
+<section id="the-urban-fabric-as-palimpsest" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> The Urban Fabric as Palimpsest</h1>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This document is a work in progress. Check back next week for more (any) content.</p>
+</div>
+</div>
+<p>… Manuscript to add …</p>
+</section>
+<section id="marktplatz-5-introduction" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Marktplatz 5: Introduction</h1>
+<section id="tramèrscher-abrissplan" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="tramèrscher-abrissplan"><span class="header-section-number">2.1</span> Tramèrscher Abrissplan</h2>
+<p>…</p>
+</section>
+<section id="correction-plans-building-lines-and-planning-regulations" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="correction-plans-building-lines-and-planning-regulations"><span class="header-section-number">2.2</span> Correction Plans, Building Lines and Planning Regulations</h2>
+<p>…</p>
+</section>
+</section>
+<section id="rümelinsplatz-talentlastungsstrasse" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Rümelinsplatz: Talentlastungsstrasse</h1>
+<p>…</p>
+</section>
+<section id="schneidergasse-18-stadthaus" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Schneidergasse 18: Stadthaus</h1>
+<p>…</p>
+</section>
+<section id="spiegelhof-schuhmacherplan" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Spiegelhof: Schuhmacherplan</h1>
+<p>…</p>
+</section>
+<section id="petersgraben-20-heritage-conservation" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Petersgraben 20: Heritage Conservation</h1>
+<p>…</p>
+</section>
+<section id="spitalstrasse-unhappy-doctors" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Spitalstrasse: Unhappy Doctors</h1>
+<p>…</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    A[Federal Statistical Office] --&gt;|EGID| B(Building Footprint)
+    A2[Open Data Basel-Stadt] --&gt;|Geometries| B
+    B --&gt; C{QGIS Layer}
+    C --&gt;|EGID| D[Construction Year]
+    C --&gt;|EGID| E[Building Type]
+    C --&gt;|Geometries| F[Building Area]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+<a class="quarto-notebook-link" id="nblink-1" href="palimpsest-bs-preview.html">Source: Article Notebook</a></div>
+</section>
+<section id="feldbergstrasse-city-wide-implementation" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Feldbergstrasse: City-Wide Implementation?</h1>
+<p>…</p>
+<section id="gis-analysis" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="gis-analysis"><span class="header-section-number">8.1</span> GIS Analysis</h2>
+<p>…</p>
+</section>
+</section>
+<section id="aeschenvorstadt-68-last-man-standing" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Aeschenvorstadt 68: Last Man Standing</h1>
+<p>…</p>
+<section id="current-situation" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="current-situation"><span class="header-section-number">9.1</span> Current Situation</h2>
+<p>…</p>
+</section>
+</section>
+<section id="nauentunnelheuwaage-viadukt" class="level1" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> Nauentunnel/Heuwaage-Viadukt</h1>
+<p>Life after the Correction Plans</p>
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-bernoulli_neuer_1933" class="csl-entry" role="listitem">
+Bernoulli, Hans, and A. Schuhmacher. 1933. <span>“Ein Neuer <span>Plan</span> Für Die <span>Altstadt</span> von <span>Basel</span>,”</span> November. <a href="https://doi.org/10.5169/SEALS-86439">https://doi.org/10.5169/SEALS-86439</a>.
+</div>
+<div id="ref-brandenberger_baumgartnerhauser_2023" class="csl-entry" role="listitem">
+Brandenberger, Rebekka, Ulrike Zophoniasson, and Marco Zünd, eds. 2023. <em>Die <span>Baumgartnerhäuser</span>: <span>Basel</span> 1926-1938</em>. De Gruyter. <a href="https://doi.org/10.1515/9783035626940">https://doi.org/10.1515/9783035626940</a>.
+</div>
+<div id="ref-brunner_bauliche_1999" class="csl-entry" role="listitem">
+Brunner, Mirjam. 1999. <span>“Die Bauliche <span>Entwicklung</span> Der <span>Stadt</span> <span>Basel</span>.”</span> In <em>Die <span>Basler</span> <span>Strassennamen</span></em>, edited by André Salvisberg, 31–65. Basel: Christoph Merian Verlag.
+</div>
+<div id="ref-buchdruckerei_vsk_basel_1949" class="csl-entry" role="listitem">
+Buchdruckerei VSK. 1949. <span>“Basel Wächst, <span>Korrektionsplan</span> <span>Ja</span>.”</span> <a href="https://www.recherche-plakatsammlungbasel.ch/objects/35580">https://www.recherche-plakatsammlungbasel.ch/objects/35580</a>.
+</div>
+<div id="ref-burckhardt_achtung_2019" class="csl-entry" role="listitem">
+Burckhardt, Lucius, Max Frisch, and Markus Kutter. 2019. <em>Achtung: Die <span>Schweiz</span> - <span>Der</span> <span>Urtext</span> von <span>Lucius</span> <span>Burckhardt</span> Über Die <span>Idee</span> Einer Neuen <span>Stadt</span>: <span>Die</span> <span>Geschichte</span> Eines <span>Buches</span> von <span>Lucius</span> <span>Burckhardt</span>, <span>Max</span> <span>Frisch</span> &amp; <span>Markus</span> <span>Kutter</span></em>. Edited by Markus Ritter and Martin Schmitz. 1. Auflage. Berlin: Martin Schmitz Verlag.
+</div>
+<div id="ref-corboz_territorium_2001" class="csl-entry" role="listitem">
+Corboz, André. 2001a. <span>“Das <span>Territorium</span> Als <span>Palimpsest</span>.”</span> In <em>Die <span>Kunst</span>, <span>Stadt</span> Und <span>Land</span> Zum <span>Sprechen</span> Zu Bringen</em>, 143–66. DE GRUYTER. <a href="https://doi.org/10.1515/9783035602654.143">https://doi.org/10.1515/9783035602654.143</a>.
+</div>
+<div id="ref-corboz_geschichte_2001" class="csl-entry" role="listitem">
+———. 2001b. <span>“Die <span>Geschichte</span> Des <span>Städtebaus</span> Als <span>Bedeutungsforschung</span>.”</span> In <em>Die <span>Kunst</span>, <span>Stadt</span> Und <span>Land</span> Zum <span>Sprechen</span> Zu Bringen</em>, 55–64. DE GRUYTER. <a href="https://doi.org/10.1515/9783035602654.55">https://doi.org/10.1515/9783035602654.55</a>.
+</div>
+<div id="ref-eisinger_stadte_2004" class="csl-entry" role="listitem">
+Eisinger, Angelus. 2004. <em>Städte Bauen: <span>Städtebau</span> Und <span>Stadtentwicklung</span> in Der <span>Schweiz</span> 1940-1970</em>. Zürich: gta Verlag.
+</div>
+<div id="ref-eisinger_stadt_2005" class="csl-entry" role="listitem">
+———. 2005. <em>Die <span>Stadt</span> Der <span>Architekten</span>: <span>Anatomie</span> Einer <span>Selbstdemontage</span></em>. Bauwelt <span>Fundamente</span> 131. Gütersloh/Berlin: Bauverlag. <a href="https://doi.org/10.1515/9783764376758">https://doi.org/10.1515/9783764376758</a>.
+</div>
+<div id="ref-eisinger_zeitgemasse_2016" class="csl-entry" role="listitem">
+Eisinger, Angelus, and Reto Geiser. 2016. <span>“Zeitgemässe <span>Anachronismen</span>: Die Stadtplanerischen <span>Schriften</span> von <span>Lucius</span> <span>Burckhardt</span>, <span>Markus</span> <span>Kutter</span> Und <span>Max</span> <span>Frisch</span> Unter Aktuellen <span>Vorzeichen</span> Gesichtet.”</span> In <em>Achtung: Die <span>Schriften</span>: <span>Wir</span> Selber Bauen Unsre <span>Stadt</span>, <span>Achtung</span>: Die <span>Schweiz</span>, <span>Die</span> Neue <span>Stadt</span></em>, 13–24. Zürich: Triest.
+</div>
+<div id="ref-es_atlas_2014" class="csl-entry" role="listitem">
+Es, Evelien van, and Enrico Chapel, eds. 2014. <em>Atlas of the Functional City: <span>CIAM</span> 4 and Comparative Urban Analysis</em>. Bussum, the Netherlands: THOTH Publishers.
+</div>
+<div id="ref-fingerhuth_bauten_1988" class="csl-entry" role="listitem">
+Fingerhuth, Carl, and Basel-Stadt, eds. 1988. <em>Bauten Für <span>Basel</span>: 1979 - 1987</em>. Basel: Wepf.
+</div>
+<div id="ref-gerber_morphologie_2021" class="csl-entry" role="listitem">
+Gerber, Andri, Regula Iseli, Stefan Kurath, and Urs Primas, eds. 2021. <em>Morphologie von <span>Stadtlandschaften</span>: <span>Geschichte</span>, <span>Analyse</span>, <span>Entwurf</span></em>. Berlin: Reimer.
+</div>
+<div id="ref-gregory_routledge_2018" class="csl-entry" role="listitem">
+Gregory, Ian, Don DeBats, and Don Lafreniere, eds. 2018. <em>The <span>Routledge</span> <span>Companion</span> to <span>Spatial</span> <span>History</span></em>. 1st ed. Milton Park, Abingdon, Oxon; New York, NY: Routledge, 2018.: Routledge. <a href="https://doi.org/10.4324/9781315099781">https://doi.org/10.4324/9781315099781</a>.
+</div>
+<div id="ref-hagmann_kleinbasels_2022" class="csl-entry" role="listitem">
+Hagmann, Daniel, and Tilo Richter. 2022. <span>“Kleinbasels <span>Rückgrat</span>: <span>Die</span> <span>Clarastrasse</span> Und Ihre <span>Umgebung</span>.”</span> In <em>Basel Ungebaut</em>, edited by Tilo Richter and Christoph Merian Stiftung, 113–28. Basel: Christoph Merian Verlag.
+</div>
+<div id="ref-hoflinger_altes_1954" class="csl-entry" role="listitem">
+Höflinger, Jakob. 1954. <em>Altes <span>Basel</span> Und <span>Neues</span> <span>Basel</span></em>. Basel: Verlag Athena.
+</div>
+<div id="ref-huber_architekturfuhrer_2014" class="csl-entry" role="listitem">
+Huber, Dorothee. 2014. <em>Architekturführer <span>Basel</span>: Die <span>Baugeschichte</span> Der <span>Stadt</span> Und Ihrer <span>Umgebung</span></em>. Überarb. Aufl. von 1993. Eine <span>Publikation</span> Der <span>Christoph</span> <span>Merian</span> <span>Stiftung</span>. Basel: Christoph-Merian-Verlag.
+</div>
+<div id="ref-kaufmann_lebendige_1954" class="csl-entry" role="listitem">
+Kaufmann, Rudolf. 1954. <span>“Die Lebendige <span>Stadt</span>.”</span> In <em>Altes <span>Basel</span> Und <span>Neues</span> <span>Basel</span></em>, 9–15. Basel: Verlag Athena.
+</div>
+<div id="ref-kreis_goldene_2000" class="csl-entry" role="listitem">
+Kreis, Georg. 2000. <span>“Goldene <span>Jahre</span> Mit Irritierenden <span>Erfahrungen</span>.”</span> In <em>Basel – <span>Geschichte</span> Einer Städtischen <span>Gesellschaft</span></em>, 268–312. Basel: Christoph Merian Verlag.
+</div>
+<div id="ref-lenherr_fortwahrendes_nodate" class="csl-entry" role="listitem">
+Lenherr, Barbara. n.d. <span>“Fortwährendes <span>Seilziehen</span>: <span>Die</span> <span>Heuwaage</span> Als Neuralgischer <span>Stadtort</span>.”</span> In <em>Basel Ungebaut</em>, edited by Tilo Richter and Christoph Merian Stiftung, 85–100. Basel: Christoph Merian Verlag. Accessed January 23, 2024. <a href="https://basel.swisscovery.org/discovery/fulldisplay?docid=alma9972606264305504&amp;context=L&amp;vid=41SLSP_UBS:live&amp;lang=de&amp;search_scope=UBS&amp;adaptor=Local%20Search%20Engine&amp;tab=UBS&amp;query=any,contains,lenherr%20heuwaage&amp;offset=0">https://basel.swisscovery.org/discovery/fulldisplay?docid=alma9972606264305504&amp;context=L&amp;vid=41SLSP_UBS:live&amp;lang=de&amp;search_scope=UBS&amp;adaptor=Local%20Search%20Engine&amp;tab=UBS&amp;query=any,contains,lenherr%20heuwaage&amp;offset=0</a>.
+</div>
+<div id="ref-malfroy_morphologische_2018" class="csl-entry" role="listitem">
+Malfroy, Sylvain, and Gianfranco Caniggia. 2018. <em>Die Morphologische <span>Betrachtungsweise</span> von <span>Stadt</span> Und <span>Territorium</span></em>. Zweite Auflage. Zürich: Triest Verlag.
+</div>
+<div id="ref-mohle_profanes_2016" class="csl-entry" role="listitem">
+Möhle, Martin. 2016. <span>“Profanes Im <span>Herzen</span> Der <span>Stadt</span>.”</span> In <em>Kantonale <span>Denkmalpflege</span> <span>Basel</span>-<span>Stadt</span>: <span>Jahresbericht</span> 2016</em>, 102–5. Basel: Bau- und Verkehrsdepartement des Kantons Basel-Stadt.
+</div>
+<div id="ref-mohle_stadtplananalyse_2018" class="csl-entry" role="listitem">
+———. 2018. <span>“Stadtplananalyse : Eine Historisch-Methodische <span>Einführung</span>.”</span> <a href="https://doi.org/10.5169/SEALS-787417">https://doi.org/10.5169/SEALS-787417</a>.
+</div>
+<div id="ref-redaktion_der_schweizerischen_bauzeitung_kampf_1949" class="csl-entry" role="listitem">
+Redaktion der Schweizerischen Bauzeitung, and Hans Bernoulli. 1949. <span>“Der <span>Kampf</span> Um Den <span>Korrektionsplan</span> Für <span>Grossbasel</span>,”</span> December. <a href="https://doi.org/10.5169/SEALS-84161">https://doi.org/10.5169/SEALS-84161</a>.
+</div>
+<div id="ref-russi_basler_2022" class="csl-entry" role="listitem">
+Russi, Ariane. 2022. <em>Basler <span>Plätze</span>: <span>Visitenkarten</span> Der <span>Stadt</span></em>. Basel: Friedrich Reinhardt Verlag.
+</div>
+<div id="ref-salvisberg_basler_1999" class="csl-entry" role="listitem">
+Salvisberg, André, ed. 1999. <em>Die <span>Basler</span> <span>Strassennamen</span></em>. Basel: Christoph-Merian-Verl.
+</div>
+<div id="ref-salvisberg_historischer_2010" class="csl-entry" role="listitem">
+———. 2010. <em>Historischer <span>Atlas</span> Der <span>Region</span> <span>Basel</span>: <span>Geschichte</span> Der <span>Grenzen</span></em>. Basel: Christoph Merian Verlag.
+</div>
+<div id="ref-schachenmann_altstadtsanierung_1973" class="csl-entry" role="listitem">
+Schachenmann, Felix. 1973. <span>“Altstadtsanierung Und <span>Cityring</span>.”</span> In, 1973:49–58. Basler <span>Stadtbuch</span>. Basel: Christoph Merian Verlag. <a href="https://www.baslerstadtbuch.ch/.permalink/stadtbuch/9fe10c2c-8b1b-46fa-b4fa-2a18144dcf2c">https://www.baslerstadtbuch.ch/.permalink/stadtbuch/9fe10c2c-8b1b-46fa-b4fa-2a18144dcf2c</a>.
+</div>
+<div id="ref-schneider-sliwa_strategien_1998" class="csl-entry" role="listitem">
+Schneider-Sliwa, Rita, Ulrike Zophoniasson-Baierl, and Fritz Schumacher. 1998. <span>“Strategien Gegen Den Drohenden <span>Niedergang</span> Der <span>Stadt</span> : Ein <span>Streitgespräch</span> Zwischen Dem <span>Basler</span> <span>Kantonsbaumeister</span> <span>Fritz</span> <span>Schumacher</span> Und Der <span>Geographieprofessorin</span> <span>Rita</span> <span>Schneider</span>-<span>Sliwa</span>.”</span> <a href="https://doi.org/10.5451/UNIBAS-EP34707">https://doi.org/10.5451/UNIBAS-EP34707</a>.
+</div>
+<div id="ref-schnell_architekturkrise_2013" class="csl-entry" role="listitem">
+Schnell, Dieter, and Berner Fachhochschule, eds. 2013. <em>Die <span>Architekturkrise</span> Der 1970er-<span>Jahre</span>: Zur <span>Jahresausstellung</span> <span>Architektur</span> Der <span>Berner</span> <span>Hochschule</span> Für <span>Architektur</span>, <span>Holz</span> Und <span>Bau</span> Im <span>Frühling</span> 2013</em>. Baden: Hier + Jetzt, Verl. für Kultur und Geschichte.
+</div>
+<div id="ref-schuhmacher_basler_1933" class="csl-entry" role="listitem">
+Schuhmacher, A. 1933. <span>“Der <span>Basler</span> <span>Korrektionsplan</span>.”</span> <em>Das Werk: Architektur Und Kunst</em> 20 (11): 345–50. <a href="https://doi.org/10.5169/SEALS-86438">https://doi.org/10.5169/SEALS-86438</a>.
+</div>
+<div id="ref-schulz-rehberg_metamorphosen_2022" class="csl-entry" role="listitem">
+Schulz-Rehberg, Rose Marie. 2022. <span>“Metamorphosen Und <span>Visionen</span>: <span>Pläne</span> Und <span>Projekte</span> Für Den <span>Marktplatz</span>.”</span> In <em>Basel Ungebaut</em>, edited by Tilo Richter and Christoph Merian Stiftung, 23–41. Basel: Christoph Merian Verlag.
+</div>
+<div id="ref-suter_von_1991" class="csl-entry" role="listitem">
+Suter, Rudolf. 1991. <em>Von Der Alten Zur Neuen <span>Aeschenvorstadt</span></em>. Edited by F. Hoffmann-La Roche AG. Editiones <span>Roches</span>. Basel: F. Hoffmann-LaRoche AG.
+</div>
+<div id="ref-stoecklin_verschwundenes_2018" class="csl-entry" role="listitem">
+<em>Verschwundenes <span>Basel</span>: Historische <span>Amateuraufnahmen</span> von Verschwundenen <span>Gebäuden</span> Und <span>Anlagen</span> Der <span>Stadt</span> <span>Basel</span> Zwischen 1950-1970</em>. 2018. 2. Auflage. Basel: VB-Verlag.
+</div>
+<div id="ref-vinken_neuen_2005" class="csl-entry" role="listitem">
+Vinken, Gerhard. 2005. <span>“Die Neuen <span>Ränder</span> Der Alten <span>Stadt</span>. <span>Modernisierung</span> Und ‹<span>Altstadt</span>-<span>Konstruktion</span>› Im Gründerzeitlichen <span>Basel</span>.”</span> In <em>Stadtformen. <span>Die</span> <span>Architektur</span> Der <span>Stadt</span> Zwischen <span>Imagination</span> Und <span>Konstruktion</span></em>, edited by Vittorio Magnago Lampugnani and Matthias Noell, 130–41. Zürich: gta Verlag.
+</div>
+<div id="ref-wieland_platz_2022" class="csl-entry" role="listitem">
+Wieland, Benjamin. 2022. <span>“Der <span>Platz</span>, Der Keiner Ist – Oder: <span>Holbein</span> Wurde Übel.”</span> <em>Bz</em>, January. <a href="https://www.bzbasel.ch/basel/basel-stadt/basler-plaetze-der-platz-der-keiner-ist-oder-holbein-wuerde-uebel-ld.2392987">https://www.bzbasel.ch/basel/basel-stadt/basler-plaetze-der-platz-der-keiner-ist-oder-holbein-wuerde-uebel-ld.2392987</a>.
+</div>
+<div id="ref-wittwer_ludwig_1987" class="csl-entry" role="listitem">
+Wittwer, Hans-Jakob. 1987. <span>“Ludwig <span>Marings</span> ‹<span>Generalplan</span> Der <span>Stadt</span> <span>Basel</span>› von 1857.”</span> <em>Basler Stadtbuch</em> 1987: 159–64. <a href="https://www.baslerstadtbuch.ch/.download/stadtbuch/aa331a19-6ec0-4db6-a68d-29f7a188b00f">https://www.baslerstadtbuch.ch/.download/stadtbuch/aa331a19-6ec0-4db6-a68d-29f7a188b00f</a>.
+</div>
+<div id="ref-wullschleger_heuwaage-viadukt_1965" class="csl-entry" role="listitem">
+Wullschleger, Max. 1965. <span>“Der <span>Heuwaage</span>-<span>Viadukt</span> – Eine Gute Städtebauliche <span>Lösung</span>.”</span> In <em>Basler <span>Stadtbuch</span></em>, 1965:227–30. Basel: Christoph Merian Stiftung. <a href="http://www.baslerstadtbuch.ch/stadtbuch/1965/1965_1193.html">http://www.baslerstadtbuch.ch/stadtbuch/1965/1965_1193.html</a>.
+</div>
+<div id="ref-zaugg_stadtentwicklung_2010" class="csl-entry" role="listitem">
+Zaugg, Roland. 2010. <span>“Stadtentwicklung <span>Basels</span> Seit 1860.”</span> In <em>Historischer <span>Atlas</span> Der <span>Region</span> <span>Basel</span>: <span>Geschichte</span> Der <span>Grenzen</span></em>, edited by André Salvisberg, 160–61. Basel: Christoph Merian Verlag.
+</div>
+</div></section><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@report{twente2024,
+  author = {Twente, Moritz},
+  title = {The {Urban} {Fabric} as {Palimpsest}},
+  date = {2024-06-25},
+  url = {https://mtwente.github.io/palimpsest-bs/},
+  langid = {en},
+  abstract = {Like most cities in Switzerland, present-day Basel was
+    shaped particularly by urban planning decisions made between 1940
+    and 1970: With the underlying goal of modernization, new transport
+    infrastructures were built to make cities more accessible to cars.
+    To this end, several so-called “Korrektionspläne” were drawn up for
+    Basel that proposed the construction of automobile traffic axes
+    through the Old Town. Overall, these plans were not fully executed,
+    since urban planning that prioritized private cars was met with
+    increasing criticism. Nevertheless, the planned road system left a
+    mark and partial implementations can still be seen today. We use GIS
+    to trace these fragments in the urban fabric. By reading the city
+    structure as a palimpsest to expose the superimposition of temporal
+    layers that each convey different sociopolitical ideas, we
+    critically engage with narratives about the history of Basel.}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-twente2024" class="csl-entry quarto-appendix-citeas" role="listitem">
+Twente, Moritz. 2024. <span>“The Urban Fabric as Palimpsest.”</span> <a href="https://mtwente.github.io/palimpsest-bs/">https://mtwente.github.io/palimpsest-bs/</a>.
+</div></div></section></div></main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+          // default icon
+          link.classList.add("external");
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
