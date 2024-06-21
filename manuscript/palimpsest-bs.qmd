@@ -68,6 +68,7 @@ This document is a work in progress. Check back next week for more (any) content
 # Spitalstrasse: Unhappy Doctors
 
 ...
+
 ```{mermaid}
 flowchart LR
     A[Federal Statistical Office] -->|EGID| B(Building Footprint)
