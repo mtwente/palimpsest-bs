@@ -1,0 +1,30 @@
+project:
+  type: manuscript
+
+manuscript:
+  article: palimpsest-bs.qmd
+  meca-bundle: 'palimpsest-basel.zip'
+  #resources:
+  #  - FIXME
+  code-links:
+    - text: Source Code
+      icon: github
+      href: https://github.com/mtwente/palimpsest-bs
+    - text: Bibliography (Zotero)
+      icon: book
+      href: https://www.zotero.org/groups/5500966/palimpsest-bs
+  manuscript-url: https://mtwente.github.io/palimpsest-bs/
+
+format:
+  html:
+    # doi: FIXME
+    date-modified: last-modified
+    link-external-icon: true
+    link-external-newwindow: true
+    css:
+      - custom.css
+    page-layout: full
+    license: CC BY-SA
+  pdf:
+    pdf-engine: xelatex
+    keep-tex: false
