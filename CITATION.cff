@@ -1,0 +1,34 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: >-
+  The Urban Fabric As Palimpsest: Tracing Proposed
+  Corrections Plans in Basel.
+message: >-
+  If you use this manuscript, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Moritz
+    family-names: Twente
+    email: moritz.twente@unibas.ch
+    affiliation: University of Basel
+    orcid: 'https://orcid.org/0009-0005-7187-9774'
+identifiers:
+  - type: doi
+    # value: FIXME
+repository-code: 'https://www.github.com/mtwente/palimpsest-bs'
+url: 'https://mtwente.github.io/palimpsest-bs'
+abstract: >-
+  Between 1940 and 1970, Basel's urban planning focused on modernization and car accessibility, leading to proposed traffic axes through the Old Town. Although not fully executed due to criticism of car-centric planning, remnants of these plans are still visible. Using GIS, we trace these fragments and reveal how different sociopolitical ideas are layered in the city's structure
+keywords:
+  - Basel
+  - Urban Design History
+  - Planning History
+  - Automotive City
+  - GIS
+  - Korrektionsplan
+license: CC-BY-SA-4.0
+version: '1.0'
+date-released: '2024-06-25'
