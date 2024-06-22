@@ -31,43 +31,123 @@ citation:
 number-sections: true
 ---
 
-# The Urban Fabric as Palimpsest
-
 ::: {.callout-warning}
 This document is a work in progress. Check back next week for more (any) content.
 :::
+
+Basel prides itself as a city of rich architectural culture, with its "world-renowned historical city center" [@huber_architekturfuhrer_2014] in the front row of architecture guides, marketing and tourist publications.
 
 ... Manuscript to add ...
 
 # Marktplatz 5: Introduction
 
+Standing in front of City Hall/Clothing Store:
+
+- The city is not as old as it seems.
+
 ## Tramèrscher Abrissplan
 
-...
+- Illustrations:
 
-## Correction Plans, Building Lines and Planning Regulations
+  - Topography
+  - Abrissplan
 
-...
+- Why has so much of the lower part of the old town been torn down?
+  - Talentlastungsstrasse
+
+## 20th Century Urban Planning in Basel:
+
+- traffic problem
+
+  - growth (increase of population)
+  - sanitary reasons (picture of Birsig?)
+  - topography (map with height lines, scan from old document?), Ratschlag 3370
+  - automobiles (stats: number of cars in Basel?)
+
+- different plans/approaches during 20<sup>th</sup> century:
+
+  - Schuhmacherplan 1930s
+  - Korrektionspläne 40/50s => Focus!
+  - Leibbrandplan/Gegenvorschlag Fachverbände 60s
+
+- counter narrative of "city center is old" (mostly marketing)
+- counter narrative of "Korrektionspläne nur ansatzweise umgesetzt"
+  - [@fingerhuth_bauten_1988, p. 50], [@fingerhuth_bauten_1988, p. 52]
+  - "Die Ansätze [!] zur Verwirklichung des Plans zeigen sich besonders einschneidend im Bereich Blumenrain-Spiegelgasse, am Rümelinsplatz und am Barfüsserplatz" [@huber_architekturfuhrer_2014, p. 227]
+  - “Besonders in der Talstadt mussten im 20. Jahrhundert viele Häuser dem Konzept der sogenannten Talentlastungsstrasse weichen, die vom Blumenrain bis zum Barfüsserplatz hätte führen sollen. Die Neuausrichtung und Verbreiterung der Spiegelgasse mit der Kantonalbank und dem Spiegelhof (erbaut 1937–1939) machten hiermit den Anfang, es folgten Neubauten in der Stadthaus-, der Schneider- und der Münzgasse. Erst 1974, ein Jahr vor dem europaweiten Denkmalschutzjahr, wurden die Verbreiterungspläne aufgegeben.” [@mohle_profanes_2016, p. 103]
+  - "Dank dem Abbruch des Vorhabens blieb das Gerbergässli verschont und die verbreiterte Strasse fand am südlichen Platzende ein abruptes Ende. Noch heute mahnt das auffällige Eck beim Rümelinsplatz 1 daran, dass Basel nur knapp der Zerstörung seiner Altstadt entgangen ist." [@russi_basler_2022, p. 33]
+  - "zum Fischmarkt: “Die neuen Zweckbauten sowie die überaus breite Spiegelgasse – Teil einer geplanten, aber nie finalisierten Talentlastungsstrasse – beraubten den Ort nicht nur seiner Ästhetik, sondern auch seiner Nutzfläche.” [@russi_basler_2022, p. 62]
+  - "Ab den 1930er-Jahren wurde das Auto zum Planungsfaktor, sichtbar in den Fragmenten der geplanten Talentlastungsstrasse am Blumenrain um an Fischmarkt, in der Erneuerung der Steinentorstrasse und im Abbruch der alten Aeschenvorstadt" [@zaugg_stadtentwicklung_2010, p. 160]
 
 # Rümelinsplatz: Talentlastungsstrasse
 
-...
+- idea of Talentlastungsstrasse (see topography)
+- how to implement?
 
-# Schneidergasse 18: Stadthaus
+## Correction Plans, Building Lines and Planning Regulations
+
+- introduction into planning regulation
+
+  - concept of Baulinienplan
+  - Bau- und Strassenlinie
+  - show example map (screenshot)
+  - expropriation law?
+  - not plot-by-plot, but then a "grand plan": Korrektionsplan
+    - type of instrument
+    - legally binding not for plot owners, but for the authorities
+    - have to transfer city-wide development strategy to individual plans on smaller scale
+
+- Illustrations:
+  - Korrektionsplan
+  - mermaid: workflow Mehrebenensystem
 
 ...
 
 # Spiegelhof: Schuhmacherplan
+
+- 1930s
+- jump on scale
+- criticism?
+
+# Schneidergasse 18: Stadthaus
 
 ...
 
 # Petersgraben 20: Heritage Conservation
 
 ...
+[@huber_architekturfuhrer_2014, p. 227]
+
+- Altstadtschutzzone 1939, unterschiedliche Bedeutungen von Heritage Conservation
+
+- "Bereits 1939 waren die Hügelrücken nahe der Peterskirche und der Leonhardskirche als Altstadtzonen ausgewiesen worden und unterlagen seither einem besonderen Baurecht. Seitdem wurden bei denkmalpflegerisch begleiteten Umbauten fast in jedem Haus historische Konstruktionen und Dekorationsschichten freigelegt und restauriert oder zumindest gesichert.” [@mohle_profanes_2016, p. 103]
 
 # Spitalstrasse: Unhappy Doctors
 
+- who is against having cars everywhere? Hospitals
+
+- Referendumsdemokratie, Abstimmungen 1949
+
+  - emotional debate, show two ads each (Goebbels/communism and 'ebi patria' + x)
+  - achtung: die Schweiz etc.
+  - comparison of city to growth of children, Plakat
+
+- Abstimmungsergebnisse als Diagramm
+
+# Feldbergstrasse: City-Wide Implementation?
+
 ...
+
+- playing the long game: nobody expects quick results
+
+  - Bürgergemeinde inquiry on renovation timeframes
+  - Schneidergasse 11: https://oereblex.bs.ch/api/geolinks/3574.html (Betting on Red Wine), Rücknahme 1978 https://oereblex.bs.ch/api/geolinks/2554.html
+
+- Verlangsamungsgründe:
+  - 2. Weltkrieg
+  - "Der Ausbruch des Zweiten Weltkriegs verhinderte zunächst eine Weiterprojektierung. Danach waren es die ernüchternden Erkenntnisse aus der Umsetzung des Korrektionsplans, die lediglich partiell erfolgt war, was zu einem vorläufigen Verzicht führte. Insbesondere der hohe finanzielle Aufwand und die Belastung der ansässigen Bevölkerung durch die umfangreichen und langanhaltenden Bauarbeiten wurden als kritisch beurteilt; aber auch ein zunehmendes denkmalschützerisches Bewusstsein stellte solch einschneidende Vorhaben in Frage" [@lenherr_fortwahrendes_nodate, p. 92]
+
+## GIS Analysis
 
 ```{mermaid}
 flowchart LR
@@ -79,21 +159,58 @@ flowchart LR
     C -->|Geometries| F[Building Area]
 ```
 
-# Feldbergstrasse: City-Wide Implementation?
-
-...
-
-## GIS Analysis
-
-...
-
 # Aeschenvorstadt 68: Last Man Standing
 
-...
+Aeschenvorstadt: last implemented policies from Korrektionsplan
+
+“Im September 1953 wurde per Volksabstimmung die Opferung historischer Bausubstanz der Aeschenvorstadt (‘Goldener Sternen’) mit einem Ja von 59,7 Prozent zum schliesslich nie zu Ende geführten Korrektionsplan angenommen.” [@kreis_goldene_2000, p. 276]
+
+"Daher wurde ein Korrektionsplan ausgearbeitet, der auf der westlichen Vorstadtseite eine beträchtliche Zurücksetzung der Bau- und Straßenlinie und ihre Begradigung vom Banken- bis zum Aeschenplatz vorsah. Gegen diesen von der Regierung vorgelegten und vom Großen Rat gutgeheißenen Korrektionsplan wurde das Referendum ergriffen. Nach einem heftigen Abstimmungskampf unterlagen indes die dem Heimatschutzgedanken verpflichteten Gegner im September 1953 mit bloß 350 Stimmen. Damit war der Untergang einer noch fast intakten malerischen Altstadtstraße besiegelt […]" [@suter_von_1991, p. 25]
+
+“Bei der Schleifung der beiden letztgenannten meinten die seither ebenfalls untergegangenen ‘Basler Nachrichten’: ‘Kommende Generationen werden dieses Zerstörungswerk nie begreifen können.” [@suter_von_1991, p. 25]
+
+tides are turning:
+
+“Anfang der siebziger Jahre wurde das Verkehrskonzept für die Innerstadt neu überdacht. Die Baulinien für die Talentlastungsstrasse im Raum der Schneidergasse wurde 1974 aufgehoben. Auf die totale Auskernung im Bereich Schneidergasse-Spalenberg-Nadelberg wurde verzichtet. Noch immer bestand aber die Vorstellung von der radikalen Sanierung der Altstadt.” [@fingerhuth_bauten_1988, p. 52].
+
+"“1964 sprach sich die Regierung für das Konzept des sogenannten Cityrings aus und erteilte der Vorstellung, dass der Durchgangsverkehr durch das Stadtzentrum führen müsse, eine definitive Absage. Damit wurde auch das in der Zwischenkriegszeit entwickelte, im Korrektionsplan von 1947 bestätigte und bis Ende der 1950er-Jahre gültige Konzept begraben, das eine zusätzliche Transitstrasse durch die Schneidergasse und das hintere Gerbergässlein (so genannte Talentlastung) vorgesehen hatte.” [@kreis_goldene_2000, p. 276]"
+
+"Nach dem Ölschock der 1970er-Jahre zeichnete sich ein Bewusstseinswandel ab. Die Bewohner wollten keine neue Stadt mehr, sie wollten die alte zurückhaben." [@zaugg_stadtentwicklung_2010, p. 160]
+
+"Erst 1974, ein Jahr vor dem europaweiten Denkmalschutzjahr, wurden die Verbreiterungspläne aufgegeben" [@mohle_profanes_2016, p. 103] – _spezifisch bzgl. Talentlastung?_
+
+- Rolling back the regulations: starting ca. 1970s?
+
+  - Klybeckstr. 1934 https://oereblex.bs.ch/api/geolinks/2948.html, 1993 https://oereblex.bs.ch/api/geolinks/2947.html
+  - Hardstr. 1935 https://oereblex.bs.ch/api/geolinks/2798.html, 2022 https://oereblex.bs.ch/api/geolinks/4941.html (Street Line removed, Building line still existing)
+
+- Pharmacy Aeschenvorstadt
+
+  - large number of individual plot owners: https://oereblex.bs.ch/api/geolinks/3505.html
+
+- other trends in urban planning gained traction: Cityring
+  - problem shifts from transit/accessibility to providing parking:
+    "Nun entwickelte man auch neue Lösungen für die Parkprobleme. Die 1956/60 erbaute Storchen-Garage (die ursprünglich unterirdisch bis zum Spalentor hätte ausgedehnt werden sollen), ist ein anachronistisches Relikt aus der Vor-Cityring-Ära. Das 1956/58 erbaute Autosilo an der Steinentorstrasse (es war das erste vollautomatisierte Parkhaus der Welt) wurde wieder aufgehoben, als von 1968 an in den Fundamenten des Heuwaage-Viaduktes neue Abstellmöglichkeiten zur Verfügung standen. Das erste Stück einer Fussgänger-City wurde jedoch erst 1972 geschaffen" [@kreis_goldene_2000, p. 276]
+  - “Bereits 50 Jahre später stand die nächste Umgestaltung an, denn nun verfolgten die Behörden ihren Plan einer Autobahn mitten durch die Innenstadt. Das vom ETH-Ingenieur – und Nazi-Kriegsverbrecher – Kurt Leibbrand entwickelte Projekt sollte den Stadtkern entlasten, in dem die angrenzenden Parallelstrassen zu mehrspurigen, möglichst gerade verlaufenden Verkehrsadern ausgebaut werden [@russi_basler_2022, p. 33]
+  - "1962 stellte ETH-Ingenieur Kurt Leibbrand, auch «Karajan des Verkehrswesens» genannt, den Gesamtverkehrsplan Basel vor. Die Idee: Einen Ring um den Stadtkern herum bauen, der den Verkehr aufsaugt." [@wieland_platz_2022]
+  - “Die Diskussionen um den neuen Viadukt wurden bereits vor der Realisierung, vor allem aber danach kontrovers geführt. Aus verkehrsplanerischer Sicht war er zunächst vielleicht ein Gewinn. Städtebaulich stellte er hingegen einen markanten Einschnitt dar und schuf Probleme, die erst im Laufe der Zeit in vollem Umfang sichtbar wurden. So prangerte das ‘Aktionskomitee gegen den Cityring und für ein wohnliches Basel’ das ‘scheussliche Stahlmonument’ an, für das die Elisabethen- und Steinenschanze gerodet werden musste. Insbesondere die Fussverbindung von der Altstadt zum Bahnhof und zum Zoo war wegen der komplexen Verkehrsführung problematisch geworden und wurde von der Bevölkerung gemieden.” [@lenherr_fortwahrendes_nodate, p. 92f.]
 
 ## Current Situation
 
 ...
+
+- some regulations still valid
+- some regulations were retracted starting in the 19xxxs
+- today's use of the urban space gained by facade relocation
+
+  - bars, trees, parking, non-lieu?
+
+- the role of men/politicians in this? nature metaphors: "städtebauliche[] Erosion" [@fingerhuth_bauten_1988, p, 188]
+- "it has to be completed now": “Das Korrektionswerk war jetzt so weit fortgeschritten, daß es auch zu Ende geführt werden mußte, obschon sich inzwischen gezeigt hatte, daß der Zweibahnverkehr nicht nötig war und die Verbreiterung noch lange hätte unterbleiben können. Sie bekam indessen erneut einen Sinn durch das 1989 vorgelegte Projekt, ein drittes Tramgeleise in die Vorstadt zu legen.” [@suter_von_1991, p. 25]
+- (ggfs.:) looking back from 1998: [@schneider-sliwa_strategien_1998]
+
+- parallels on current railway planning: https://www.bazonline.ch/gopferdeckel-herr-de-meuron-382416996850
+  - traffic situation has not really changed
 
 # Nauentunnel/Heuwaage-Viadukt
 
