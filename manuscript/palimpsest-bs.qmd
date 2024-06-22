@@ -103,6 +103,14 @@ Standing in front of City Hall/Clothing Store:
     - legally binding not for plot owners, but for the authorities
     - have to transfer city-wide development strategy to individual plans on smaller scale
 
+  Korrektionsplan, Ratschlag 4531:
+
+> Der Korrektionsplan hat zum Ziel:
+
+1. die Innerstadt von allem unnötigen Verkehr zu entlasten durch den Ausbau gut dimensionierter und gut gelegener Umfahrungsstrassen,
+2. den Stadtverkehr selbst durch den Ausbau und die Ergänzung des bisherigen Straßennetzes zu verbessern,
+3. unhaltbar gewordene Zustände zu sanieren.
+
 - Illustrations:
   - Korrektionsplan
   - mermaid: workflow Mehrebenensystem
