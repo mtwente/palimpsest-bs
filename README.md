@@ -5,8 +5,8 @@ This project investigates the history of 20<sup>th</sup> century urban design pa
 [![GitHub issues](https://img.shields.io/github/issues/mtwente/palimpsest-bs.svg)](https://github.com/mtwente/palimpsest-bs/issues)
 [![GitHub forks](https://img.shields.io/github/forks/mtwente/palimpsest-bs.svg)](https://github.com/mtwente/palimpsest-bs/network)
 [![GitHub stars](https://img.shields.io/github/stars/mtwente/palimpsest-bs.svg)](https://github.com/mtwente/palimpsest-bs/stargazers)
-[![Code license](https://img.shields.io/github/license/mtwente/palimpsest-bs.svg)](https://github.com/mtwente/palimpsest-bs/blob/main/LICENSE-AGPL.md)
-[![Data license](https://img.shields.io/github/license/mtwente/palimpsest-bs.svg)](https://github.com/mtwente/palimpsest-bs/blob/main/LICENSE-CCBY.md)
+[![Code license](<https://img.shields.io/badge/license%20(code)-AGPL--3.0-orange.svg>)](https://github.com/mtwente/palimpsest-bs/blob/main/LICENSE-AGPL.md)
+[![Data license](<https://img.shields.io/badge/license%20(data)-CC%20BY%204.0-brightgreen.svg>)](https://github.com/mtwente/palimpsest-bs/blob/main/LICENSE-CCBY.md)
 [![Zotero](https://img.shields.io/badge/zotero-palimpsest--bs-bb393c?logo=zotero)](https://www.zotero.org/groups/5500966/palimpsest-bs)
 
 ## How to Cite
