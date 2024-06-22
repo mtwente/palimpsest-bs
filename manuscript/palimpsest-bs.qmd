@@ -44,8 +44,11 @@ Basel prides itself as a city of rich architectural culture, with its "world-ren
 Standing in front of City Hall/Clothing Store:
 
 - The city is not as old as it seems.
+- Concept of City as Palimpsest
 
 ## Tramèrscher Abrissplan
+
+![Topographic Model of Basel, STA DS BS 9 3370 [@regierungsrat_des_kantons_basel-stadt_ratschlag_1933]](./media/3370_Beilage2_Scan_Topografie.jpg){fig-align="left" width=50% fig-alt="A scanned map showing the topography of Basel."}
 
 - Illustrations:
 
@@ -55,7 +58,7 @@ Standing in front of City Hall/Clothing Store:
 - Why has so much of the lower part of the old town been torn down?
   - Talentlastungsstrasse
 
-## 20th Century Urban Planning in Basel:
+## 20th Century Urban Planning in Basel
 
 - traffic problem
 
@@ -63,6 +66,9 @@ Standing in front of City Hall/Clothing Store:
   - sanitary reasons (picture of Birsig?)
   - topography (map with height lines, scan from old document?), Ratschlag 3370
   - automobiles (stats: number of cars in Basel?)
+
+  * "... denn bei Licht besehen, bedeutet solch ein Plan nicht eine Korrektur, sondern einen Neubau der Altstadt ..."[@bernoulli_neuer_1933, p. 350]
+  * "In Basel behilft man sich bis auf den heutigen Tag mit den Strassen und Gassen, die für die Verkehrsansprüche des XI. und XII. Jahrhunderts geschaffen worden sind. Kein Wunder, dass eine solche Altstadt pittoresk, aber so gut wie unbrauchbar ist." [@bernoulli_neuer_1933, p. 350]
 
 - different plans/approaches during 20<sup>th</sup> century:
 
@@ -103,11 +109,36 @@ Standing in front of City Hall/Clothing Store:
 
 ...
 
+```{r}
+#| label: fig-airquality
+#| fig-cap: "Temperature and ozone level."
+#| warning: false
+
+library(ggplot2)
+
+testplot <- ggplot(airquality, aes(Temp, Ozone)) +
+              geom_point() +
+              geom_smooth(method = "loess")
+
+testplot
+
+if(!require(plotly)){
+    install.packages("plotly",
+                     dependencies =TRUE)
+    library(plotly)}
+
+p <- ggplotly(testplot,
+              source = 'h',)
+
+p
+```
+
 # Spiegelhof: Schuhmacherplan
 
 - 1930s
 - jump on scale
 - criticism?
+  - Schuhmacher selbst: "Im Ratschlag ist ausdrücklich darauf hingewiesen, dass die Altstadt verhältnismässig viel Verkehrsfläche aufweist." [@bernoulli_neuer_1933, p. 352]
 
 # Schneidergasse 18: Stadthaus
 
@@ -122,7 +153,15 @@ Standing in front of City Hall/Clothing Store:
 
 - "Bereits 1939 waren die Hügelrücken nahe der Peterskirche und der Leonhardskirche als Altstadtzonen ausgewiesen worden und unterlagen seither einem besonderen Baurecht. Seitdem wurden bei denkmalpflegerisch begleiteten Umbauten fast in jedem Haus historische Konstruktionen und Dekorationsschichten freigelegt und restauriert oder zumindest gesichert.” [@mohle_profanes_2016, p. 103]
 
+- Ratschlag 5468: Aufhebung Baulinien Spalengraben, "Im Bestreben, schöne Partien unserer Altstadt zu erhalten, …": Grabeneck zurückverlegt 19.10.1950, jetzt auch Hs. 18–24
+
+  - "Im Korrektionsplan aus dem Jahre 1934 wurde die Südseite des Spalengrabens mit einer Korrektionslinie belastet. Es war vorgesehen, die alte Gebäudefront abzubrechen und den Südflügel des Kollegiengebäudes der Universität freizugeben. In der Zwischenzeit ist der Sinn für die Schönheit unserer Altstadt gewachsen; es wird Wert auf deren Erhaltung gelegt."
+
+  - 6490: "Der Vollständigkeit halber sei hier erwähnt, dass der Altstadtschutz nicht mit dem Denkmalschutz verwechselt werden darf. Hier handelt es sich um eine Bewahrung des überlieferten Stadtbildes durch besonders strenge bauliche Vorschriften, während dort einzelne Gebäude unter Schutz gestellt, d.h. praktisch mit einem Abbruchverbot belegt werden."
+
 # Spitalstrasse: Unhappy Doctors
+
+- Ratschlag 3370: Freiwilligkeit?
 
 - who is against having cars everywhere? Hospitals
 
@@ -134,9 +173,52 @@ Standing in front of City Hall/Clothing Store:
 
 - Abstimmungsergebnisse als Diagramm
 
+### Results per Polling Place (without Military and 'Sick'/'Frail' votes)
+
+```{r}
+library(tidyr)
+
+data <- read.csv("./data/1949_referendum_results.csv")
+
+# remove Militär and Kranke und Gebrechliche
+data <- data[-24:-25,]
+
+# Convert data to long format for ggplot
+data_long <- data %>%
+  pivot_longer(cols = c(yes_pct, no_pct),
+               names_to = "Vote",
+               values_to = "Percentage")
+
+# Create the stacked bar chart
+plot1949 <- ggplot(data_long, aes(x = polling_place, y = Percentage, fill = Vote)) +
+  geom_bar(stat = "identity", orientation = "Percentage") +
+  geom_hline(yintercept = 50, linetype = "dashed", color = "black") +
+  theme_minimal() +
+  coord_flip() +
+  scale_fill_manual(values = c("yes_pct" = "#6195CF", "no_pct" = "#A5170E"),
+                    labels = c("Yes", "No")) +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+p2 <- ggplotly(plot1949,
+              source = 'h',)
+
+p2
+```
+
 # Feldbergstrasse: City-Wide Implementation?
 
-...
+```{r}
+
+if(!require(leaflet)){
+    install.packages("leaflet",
+                     dependencies =TRUE)
+    library(leaflet)}
+
+leaflet() %>%
+  addProviderTiles(providers$SwissFederalGeoportal.SWISSIMAGE) %>%
+  setView(7.58983, 47.56624, zoom = 20) %>%
+  addMarkers(lng=7.58983, lat=47.56624, popup="Feldbergstrasse 31, 4057 Basel")
+```
 
 - playing the long game: nobody expects quick results
 
