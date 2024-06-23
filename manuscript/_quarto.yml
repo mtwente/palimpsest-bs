@@ -25,6 +25,8 @@ format:
       - custom.css
     page-layout: full
     license: CC BY-SA
+    mermaid:
+      theme: neutral
   pdf:
     pdf-engine: xelatex
     keep-tex: false
