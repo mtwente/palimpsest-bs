@@ -44,17 +44,16 @@ Basel prides itself as a city of rich architectural culture, with its "world-ren
 Standing in front of City Hall/Clothing Store:
 
 - The city is not as old as it seems.
-- Concept of City as Palimpsest
 
-## Tramèrscher Abrissplan
-
-![Topographic Model of Basel, STA DS BS 9 3370 [@regierungsrat_des_kantons_basel-stadt_ratschlag_1933]](./media/3370_Beilage2_Scan_Topografie.jpg){fig-align="left" width=50% fig-alt="A scanned map showing the topography of Basel."}
-
-```{r}
+```{r abrissplan}
 library(leaflet)
 library(geojsonio)
 
-altstadt1875 <- geojson_sf("data/geodata/altstadt1875.shp")
+altstadt1875 <- geojson_sf("data/geodata/buildings1875/altstadt1875.shp")
+bezirke_shape <- geojson_sf("data/geodata/districts/100042.shp")
+
+# keep only Altstädte
+bezirke_shape <- bezirke_shape[bezirke_shape$wov_label == 12 | bezirke_shape$wov_label == 1, ]
 
 pop_up <- paste("Constructed in", altstadt1875$GBAUJ)
 
@@ -63,11 +62,19 @@ bs_buildings<-leaflet() %>%
   addProviderTiles("CartoDB.Voyager",options = providerTileOptions(
     opacity = 0.7
   )) %>%
-  addPolygons(data=altstadt1875, fillOpacity = 0.03,weight = 1.2,
+  addPolygons(data=bezirke_shape, fillOpacity = 0, weight = 1.5,
+              stroke=TRUE, color="black") %>%
+    addPolygons(data=altstadt1875, fillOpacity = 0.03,weight = 1.2,
               popup = pop_up)
 
 bs_buildings
 ```
+
+- Concept of City as Palimpsest, Corboz, Morphologie-Buch?
+
+## Tramèrscher Abrissplan
+
+![Topographic Model of Basel, STA DS BS 9 3370 [@regierungsrat_des_kantons_basel-stadt_ratschlag_1933]](./media/3370_Beilage2_Scan_Topografie.jpg){fig-align="left" width=50% fig-alt="A scanned map showing the topography of Basel."}
 
 - Illustrations:
 
@@ -86,13 +93,44 @@ Tramèrscher Abrissplan: Grundlage Falknerplan 1875, Vergleich 1993/1875: Basler
 
 - traffic problem
 
-  - growth (increase of population)
-  - sanitary reasons (picture of Birsig?), Birsig was open until 1897 (@vinken_zones_2021, p. 91)
-  - topography (map with height lines, scan from old document?), Ratschlag 3370
-  - automobiles (stats: number of cars in Basel?)
+```{r car-plot}
+library(ggplot2)
+library(tidyverse)
 
-  * "... denn bei Licht besehen, bedeutet solch ein Plan nicht eine Korrektur, sondern einen Neubau der Altstadt ..."[@bernoulli_neuer_1933, p. 350]
-  * "In Basel behilft man sich bis auf den heutigen Tag mit den Strassen und Gassen, die für die Verkehrsansprüche des XI. und XII. Jahrhunderts geschaffen worden sind. Kein Wunder, dass eine solche Altstadt pittoresk, aber so gut wie unbrauchbar ist." [@bernoulli_neuer_1933, p. 350]
+if(!require(plotly)){
+    install.packages("plotly",
+                     dependencies =TRUE)
+    library(plotly)}
+
+vehicles <- read.csv("./data/statistics_cars.csv", sep = ";")
+
+vehicles_long <- vehicles %>%
+  pivot_longer(cols = -Year, names_to = "VehicleType", values_to = "Per1000")
+
+carplot <- ggplot(vehicles_long,
+               aes(x = Year, y = Per1000, color = VehicleType)) +
+  geom_smooth(se = FALSE) +
+
+  scale_x_continuous(
+    breaks = seq(1910, 1960, by = 10),
+    expand = expansion(mult = c(0, 0))
+  ) +
+
+  #geom_point() +
+  labs(title = "Vehicles Per 1000 Inhabitants Over Time",
+       color = "Vehicle Type") +
+  theme_minimal()
+
+ggplotly(carplot)
+```
+
+- growth (increase of population)
+- sanitary reasons (picture of Birsig?), Birsig was open until 1897 (@vinken_zones_2021, p. 91)
+- topography (map with height lines, scan from old document?), Ratschlag 3370
+- automobiles (stats: number of cars in Basel?)
+
+* "... denn bei Licht besehen, bedeutet solch ein Plan nicht eine Korrektur, sondern einen Neubau der Altstadt ..."[@bernoulli_neuer_1933, p. 350]
+* "In Basel behilft man sich bis auf den heutigen Tag mit den Strassen und Gassen, die für die Verkehrsansprüche des XI. und XII. Jahrhunderts geschaffen worden sind. Kein Wunder, dass eine solche Altstadt pittoresk, aber so gut wie unbrauchbar ist." [@bernoulli_neuer_1933, p. 350]
 
 - different plans/approaches during 20<sup>th</sup> century:
 
@@ -202,6 +240,8 @@ p
 
   - "The Schutzzonen Altstadt, however, were, although they were designated as protection zones, were [sic] likewise planning zones, and conservation legislation in the proper sense was not established until 1977" [@vinken_zones_2021, p. 92]
 
+  Kostenaspekt der Unterschutzstellung: Kreis 2005 p. 54
+
 # Spitalstrasse: Unhappy Doctors
 
 - Ratschlag 3370: Freiwilligkeit?
@@ -213,6 +253,7 @@ p
   - emotional debate, show two ads each (Goebbels/communism and 'ebi patria' + x)
   - achtung: die Schweiz etc.
   - comparison of city to growth of children, Plakat
+  - Aktion Aesche 1950s: "Zugleich wurde ihnen [den Gegnern] aber die Sachkompetenz abgesprochen, die Opposition lasse sich, hiess es, vor allem von Gefühlen leiten." (Kreis 2005, 59)
 
 - Abstimmungsergebnisse als Diagramm
 
@@ -278,6 +319,8 @@ leaflet() %>%
 
 - Kostenfrage: "Because of the size of the compensation payments to owners, this process was only economically and politically viable for a few main shopping streets." [@vinken_zones_2021, p. 91]
 
+- Kreis 2005: “Ein weiteres wichtiges Element dieser ‘Grosskorrektion’ sah eine für die öffentliche Hand kostengünstige Zurückversetzung der Baulinie auf der rechten Seite vor, da die meisten Eigentümer im Hinblick auf ihre grösseren Renditen bereit waren, den Boden für die zustäzliche Allmend dem Staat kostenlos abzugeben. Die privaten Investoren (insbesondere der Briefmarkenhändler Ernst Müller-Price mit dem Architekturbüro Bräuning, Leu und Dürig sowie die Schweizerische Kreditanstalt) waren für die untere Aeschenvorstadt die treibenden Kräfte und stiessen bei den Behörden aus dem genannten Grund auf offene Ohren. p. 54
+
 – Ratschlag 4172, Feldbergstrasse: 1934 Verbreiterung zw. Claragraben u. Riehenring vorgesehen auf 18m, 4172 schlägt vor: 20m mit Fahrbahnbreite 12m. (p. 8)
 
 ## GIS Analysis
@@ -332,7 +375,8 @@ flowchart LR
 
 # Aeschenvorstadt 68: Last Man Standing
 
-Aeschenvorstadt: last implemented policies from Korrektionsplan
+- Aeschenvorstadt: last implemented policies from Korrektionsplan
+  - why so late still? Kreis zu **Eigentümerstruktur**: "Vielleicht waren für diese Variante [Alternativorschlag anstelle Aeschenverbreiterung] die in solchen Fällen stets sehr wichtigen Besitzverhältnisse weniger günstig, das heisst: Der Besitz der Aeschenparzellen lag in Händen von Leuten, die über grosse Nähe zu den Behörden verfügten." (p. 58)
 
 “Im September 1953 wurde per Volksabstimmung die Opferung historischer Bausubstanz der Aeschenvorstadt (‘Goldener Sternen’) mit einem Ja von 59,7 Prozent zum schliesslich nie zu Ende geführten Korrektionsplan angenommen.” [@kreis_goldene_2000, p. 276]
 
@@ -342,13 +386,21 @@ Aeschenvorstadt: last implemented policies from Korrektionsplan
 
 tides are turning:
 
+spezifisch Aeschenvorstadt: "Die Vorbehalte gegen die von den Behörden vorgespurte Erweiterung der Aeschen hatten in den vier Jahren zwischen 1949 und 1953 stark zugenommen. Dem stand allerdings eine gewisse Schlussstrichstimmung entgegen. 1949 hatten noch alle grossen Parteien den Korrektionsplan gutgeheissen. 1953 waren nur noch die Radikalen und Sozialdemokraten für die Durchsetzung der ursprünglichen Ordnung, die Liberalen gaben die Nein-Parole heraus, und die übrigen (die Katholische Volkspartei, die Evangelische Volkspartei, die Bürger- und Gewerbepartei, der Landesring und die PdA) beschlossen Stimmfreigabe. Der Vorstand des Heimatschutzes unterstütze 1953 das Komitee, 1949 hatte er aus Rücksicht auf die internen Befürworter des Korrektionsplanes auf eine Ja-Parole verzichtet und das Komitee nur nachträglich finanziell unterstützt." Kreis 2005, p. 57
+
+"Selbst Sanierer - vielleicht gerade sie – führten das Wort von den 'notwendigen Opfern' im Munde. Weil man bei anderen Teilen der Altstadt für deren Erhaltung eintrat, glaubte man in diesem Fall das 'Opfer' den Freunden des alten Basel zumuten zu können." (Kreis 2005, p. 58)
+
 “Anfang der siebziger Jahre wurde das Verkehrskonzept für die Innerstadt neu überdacht. Die Baulinien für die Talentlastungsstrasse im Raum der Schneidergasse wurde 1974 aufgehoben. Auf die totale Auskernung im Bereich Schneidergasse-Spalenberg-Nadelberg wurde verzichtet. Noch immer bestand aber die Vorstellung von der radikalen Sanierung der Altstadt.” [@fingerhuth_bauten_1988, p. 52].
 
-"“1964 sprach sich die Regierung für das Konzept des sogenannten Cityrings aus und erteilte der Vorstellung, dass der Durchgangsverkehr durch das Stadtzentrum führen müsse, eine definitive Absage. Damit wurde auch das in der Zwischenkriegszeit entwickelte, im Korrektionsplan von 1947 bestätigte und bis Ende der 1950er-Jahre gültige Konzept begraben, das eine zusätzliche Transitstrasse durch die Schneidergasse und das hintere Gerbergässlein (so genannte Talentlastung) vorgesehen hatte.” [@kreis_goldene_2000, p. 276]"
+"1964 sprach sich die Regierung für das Konzept des sogenannten Cityrings aus und erteilte der Vorstellung, dass der Durchgangsverkehr durch das Stadtzentrum führen müsse, eine definitive Absage. Damit wurde auch das in der Zwischenkriegszeit entwickelte, im Korrektionsplan von 1947 bestätigte und bis Ende der 1950er-Jahre gültige Konzept begraben, das eine zusätzliche Transitstrasse durch die Schneidergasse und das hintere Gerbergässlein (so genannte Talentlastung) vorgesehen hatte.” [@kreis_goldene_2000, p. 276]
 
 "Nach dem Ölschock der 1970er-Jahre zeichnete sich ein Bewusstseinswandel ab. Die Bewohner wollten keine neue Stadt mehr, sie wollten die alte zurückhaben." [@zaugg_stadtentwicklung_2010, p. 160]
 
+"Bis in die späten 1960er Jahre war der Einsatz für den Schutz, wie ihn die Aeschenvorstadt nötig gehabt hätte, eine Sache der Minderheit, die inzwischen tendenziell zur Mehrheit geworden ist. Das grosse Umdenken fand, wie Uta Feldges richtig feststellt, erst in den 1970er Jahren statt. Es wurde von der politischen Linken mitgetragen, die in den 1930er wie in den 1950er Jahren ein kräftiger Motor der zerstörerischen Modernisierung war." (Kreis 2005, p. 59)
+
 "Erst 1974, ein Jahr vor dem europaweiten Denkmalschutzjahr, wurden die Verbreiterungspläne aufgegeben" [@mohle_profanes_2016, p. 103] – _spezifisch bzgl. Talentlastung?_
+
+## new times
 
 - Rolling back the regulations: starting ca. 1970s?
 
@@ -368,7 +420,7 @@ tides are turning:
 
 ## Current Situation
 
-...
+Kreis 2005, p. 57: "Ironie des Schicksals: Das an der Stelle von Heimatschützern verteidigten Häusern in den Jahren 1954–1957 errichtete 'Drachen-Center' hätte nach dem Willen der staatlichen Denkmalpflege 2005 vor einer mit starken Eingriffen verbundenen Umnutzung geschützt werden sollen. Dieser ehemalige Neubau gilt mittlerweile als exemplarischer Bau eines frühen City-Hauses [...]"
 
 - some regulations still valid
 - some regulations were retracted starting in the 19xxxs
@@ -379,6 +431,7 @@ tides are turning:
 - the role of men/politicians in this? nature metaphors: "städtebauliche[] Erosion" [@fingerhuth_bauten_1988, p, 188]
 - "it has to be completed now": “Das Korrektionswerk war jetzt so weit fortgeschritten, daß es auch zu Ende geführt werden mußte, obschon sich inzwischen gezeigt hatte, daß der Zweibahnverkehr nicht nötig war und die Verbreiterung noch lange hätte unterbleiben können. Sie bekam indessen erneut einen Sinn durch das 1989 vorgelegte Projekt, ein drittes Tramgeleise in die Vorstadt zu legen.” [@suter_von_1991, p. 25]
 - (ggfs.:) looking back from 1998: [@schneider-sliwa_strategien_1998]
+- Rückblickend Kreis 2005 p. 53: "Mit fragwürdigen Mitteln wurden fragwürdige Ziele verfolgt."
 
 - parallels on current railway planning: https://www.bazonline.ch/gopferdeckel-herr-de-meuron-382416996850
   - traffic situation has not really changed
