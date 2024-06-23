@@ -33,7 +33,7 @@ The structure of this repository follows the [Advanced Structure for Data Analys
 - TODO Data models, including field names, descriptions, and controlled values, should be clearly documented in a static document that is maintained with the data and is part of the products.
 - TODO All rights and intellectual property issues should be clearly documented. Where possible, data and products should be released under open licenses (Creative Commons, GNU, BSD, MPL).
 
-```mermaid.js
+```mermaid
 flowchart TD
     C --> D
     subgraph Road Network
