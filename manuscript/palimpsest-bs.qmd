@@ -76,6 +76,15 @@ Standing in front of City Hall/Clothing Store:
   - Korrektionspläne 40/50s => Focus!
   - Leibbrandplan/Gegenvorschlag Fachverbände 60s
 
+  ```{mermaid}
+  timeline
+    1933 : Schuhmacherplan
+    1946 : Korrektionsplan Kleinbasel
+    1949 : Korrektionsplan Grossbasel
+    1958 : Gesamtverkehrsplan (Leibbrandplan)
+    1958 : Gegenvorschlag
+  ```
+
 - counter narrative of "city center is old" (mostly marketing)
 - counter narrative of "Korrektionspläne nur ansatzweise umgesetzt"
   - [@fingerhuth_bauten_1988, p. 50], [@fingerhuth_bauten_1988, p. 52]
@@ -181,12 +190,15 @@ p
 
 - Abstimmungsergebnisse als Diagramm
 
-### Results per Polling Place (without Military and 'Sick'/'Frail' votes)
+### Results per Polling Place^[without Military and 'Sick'/'Frail' votes]
 
 ```{r}
 library(tidyr)
 
 data <- read.csv("./data/1949_referendum_results.csv")
+
+data$yes_pct <- data$yes_pct/100
+data$no_pct <- data$no_pct/100
 
 # remove Militär and Kranke und Gebrechliche
 data <- data[-24:-25,]
@@ -200,17 +212,15 @@ data_long <- data %>%
 # Create the stacked bar chart
 plot1949 <- ggplot(data_long, aes(x = polling_place, y = Percentage, fill = Vote)) +
   geom_bar(stat = "identity", orientation = "Percentage") +
-  geom_hline(yintercept = 50, linetype = "dashed", color = "black") +
+  geom_hline(yintercept = 0.5, linetype = "dashed", color = "black") +
   theme_minimal() +
-  coord_flip() +
-  scale_fill_manual(values = c("yes_pct" = "#6195CF", "no_pct" = "#A5170E"),
-                    labels = c("Yes", "No")) +
-  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+  #coord_flip() +
+  scale_y_continuous(labels = scales::percent) +
+  scale_fill_manual(values = c("yes_pct" = "#6195CF", "no_pct" = "#A5170E")) +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  labs(x = "", y = "")
 
-p2 <- ggplotly(plot1949,
-              source = 'h',)
-
-p2
+ggplotly(plot1949)
 ```
 
 # Feldbergstrasse: City-Wide Implementation?
@@ -239,7 +249,45 @@ leaflet() %>%
 
 ## GIS Analysis
 
+### Calculating Road Widths
+
 ```{mermaid}
+flowchart TD
+    subgraph Road Network
+        A[(City Boundary)] -->|Download from OSM| B[Basel Transport Network]
+        A2[(Transport Network)] -->|Download from Swisstopo| B
+        B --> |Filter Features| C[Basel Road Network]
+    end
+
+    C --> D
+    C -->|Calculate Bearings| D3
+
+    subgraph Road Area Geometries
+        L[(Ground Cover Data)] -->|Download from Canton| M([Transport Geometries])
+        M --> |Filter Features| N([Way Area Polygons])
+        N --> |Fix and Dissolve| N
+    end
+
+    N --> |Transform to Lines| X
+    N --> Z
+
+    subgraph Transect Lines
+        X[Way Area Outlines] -->|Transect 25m| Y[Perpendicular Lines]
+        Y -->|Clip to Area Polygons| Z[Lines representing Road Width]
+    end
+
+    Z -->|Filter Excess Roads| D
+
+    subgraph Road Widths
+        D[Transects within Road Network] --> D4
+        D --> |Calculate Bearings| D3
+        D3[Angle Differences] -->|Filter Right Angles| D4([Road Width Line Features])
+        C --> |Filter Geometry Outliers| D4
+    end
+```
+
+```{mermaid}
+
 flowchart LR
     A[Federal Statistical Office] -->|EGID| B(Building Footprint)
     A2[Open Data Basel-Stadt] -->|Geometries| B
