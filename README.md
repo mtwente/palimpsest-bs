@@ -33,6 +33,36 @@ The structure of this repository follows the [Advanced Structure for Data Analys
 - TODO Data models, including field names, descriptions, and controlled values, should be clearly documented in a static document that is maintained with the data and is part of the products.
 - TODO All rights and intellectual property issues should be clearly documented. Where possible, data and products should be released under open licenses (Creative Commons, GNU, BSD, MPL).
 
+```mermaid.js
+flowchart TD
+    C --> D
+    subgraph Road Network
+    A[City Boundary] -->|Download from OSM| B([Basel Transport Network])
+    A2[Road Network] -->|Download from Swisstopo| B
+    B --> |Filter Features| C([Basel Road Network])
+    end
+    C -->|Calculate Bearings| D3
+    subgraph Road Area Geometries
+    L[Ground Cover Data] -->|Download from Canton| M([Transport Geometries])
+    M --> |Filter Features| N([Way Area Polygons])
+    N --> |Fix and Dissolve| N
+    end
+    N --> |Transform to Lines| X
+    N --> Z
+    subgraph Lines Across Road Surface
+    X[Way Area Outlines] -->|25m Transects| Y([Perpendicular Lines])
+    Y -->|Clip to Polygons| Z([Surface Transect Lines])
+    end
+    Z -->|Filter Excess Roads| D
+    subgraph Road Width
+    D[Transects within Road Network] --> D4
+    D --> |Calculate Length| D
+    D --> |Calculate Bearings| D3
+    D3[Angle Difference] -->|Filter +/- 90°| D4([Road Width Line Features])
+    C --> |Filter Geometry Outliers| D4
+    end
+```
+
 ## Support
 
 This project is maintained by [@mtwente](https://github.com/mtwente). Please understand that we can't provide individual support via email. We also believe that help is much more valuable when it's shared publicly, so more people can benefit from it.
