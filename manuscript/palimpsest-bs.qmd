@@ -50,10 +50,34 @@ Standing in front of City Hall/Clothing Store:
 
 ![Topographic Model of Basel, STA DS BS 9 3370 [@regierungsrat_des_kantons_basel-stadt_ratschlag_1933]](./media/3370_Beilage2_Scan_Topografie.jpg){fig-align="left" width=50% fig-alt="A scanned map showing the topography of Basel."}
 
+```{r}
+library(leaflet)
+library(geojsonio)
+
+altstadt1875 <- geojson_sf("data/geodata/altstadt1875.shp")
+
+pop_up <- paste("Constructed in", altstadt1875$GBAUJ)
+
+bs_buildings<-leaflet() %>%
+  addTiles()  %>%
+  addProviderTiles("CartoDB.Voyager",options = providerTileOptions(
+    opacity = 0.7
+  )) %>%
+  addPolygons(data=altstadt1875, fillOpacity = 0.03,weight = 1.2,
+              popup = pop_up)
+
+bs_buildings
+```
+
 - Illustrations:
 
   - Topography
   - Abrissplan
+
+Abrissplan nachbilden ab 1859: Basels Entfestigung, siehe [@vinken_zones_2021 p. 87] und Kreis 1995, p. 224.
+Tramèrscher Abrissplan: Grundlage Falknerplan 1875, Vergleich 1993/1875: Basler Altstadt hat 70% verloren, s. Meier 1993, 10.
+
+"Strictly speaking, Basel's famed Altstadt came into existence as a planning zone" [@vinken_zones_2021, p. 91]
 
 - Why has so much of the lower part of the old town been torn down?
   - Talentlastungsstrasse
@@ -63,7 +87,7 @@ Standing in front of City Hall/Clothing Store:
 - traffic problem
 
   - growth (increase of population)
-  - sanitary reasons (picture of Birsig?)
+  - sanitary reasons (picture of Birsig?), Birsig was open until 1897 (@vinken_zones_2021, p. 91)
   - topography (map with height lines, scan from old document?), Ratschlag 3370
   - automobiles (stats: number of cars in Basel?)
 
@@ -176,6 +200,8 @@ p
 
   - 6490: "Der Vollständigkeit halber sei hier erwähnt, dass der Altstadtschutz nicht mit dem Denkmalschutz verwechselt werden darf. Hier handelt es sich um eine Bewahrung des überlieferten Stadtbildes durch besonders strenge bauliche Vorschriften, während dort einzelne Gebäude unter Schutz gestellt, d.h. praktisch mit einem Abbruchverbot belegt werden."
 
+  - "The Schutzzonen Altstadt, however, were, although they were designated as protection zones, were [sic] likewise planning zones, and conservation legislation in the proper sense was not established until 1977" [@vinken_zones_2021, p. 92]
+
 # Spitalstrasse: Unhappy Doctors
 
 - Ratschlag 3370: Freiwilligkeit?
@@ -244,8 +270,15 @@ leaflet() %>%
   - Schneidergasse 11: https://oereblex.bs.ch/api/geolinks/3574.html (Betting on Red Wine), Rücknahme 1978 https://oereblex.bs.ch/api/geolinks/2554.html
 
 - Verlangsamungsgründe:
+
   - 2. Weltkrieg
   - "Der Ausbruch des Zweiten Weltkriegs verhinderte zunächst eine Weiterprojektierung. Danach waren es die ernüchternden Erkenntnisse aus der Umsetzung des Korrektionsplans, die lediglich partiell erfolgt war, was zu einem vorläufigen Verzicht führte. Insbesondere der hohe finanzielle Aufwand und die Belastung der ansässigen Bevölkerung durch die umfangreichen und langanhaltenden Bauarbeiten wurden als kritisch beurteilt; aber auch ein zunehmendes denkmalschützerisches Bewusstsein stellte solch einschneidende Vorhaben in Frage" [@lenherr_fortwahrendes_nodate, p. 92]
+
+  - Kleinbasel plan was already put in place earlier, resp. it took longer to finish the Grossbasel plan, reasons given in Ratschlag 4172: "Kleinbasel bietet einer Korrektion wegen seines klaren Aufbaues weniger Schwierigkeiten als Grossbasel. Die vorhandenen Hauptstrassen liegen alle zweckmässig. Auf Durchbrüche oder neue Strassen kann infolgedessen vollständig verzichtet werden. Es genügt eine allmähliche, durch Baulinien zu sichernde Anpassung der vorhandenen Strassen an die Erfordernisse des zukünftigen Verkehrs. Dabei ist es auch möglich, den mittelalterlichen Kern, soweit er nicht sanierungsbedürftig ist, weitgehend zu erhalten." (p. 1)
+
+- Kostenfrage: "Because of the size of the compensation payments to owners, this process was only economically and politically viable for a few main shopping streets." [@vinken_zones_2021, p. 91]
+
+– Ratschlag 4172, Feldbergstrasse: 1934 Verbreiterung zw. Claragraben u. Riehenring vorgesehen auf 18m, 4172 schlägt vor: 20m mit Fahrbahnbreite 12m. (p. 8)
 
 ## GIS Analysis
 
