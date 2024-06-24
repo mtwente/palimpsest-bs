@@ -31,15 +31,25 @@ citation:
 number-sections: true
 ---
 
-::: {.callout-warning}
-This document is a work in progress. Check back next week for more (any) content.
+::: {.callout-note}
+This document is a work in progress. Check back soon for more content.
 :::
 
-Basel prides itself as a city of rich architectural culture, with its "world-renowned historical city center" [@huber_architekturfuhrer_2014] in the front row of architecture guides, marketing and tourist publications.
+Basel prides itself as a city of rich architectural culture, with its "world-renowned historical city center"^[In the case of Basel, "Historical City Center" refers to both Altstadt Grossbasel on the left bank of the Rhine and Altstadt Kleinbasel on the right.] [@huber_architekturfuhrer_2014] having a front-row seat in marketing brochures, tourist publications, and architecture guides as well. Painted in bright red colour, Basel's City Hall is one example for this type of built heritage. But standing on the market square, visitors might notice the building next to City Hall: The office building at Markplatz 5 (see @fig-marktplatz5mt), built in 1952, stands out against most of the buildings around the square, and makes for an especially stark contrast to the intricatly decorated walls next door.
 
-... Manuscript to add ...
+Like most cities in Switzerland, present-day Basel was shaped particularly by urban planning decisions made between 1940 and 1970 [@eisinger_stadte_2004], which the office building at Marktplatz 5 is a pointed example for – as it opens up a window to an era of Basel urban planning thought to be long gone: Its location at the pedestrianised market square masks the fact that this building owes its very existence to a project with the aim of construction high-capacity roads through the innermost parts of Basel.
 
-# Marktplatz 5: Introduction
+In this paper, we will revisit this and similar projects. We will see how different eras of urban planning echo in the urban fabric of contemporary Basel and, focusing on specific planning proposals related to car-centered planning decisions of the mid-20<sup>th</sup> century, how even abandoned plans have left their mark in Basel.
+
+Before delving into any GIS analysis, we will first look at the socio-political circumstances that led to traffic planning becoming a key policy issue in Basel's urban planning at the beginning of the 20<sup>th</sup> century (@sec-context). Then we will quickly dissect the most important aspects of building law and planning regulations (@sec-instruments), before discussing two pre-WW2 plans and their impact (@sec-spiegelhof and @sec-stadthaus). After a change of perspective to built heritage conservation aspects (@sec-heritage) we will then take a look at the available geodata and analyse the overall impact of 20<sup>th</sup> century traffic planning on the contemporary city (@sec-analysis).
+
+::: {.callout-tip}
+
+The sections are associated with individual buildings and streets that, if read from top to bottom, will present you with an alternative city tour of Basel, starting on market square, leading through Altstadt Grossbasel towards Johanniterbrücke, crossing the Rhine into Kleinbasel and back, finishing the tour at Aeschenvorstadt.
+
+:::
+
+# Marktplatz 5: Introduction {#sec-marktplatz5}
 
 Standing in front of City Hall/Clothing Store:
 
@@ -47,9 +57,9 @@ Standing in front of City Hall/Clothing Store:
 
 ::: {layout-ncol=2}
 
-![[Marktplatz 5](https://osm.org/go/0CdsJzXoq?m=) to the left of City Hall, facing east. June 2024.](./media/Marktplatz5_20240623_195409.jpg)
+![[Marktplatz 5](https://osm.org/go/0CdsJzXoq?m=) to the left of City Hall, facing east. June 2024.](./media/Marktplatz5_20240623_195409.jpg){#fig-marktplatz5mt}
 
-![Marktplatz 5 with open arcades. Detail of a photo by Werner Friedli [-@friedli_basel_1966].](./media/Marktplatz5_ETH-Bibliothek_LBS_H1-026898_Ausschnitt.png)
+![Marktplatz 5 with open arcades. Detail of a photo by Werner Friedli [-@friedli_basel_1966].](./media/Marktplatz5_ETH-Bibliothek_LBS_H1-026898_Ausschnitt.png){#fig-marktplatz5friedli}
 
 :::
 
@@ -98,12 +108,7 @@ bs_buildings
 
 ![Topographic Model of Basel, STA DS BS 9 3370 [@regierungsrat_des_kantons_basel-stadt_ratschlag_1933]](./media/3370_Beilage2_Scan_Topografie.jpg){fig-align="left" width=50% fig-alt="A scanned map showing the topography of Basel."}
 
-- Illustrations:
-
-  - Topography
-  - Abrissplan
-
-## 20<sup>th</sup> Century Urban Planning in Basel
+## 20<sup>th</sup> Century Urban Planning in Basel {#sec-context}
 
 - traffic problem
 
@@ -205,7 +210,7 @@ Even though private motor vehicle were not a common phenomenon in Basel before W
 ![[Rümelinsplatz 5](https://osm.org/go/0CdsJnGOI?m=), facing south. June 2024.](./media/Ruemelinsplatz5_20240623_142303.jpg)
 :::
 
-## Planning Instruments
+## Planning Instruments {#sec-instruments}
 
 - introduction into planning regulation
 
@@ -248,7 +253,7 @@ The map, a legal document, is accompanied by a textual resolution with further d
 
 ...
 
-# Spiegelhof: Schuhmacherplan
+# Spiegelhof: Schuhmacherplan {#sec-spiegelhof}
 
 - 1930s
 - jump on scale
@@ -266,7 +271,7 @@ The map, a legal document, is accompanied by a textual resolution with further d
 
 :::
 
-# Schneidergasse 18: Stadthaus
+# Schneidergasse 18: Stadthaus {#sec-stadthaus}
 
 - Scope of 1940s correction plans
 - doubts about feasibility
@@ -283,21 +288,45 @@ library(leaflet)
 library(geojsonio)
 library(tidyr)
 
+lines3370r_bpbs_844_33 <- geojson_sf("data/geodata/correction_lines/3370r_bpbs_844_33_linien.shp")
+lines3433b_kpbs_1395_34 <- geojson_sf("data/geodata/correction_lines/3433b_kpbs_1395_34_linien.shp")
+lines4172r_kpkb_5100_45 <- geojson_sf("data/geodata/correction_lines/4172r_kpkb_5100_45_linien.shp")
+lines4224r_kpgb_4100_46 <- geojson_sf("data/geodata/correction_lines/4224r_kpgb_5100_46_linien.shp")
+lines4237_kpkb_5400_46 <- geojson_sf("data/geodata/correction_lines/4237_kpkb_5400_46_linien.shp")
 lines4531b_kpgb_4500_49 <- geojson_sf("data/geodata/correction_lines/4531b_kpgb_4500_49_linien.shp")
 
 map4531b<-leaflet() %>%
   addTiles()  %>%
-  addProviderTiles("CartoDB.Voyager",options = providerTileOptions(
-    opacity = 0.7
-  )) %>%
-    addPolylines(data=lines4531b_kpgb_4500_49, fillOpacity = 1,weight = 3)
+  addProviderTiles(providers$SwissFederalGeoportal.SWISSIMAGE, group = "Swisstopo Satellite Imagery") %>%
+  addProviderTiles("CartoDB.Voyager", group = "OpenStreetMap (CartoDB)") %>%
+
+    addPolylines(data = lines3370r_bpbs_844_33, fillOpacity = 1, weight = 3, color = "#1965B0",
+                group = "Proposal 3370 for Basel (1933)") %>%
+    addPolylines(data = lines3433b_kpbs_1395_34, fillOpacity = 1, weight = 3, color = "#7BAFDE",
+                group = "Proposal 3433 for Basel (1934)") %>%
+    addPolylines(data = lines4172r_kpkb_5100_45, fillOpacity = 1, weight = 3, color = "#F6C141",
+                group = "Proposal 4172 for Kleinbasel (1945)") %>%
+    addPolylines(data = lines4224r_kpgb_4100_46, fillOpacity = 1, weight = 3, color = "#F1932D",
+                group = "Proposal 4224 for Grossbasel (1946)") %>%
+    addPolylines(data = lines4237_kpkb_5400_46, fillOpacity = 1, weight = 3, color = "#E8601C",
+                group = "Proposal 4237 for Kleinbasel (1946)") %>%
+    addPolylines(data = lines4531b_kpgb_4500_49, fillOpacity = 1, weight = 3, color = "#DC050C",
+                group = "Proposal 4531 for Grossbasel (1949)") %>%
+
+    addLayersControl(
+      baseGroups = c("OpenStreetMap (CartoDB)", "Swisstopo Satellite Imagery"),
+      overlayGroups = c("Proposal 3370 for Basel (1933)", "Proposal 3433 for Basel (1934)",
+                      "Proposal 4172 for Kleinbasel (1945)", "Proposal 4224 for Grossbasel (1946)",
+                      "Proposal 4237 for Kleinbasel (1946)", "Proposal 4531b for Grossbasel (1949)"),
+      options = layersControlOptions(collapsed = FALSE)
+    )
 
 map4531b
 ```
 
 :::
 
-# Petersgraben 20: Heritage Conservation
+# Petersgraben 20: Heritage Conservation {#sec-heritage}
 
 ...
 [@huber_architekturfuhrer_2014, p. 227]
@@ -406,7 +435,7 @@ leaflet() %>%
 
 – Ratschlag 4172, Feldbergstrasse: 1934 Verbreiterung zw. Claragraben u. Riehenring vorgesehen auf 18m, 4172 schlägt vor: 20m mit Fahrbahnbreite 12m. (p. 8)
 
-## GIS Analysis
+## GIS Analysis {#sec-analysis}
 
 As described above, the correction plans and their impact barely play a role in narratives about Basel's city center. On the contrary: Publications that do mention the plans largely downplay the degree of implementation and focus on the Blumenrain–Rümelinsplatz axis. The aim of this paper is to challenge this notion and to look for traces of these proposals in the historical city center and beyond. To this end, we make use of several data sets that are available with information on Basel's urban fabric today.
 
@@ -475,24 +504,72 @@ flowchart TD
 
 ```
 
-```{mermaid}
+### Calculating Distance To Road
+
+```{mermaid fig-WorkflowDistance}
 flowchart TD
-    subgraph Buildings Footprints
+
+    subgraph Building Footprints
         BF1[(Building Data)] -->|Download from Canton| BF2([Building Footprints])
+        BF2 --> |Transform to Outline| BF3["Building Outlines (Façades)"]
+        BF3 --> |Calculate Centroids| BF4(Façade Centroids)
     end
+
+    subgraph Road Areas
+        RA1[(Ground Cover Data)] --> |Download from Canton| RA2([Transport Geometries])
+        RA2 --> |Filter Features| RA3([Way Area Polygons])
+        RA3 --> |"Buffer -0.01m"| RA3
+        RA3 --> |Transform to Lines| RA4([Way Area Outlines])
+    end
+
+    RA4 --> BF5
+
+    subgraph Distance Calculation
+        BF4 --> |Draw Shortest Lines| BF5[Shortest Line from Façades to Road Area]
+        BF5 --> |Split At Intersections| BF6[Line Segments Outside of Building]
+        BF3 --> |Difference| BF6
+        BF6 --> |Keep Only Intersects with Road | BF6
+        BF6 --> |Rank Line Lengths| BF7[Shortest Distance per Building]
+        BF7 --> |Extract Vertices| BF8(Lines Originating From Street-Facing Buildings Only)
+    end
+
+    subgraph City Blocks
+        CB1[(Statistical City Blocks)] --> |Download from Canton| CB3([Perimeter Blocks])
+        CB2[(City Boundary)] --> |Download from OSM| CB3
+        CB3 --> |Buffer In -20m| CB3
+        CB3 --> |Buffer Out 1.5m| CB3
+    end
+
+    CB3 --> |Filter Features| BF8
+
+    subgraph Building Statistics
+        BS1[(Building Statistics)] --> |Download from Canton| BS2[[Building Type, Age etc.]]
+    end
+
+    BS2 --> |Join Attributes| BF8
+
+    subgraph Clean Outliers
+        CO1[[Building Distances]] --> |Calculate Quartile Ranges| CO2[[Upper/Lower Bounds]]
+        CO2 --> |Filter Outliers| CO3{{Building/Street Distance Line Features}}
+    end
+
+    BF8 --> CO1
+
+  style BF1 fill:#D9CCE3
+  style RA1 fill:#D9CCE3
+  style CB1 fill:#D9CCE3
+  style CB2 fill:#D9CCE3
+  style BS1 fill:#D9CCE3
+  style BF4 fill:#7BAFDE
+  style RA4 fill:#7BAFDE
+  style BF8 fill:#7BAFDE
+  style CB3 fill:#7BAFDE
+  style BS2 fill:#7BAFDE
+  style CO3 fill:#F7F056
+
 ```
 
-```{mermaid fig-WorkflowData}
-flowchart LR
-    A[Federal Statistical Office] -->|EGID| B(Building Footprint)
-    A2[Open Data Basel-Stadt] -->|Geometries| B
-    B --> C{QGIS Layer}
-    C -->|EGID| D[Construction Year]
-    C -->|EGID| E[Building Type]
-    C -->|Geometries| F[Building Area]
-```
-
-# Aeschenvorstadt 68: Last Man Standing
+# Aeschenvorstadt 68: Last Man Standing {#sec-aeschenvorstadt}
 
 - Aeschenvorstadt: last implemented policies from Korrektionsplan
   - why so late still? Kreis 2005 zu **Eigentümerstruktur**: "Vielleicht waren für diese Variante [Alternativorschlag anstelle Aeschenverbreiterung] die in solchen Fällen stets sehr wichtigen Besitzverhältnisse weniger günstig, das heisst: Der Besitz der Aeschenparzellen lag in Händen von Leuten, die über grosse Nähe zu den Behörden verfügten." (p. 58), s. auch:
