@@ -47,7 +47,7 @@ Standing in front of City Hall/Clothing Store:
 
 ::: {layout-ncol=2}
 
-![[Marktplatz 5](https://osm.org/go/0CdsJzXoq?m=), facing east. June 2024.](./media/Marktplatz5_20240623_195409.jpg)
+![[Marktplatz 5](https://osm.org/go/0CdsJzXoq?m=) to the left of City Hall, facing east. June 2024.](./media/Marktplatz5_20240623_195409.jpg)
 
 ![Marktplatz 5 with open arcades. Detail of a photo by Werner Friedli [-@friedli_basel_1966].](./media/Marktplatz5_ETH-Bibliothek_LBS_H1-026898_Ausschnitt.png)
 
@@ -76,7 +76,7 @@ bezirke_shape <- geojson_sf("data/geodata/districts/100042.shp")
 # keep only Altstädte
 bezirke_shape <- bezirke_shape[bezirke_shape$wov_label == 12 | bezirke_shape$wov_label == 1, ]
 
-pop_up <- paste("Constructed in", altstadt1875$GBAUJ)
+pop_up_buildings <- paste("Constructed in", altstadt1875$GBAUJ)
 
 bs_buildings<-leaflet() %>%
   addTiles()  %>%
@@ -86,7 +86,7 @@ bs_buildings<-leaflet() %>%
   addPolygons(data=bezirke_shape, fillOpacity = 0, weight = 1.5,
               stroke=TRUE, color="black") %>%
     addPolygons(data=altstadt1875, fillOpacity = 0.03,weight = 1.2,
-              popup = pop_up)
+              popup = pop_up_buildings)
 
 bs_buildings
 
@@ -108,8 +108,6 @@ bs_buildings
 - traffic problem
 
 As data provided by the Cantonal Statistical Office [-@statistisches_amt_des_kantons_basel-stadt_statistisches_1951; -@statistisches_amt_des_kantons_basel-stadt_statistisches_1961] shows, the number of registered motor vehicles per 1000 inhabitants ...
-
-###
 
 ```{r}
 #| label: fig-cars
@@ -154,16 +152,23 @@ ggplotly(carplot)
 
 - growth (increase of population)
 - sanitary reasons (picture of Birsig?), Birsig was open until 1897 (@vinken_zones_2021, p. 91)
+  - "Die systematische Untersuchung ergab, dass 79% der Wohnungen über kein Bad, 84% über kein Warmwasser und 64% über keine Waschküche verfügten" [@huber_architekturfuhrer_2014, p. 228]
 - topography (map with height lines, scan from old document?), Ratschlag 3370
 - automobiles (stats: number of cars in Basel?), @fig-cars
+- Arbeitsrappen, Arbeitsbeschaffungsmassnahme:
+  - "Der Arbeitsrappen, 1936 eingeführt, beruhte auf der Solidarität der Arbeitenden mit den Arbeitslosen und gab dem Staat die notwendigen Mittel für ein grossangelegtes Beschäftigungsprogramm. Der Sanierung der Altstadt kam dabei vorrangige Bedeutung zu" [@huber_architekturfuhrer_2014, p. 228]
 
 Even though private motor vehicle were not a common phenomenon in Basel before World War II (see @fig-cars), they played a pivotal role in the infrastructure planning efforts by the cantonal authorities.
 
-- "... denn bei Licht besehen, bedeutet solch ein Plan nicht eine Korrektur, sondern einen Neubau der Altstadt ..."[@bernoulli_neuer_1933, p. 350]
 - "In Basel behilft man sich bis auf den heutigen Tag mit den Strassen und Gassen, die für die Verkehrsansprüche des XI. und XII. Jahrhunderts geschaffen worden sind. Kein Wunder, dass eine solche Altstadt pittoresk, aber so gut wie unbrauchbar ist." [@bernoulli_neuer_1933, p. 350]
+
+### Planning Ahead
+
+- "... denn bei Licht besehen, bedeutet solch ein Plan nicht eine Korrektur, sondern einen Neubau der Altstadt ..."[@bernoulli_neuer_1933, p. 350]
 
 * different plans/approaches during 20<sup>th</sup> century:
 
+  - erster Korrektionsplan 1900 [@huber_architekturfuhrer_2014, p. 226]
   - Schuhmacherplan 1930s
   - Korrektionspläne 40/50s => Focus!
   - Leibbrandplan/Gegenvorschlag Fachverbände 60s
@@ -179,12 +184,15 @@ Even though private motor vehicle were not a common phenomenon in Basel before W
 
 * counter narrative of "city center is old" (mostly marketing)
 * counter narrative of "Korrektionspläne nur ansatzweise umgesetzt"
+
   - [@fingerhuth_bauten_1988, p. 50], [@fingerhuth_bauten_1988, p. 52]
   - "Die Ansätze [!] zur Verwirklichung des Plans zeigen sich besonders einschneidend im Bereich Blumenrain-Spiegelgasse, am Rümelinsplatz und am Barfüsserplatz" [@huber_architekturfuhrer_2014, p. 227]
   - “Besonders in der Talstadt mussten im 20. Jahrhundert viele Häuser dem Konzept der sogenannten Talentlastungsstrasse weichen, die vom Blumenrain bis zum Barfüsserplatz hätte führen sollen. Die Neuausrichtung und Verbreiterung der Spiegelgasse mit der Kantonalbank und dem Spiegelhof (erbaut 1937–1939) machten hiermit den Anfang, es folgten Neubauten in der Stadthaus-, der Schneider- und der Münzgasse. Erst 1974, ein Jahr vor dem europaweiten Denkmalschutzjahr, wurden die Verbreiterungspläne aufgegeben.” [@mohle_profanes_2016, p. 103]
   - "Dank dem Abbruch des Vorhabens blieb das Gerbergässli verschont und die verbreiterte Strasse fand am südlichen Platzende ein abruptes Ende. Noch heute mahnt das auffällige Eck beim Rümelinsplatz 1 daran, dass Basel nur knapp der Zerstörung seiner Altstadt entgangen ist." [@russi_basler_2022, p. 33]
   - "zum Fischmarkt: “Die neuen Zweckbauten sowie die überaus breite Spiegelgasse – Teil einer geplanten, aber nie finalisierten Talentlastungsstrasse – beraubten den Ort nicht nur seiner Ästhetik, sondern auch seiner Nutzfläche.” [@russi_basler_2022, p. 62]
   - "Ab den 1930er-Jahren wurde das Auto zum Planungsfaktor, sichtbar in den Fragmenten der geplanten Talentlastungsstrasse am Blumenrain um an Fischmarkt, in der Erneuerung der Steinentorstrasse und im Abbruch der alten Aeschenvorstadt" [@zaugg_stadtentwicklung_2010, p. 160]
+
+  dagegen: Schuhmacherplan prägte Stadtplanung bis in die 1960er-Jahre [@huber_architekturfuhrer_2014, p. 226]
 
 # Rümelinsplatz: Talentlastungsstrasse
 
@@ -245,7 +253,10 @@ The map, a legal document, is accompanied by a textual resolution with further d
 - 1930s
 - jump on scale
 - criticism?
+
   - Schuhmacher selbst: "Im Ratschlag ist ausdrücklich darauf hingewiesen, dass die Altstadt verhältnismässig viel Verkehrsfläche aufweist." [@bernoulli_neuer_1933, p. 352]
+
+- Plan gemindert vom grossen Rat, trotzdem finanzielle Überforderung [@huber_architekturfuhrer_2014, p. 227]
 
 ::: {layout-ncol=2}
 
@@ -259,6 +270,10 @@ The map, a legal document, is accompanied by a textual resolution with further d
 
 - Scope of 1940s correction plans
 - doubts about feasibility
+- Ziele klar: "Ziele waren klar die Vervielfachung der Verkaufs- und Bürofläche und die Zugangserleichterungen für den Individualverkehr (Grossparkings in der Innenstadt: ‘Storchen’ am Fischmarkt, ‘Autosilo’ an der Steinentorstrasse, ‘Drachen’ in der Aeschenvorstadt)." [@huber_architekturfuhrer_2014, p. 355]
+  - Feststellung, dass man auch parken muss
+  - neues Argument: Geschäftsflächen
+- neu Arkaden, teilweise Erhaltung
 
 ::: {#lst-correctionlines lst-cap="Correction Lines as proposed by the 1949 plan for Grossbasel"}
 
@@ -290,7 +305,11 @@ map4531b
 - Altstadtschutzzone 1939, unterschiedliche Bedeutungen von Heritage Conservation
   "Strictly speaking, Basel's famed Altstadt came into existence as a planning zone" [@vinken_zones_2021, p. 91]
 
+- "Die Furcht der Bevölkerung vor dem Verlust des vertrauten Stadtbildes zeigt sich auch im zunehmenden Einfluss der Heimatschutzbewegung. Der Abbruch des Zeughauses (heute Kollegienhaus), des Segerhofes am Blumenrain und des Württembergerhofes (heute Kunstmuseum) setzte in den mittleren 1930er-Jahren ein Alarmzeichen. Die denkmalpflegerischen Massnahmen dieser Zeit orientierten sich eher an einer allgemeinen, bildhaften und auch motivischen Nähe zum Altbau denn an den heute vertretenen analytischen Grundsätzen" [@huber_architekturfuhrer_2014, p. 229]
+
 ![1939 Zoning Map of Basel. The the area shaded in purple represents the Schutzzone Altstadt [Detail, -@regierungsrat_des_kantons_basel-stadt_ratschlag_1939]](./media/R3769_Zonenplan_39_Schutzzone.jpg)
+
+- "Diesen trug das neue Hochbautengesetz von 1939 in einem gewissen Sinne Rechnung mit der sog. Altstadtzone; in dieser sollte die ‘architektonische Struktur’ (nicht aber die materielle und baukünstlerische Substanz der Häuser) erhalten bleiben. Die in einem Verzeichnis aufgeführten ausgewählten Baudenkmäler durften demnach erst abgebrochen werden, wenn die Stadt deren Kauf ablehnte" [@huber_architekturfuhrer_2014, p. 227]
 
 - "Bereits 1939 waren die Hügelrücken nahe der Peterskirche und der Leonhardskirche als Altstadtzonen ausgewiesen worden und unterlagen seither einem besonderen Baurecht. Seitdem wurden bei denkmalpflegerisch begleiteten Umbauten fast in jedem Haus historische Konstruktionen und Dekorationsschichten freigelegt und restauriert oder zumindest gesichert.” [@mohle_profanes_2016, p. 103]
 
@@ -307,6 +326,8 @@ map4531b
 # Spitalstrasse: Unhappy Doctors
 
 - Ratschlag 3370: Freiwilligkeit?
+
+- Kreis 2005, p. 54: "für die öffentliche Hand kostengünstige Zurückversetzung der Baulinie auf der rechten Seite vor, da die meisten Eigentümer im Hinblick auf ihre grösseren Renditen bereit waren, den Boden für die zustäzliche Allmend dem Staat kostenlos abzugeben"
 
 - who is against having cars everywhere? Hospitals
 
@@ -387,45 +408,81 @@ leaflet() %>%
 
 ## GIS Analysis
 
+As described above, the correction plans and their impact barely play a role in narratives about Basel's city center. On the contrary: Publications that do mention the plans largely downplay the degree of implementation and focus on the Blumenrain–Rümelinsplatz axis. The aim of this paper is to challenge this notion and to look for traces of these proposals in the historical city center and beyond. To this end, we make use of several data sets that are available with information on Basel's urban fabric today.
+
+### Data Sources and Description
+
+... mermaid graphs
+
+### Calculating Distances Between Buildings and Streets
+
+The planning approach proposed by the correction plans' authors was to make more space available for vehicles, i.e. to widen those roads that were deemed necessary to guarantee a steady flow of (car) traffic. The cheapest way to achieve this – in the already built-up districts of the inner city and closer suburbs – was essentially to move the Baulinie further away from the existing roads in order to free up space for additional lanes and/or parking. Therefore, investigating the degree of the correction plans' implementation essentially boils down to looking for roads that are wider than others.
+
+But road width alone is no feasible indicator for this research task: As pointed out by the literature, the correction plans never saw _full_ implementation, which means that only in a very few places – e.g. at Petersgraben or Aeschenvorstadt – we actually see roads that were widened. And since the automotive city has been retired as a planning paradigm by now, it is even less likely that any additional space accommodated for through traffic is actually used as such. Instead, the lanes have been kept at their original width and the additional space is used for bicycle stands, trash collection containers (at Petersgraben), outdoor seating for restaurants (at Aeschenvorstadt), etc.
+
+Instead, we have to rely on other variables. The distance between the roads and adjacent buildings appears to be a second indicator: At places that saw partial implementation of the correction plans, we can see that even if a road was not expanded with an additional lane, buildings might have been placed at a distance to the road that accommodated for planned expansion of the road that building was built next to.
+
+The first steps of the analysis are therefore to calculate the width of each road in Basel, and then calculating distances between each building and the road(s) in the vicinity of it.
+
+In the following sections, I am going to describe the approach to calculating these attributes in QGIS and the data that was used for that purpose.
+
 ### Calculating Road Widths
+
+*check mermaid shapes: source DB, polygons: stadium, line features: square, numerical features: [[]], output {{}}
+*colours: input D9CCE3, intermediate results 7BAFDE, output F7F056
 
 ```{mermaid fig-WorkflowWidth}
 flowchart TD
+    RN4 --> RW1
     subgraph Road Network
-        A[(City Boundary)] -->|Download from OSM| B[Basel Transport Network]
-        A2[(Transport Network)] -->|Download from Swisstopo| B
-        B --> |Filter Features| C[Basel Road Network]
+        RN1[(City Boundary)] -->|Download from OSM| RN3[Basel Transport Network]
+        RN2[(Transport Network)] -->|Download from Swisstopo| RN3
+        RN3 --> |Filter Features| RN4[Basel Road Network]
     end
 
-    C --> D
-    C -->|Calculate Bearings| D3
+    RN4 -->|Calculate Bearings| RW2
 
     subgraph Road Area Geometries
-        L[(Ground Cover Data)] -->|Download from Canton| M([Transport Geometries])
-        M --> |Filter Features| N([Way Area Polygons])
-        N --> |Fix and Dissolve| N
+        RG1[(Ground Cover Data)] -->|Download from Canton| RG2([Transport Geometries])
+        RG2 --> |Filter Features| RG3([Way Area Polygons])
+        RG3 --> |Fix and Dissolve| RG3
     end
 
-    N --> |Transform to Lines| X
-    N --> Z
+    RG3 --> |Transform to Lines| TL1
+    RG3 --> TL3
 
     subgraph Transect Lines
-        X[Way Area Outlines] -->|Transect 25m| Y[Perpendicular Lines]
-        Y -->|Clip to Area Polygons| Z[Lines representing Road Width]
+        TL1[Way Area Outlines] -->|Transect 25m| TL2[Perpendicular Lines]
+        TL2 -->|Clip to Area Polygons| TL3[Lines Representing Road Width]
     end
 
-    Z -->|Filter Excess Roads| D
+    TL3 -->|Filter Excess Roads| RW1
 
-    subgraph Road Widths
-        D[Transects within Road Network] --> D4
-        D --> |Calculate Bearings| D3
-        D3[Angle Differences] -->|Filter Right Angles| D4([Road Width Line Features])
-        C --> |Filter Geometry Outliers| D4
+    subgraph Road Width
+        RW1[Transects within Road Network] --> RW3
+        RW1 --> |Calculate Bearings| RW2
+        RW2[[Angle Difference]] -->|Filter Right Angles| RW3{{Road Width Line Features}}
+        RN4 --> |Filter Geometry Outliers| RW3
+    end
+
+  style RN1 fill:#D9CCE3
+  style RN2 fill:#D9CCE3
+  style RG1 fill:#D9CCE3
+  style TL3 fill:#7BAFDE
+  style RN4 fill:#7BAFDE
+  style RG3 fill:#7BAFDE
+  style RW3 fill:#F7F056
+
+```
+
+```{mermaid}
+flowchart TD
+    subgraph Buildings Footprints
+        BF1[(Building Data)] -->|Download from Canton| BF2([Building Footprints])
     end
 ```
 
 ```{mermaid fig-WorkflowData}
-
 flowchart LR
     A[Federal Statistical Office] -->|EGID| B(Building Footprint)
     A2[Open Data Basel-Stadt] -->|Geometries| B
@@ -438,7 +495,8 @@ flowchart LR
 # Aeschenvorstadt 68: Last Man Standing
 
 - Aeschenvorstadt: last implemented policies from Korrektionsplan
-  - why so late still? Kreis zu **Eigentümerstruktur**: "Vielleicht waren für diese Variante [Alternativorschlag anstelle Aeschenverbreiterung] die in solchen Fällen stets sehr wichtigen Besitzverhältnisse weniger günstig, das heisst: Der Besitz der Aeschenparzellen lag in Händen von Leuten, die über grosse Nähe zu den Behörden verfügten." (p. 58)
+  - why so late still? Kreis 2005 zu **Eigentümerstruktur**: "Vielleicht waren für diese Variante [Alternativorschlag anstelle Aeschenverbreiterung] die in solchen Fällen stets sehr wichtigen Besitzverhältnisse weniger günstig, das heisst: Der Besitz der Aeschenparzellen lag in Händen von Leuten, die über grosse Nähe zu den Behörden verfügten." (p. 58), s. auch:
+    - Das Gebiet um den Andreasplatz blieb ausgespart und war 1949 Gegenstand eines Wettbewerbs mit dem Ziel, den Marktplatz an die Schneidergasse zu verlegen (1. Preis: Bräunig, Leu, Dürig). [@huber_architekturfuhrer_2014, p. 229]
 
 “Im September 1953 wurde per Volksabstimmung die Opferung historischer Bausubstanz der Aeschenvorstadt (‘Goldener Sternen’) mit einem Ja von 59,7 Prozent zum schliesslich nie zu Ende geführten Korrektionsplan angenommen.” [@kreis_goldene_2000, p. 276]
 
@@ -482,9 +540,9 @@ spezifisch Aeschenvorstadt: "Die Vorbehalte gegen die von den Behörden vorgespu
 
 ::: {layout-ncol=2}
 
-![[Aeschengraben 68](https://osm.org/go/0CdsKSuKY?m=), facing southeast. June 2024.](./media/Aeschenvorstadt68_20240623_143654.jpg)
+![[Aeschengraben 68](https://osm.org/go/0CdsKSuKY?m=), facing southeast. June 2024.](./media/Aeschenvorstadt68_20240623_143654.jpg){label="fig-aeschengraben68-1"}
 
-![[Aeschengraben 68](https://osm.org/go/0CdsKS3hA?m=), facing southeast. June 2024.](./media/Aeschenvorstadt68_20240623_143532.jpg)
+![[Aeschengraben 68](https://osm.org/go/0CdsKS3hA?m=), facing southeast. June 2024.](./media/Aeschenvorstadt68_20240623_143532.jpg){label="fig-aeschengraben-2"}
 
 :::
 
