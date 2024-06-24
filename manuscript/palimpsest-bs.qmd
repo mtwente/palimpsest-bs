@@ -61,7 +61,12 @@ Tramèrscher Abrissplan: Grundlage Falknerplan 1875, Vergleich 1993/1875: Basler
 - Why has so much of the lower part of the old town been torn down?
   - Talentlastungsstrasse
 
-```{r abrissplan}
+In 1993, Stephan Tramèr made a hand-drawn map comparing the inventory of buildings on an 1865 cadastral plan with the buildings standing at the time – his conclusion: Between 1865 and 1993, around 70% of the urban fabric had been replaced by new buildings [@meier_basel_1993, p. 10]. A similar comparison is depicted in @lst-map which shows how many of the buildings which today stand in the historic city center(s) were built before 1875.
+
+::: {#lst-map lst-cap="Abrissplan"}
+
+```{r}
+
 library(leaflet)
 library(geojsonio)
 
@@ -84,7 +89,10 @@ bs_buildings<-leaflet() %>%
               popup = pop_up)
 
 bs_buildings
+
 ```
+
+:::
 
 - Concept of City as Palimpsest, Corboz, Morphologie-Buch?
 
@@ -101,7 +109,16 @@ bs_buildings
 
 As data provided by the Cantonal Statistical Office [-@statistisches_amt_des_kantons_basel-stadt_statistisches_1951; -@statistisches_amt_des_kantons_basel-stadt_statistisches_1961] shows, the number of registered motor vehicles per 1000 inhabitants ...
 
-```{r car-plot}
+###
+
+```{r}
+#| label: fig-cars
+#| fig-cap: !expr "Vehicle Types in Basel per 1000 Inhabitants [@statistisches_amt_des_kantons_basel-stadt_statistisches_1951; @statistisches_amt_des_kantons_basel-stadt_statistisches_1961]"
+#| column: page-inset-right
+#| echo: false
+#| message: false
+
+
 library(ggplot2)
 library(tidyverse)
 
@@ -138,18 +155,20 @@ ggplotly(carplot)
 - growth (increase of population)
 - sanitary reasons (picture of Birsig?), Birsig was open until 1897 (@vinken_zones_2021, p. 91)
 - topography (map with height lines, scan from old document?), Ratschlag 3370
-- automobiles (stats: number of cars in Basel?)
+- automobiles (stats: number of cars in Basel?), @fig-cars
 
-* "... denn bei Licht besehen, bedeutet solch ein Plan nicht eine Korrektur, sondern einen Neubau der Altstadt ..."[@bernoulli_neuer_1933, p. 350]
-* "In Basel behilft man sich bis auf den heutigen Tag mit den Strassen und Gassen, die für die Verkehrsansprüche des XI. und XII. Jahrhunderts geschaffen worden sind. Kein Wunder, dass eine solche Altstadt pittoresk, aber so gut wie unbrauchbar ist." [@bernoulli_neuer_1933, p. 350]
+Even though private motor vehicle were not a common phenomenon in Basel before World War II (see @fig-cars), they played a pivotal role in the infrastructure planning efforts by the cantonal authorities.
 
-- different plans/approaches during 20<sup>th</sup> century:
+- "... denn bei Licht besehen, bedeutet solch ein Plan nicht eine Korrektur, sondern einen Neubau der Altstadt ..."[@bernoulli_neuer_1933, p. 350]
+- "In Basel behilft man sich bis auf den heutigen Tag mit den Strassen und Gassen, die für die Verkehrsansprüche des XI. und XII. Jahrhunderts geschaffen worden sind. Kein Wunder, dass eine solche Altstadt pittoresk, aber so gut wie unbrauchbar ist." [@bernoulli_neuer_1933, p. 350]
+
+* different plans/approaches during 20<sup>th</sup> century:
 
   - Schuhmacherplan 1930s
   - Korrektionspläne 40/50s => Focus!
   - Leibbrandplan/Gegenvorschlag Fachverbände 60s
 
-  ```{mermaid}
+  ```{mermaid fig-timeline}
   timeline
     1933 : Schuhmacherplan
     1946 : Korrektionsplan Kleinbasel
@@ -158,8 +177,8 @@ ggplotly(carplot)
     1958 : Gegenvorschlag
   ```
 
-- counter narrative of "city center is old" (mostly marketing)
-- counter narrative of "Korrektionspläne nur ansatzweise umgesetzt"
+* counter narrative of "city center is old" (mostly marketing)
+* counter narrative of "Korrektionspläne nur ansatzweise umgesetzt"
   - [@fingerhuth_bauten_1988, p. 50], [@fingerhuth_bauten_1988, p. 52]
   - "Die Ansätze [!] zur Verwirklichung des Plans zeigen sich besonders einschneidend im Bereich Blumenrain-Spiegelgasse, am Rümelinsplatz und am Barfüsserplatz" [@huber_architekturfuhrer_2014, p. 227]
   - “Besonders in der Talstadt mussten im 20. Jahrhundert viele Häuser dem Konzept der sogenannten Talentlastungsstrasse weichen, die vom Blumenrain bis zum Barfüsserplatz hätte führen sollen. Die Neuausrichtung und Verbreiterung der Spiegelgasse mit der Kantonalbank und dem Spiegelhof (erbaut 1937–1939) machten hiermit den Anfang, es folgten Neubauten in der Stadthaus-, der Schneider- und der Münzgasse. Erst 1974, ein Jahr vor dem europaweiten Denkmalschutzjahr, wurden die Verbreiterungspläne aufgegeben.” [@mohle_profanes_2016, p. 103]
@@ -178,42 +197,33 @@ ggplotly(carplot)
 ![[Rümelinsplatz 5](https://osm.org/go/0CdsJnGOI?m=), facing south. June 2024.](./media/Ruemelinsplatz5_20240623_142303.jpg)
 :::
 
-## Correction Plans, Building Lines and Planning Regulations
+## Planning Instruments
 
 - introduction into planning regulation
 
-  - concept of Baulinienplan
-  - Bau- und Strassenlinie
-  - show example map (screenshot)
-  - expropriation law?
-  - not plot-by-plot, but then a "grand plan": Korrektionsplan
-    - type of instrument
-    - legally binding not for plot owners, but for the authorities
-    - have to transfer city-wide development strategy to individual plans on smaller scale
-
   Korrektionsplan, Ratschlag 4531:
 
-> Der Korrektionsplan hat zum Ziel:
+### Korrektionsplan
 
-1. die Innerstadt von allem unnötigen Verkehr zu entlasten durch den Ausbau gut dimensionierter und gut gelegener Umfahrungsstrassen,
-2. den Stadtverkehr selbst durch den Ausbau und die Ergänzung des bisherigen Straßennetzes zu verbessern,
-3. unhaltbar gewordene Zustände zu sanieren.
+Correction Plans were used as strategic planning documents on a large scale. Adressing traffic engineering solutions was one, if not the main objective, as stated during the plan's development by the cantonal parliamentarians [-@grosser_rat_des_kantons_basel-stadt_bericht_1949, p. 5]:
+
+> The correction plan aims to:<br /> 1. relieve the city centre of all unnecessary traffic by expanding well-dimensioned and well-located bypass roads,<br />2. improve urban traffic itself by expanding and supplementing the existing road network,<br />3. reorganise conditions that have become untenable.
 
 ::: {layout-ncol=2}
 
-![Correction Plan Proposal for Grossbasel (Excerpt), Ratschlag 4531 [-@grosser_rat_des_kantons_basel-stadt_bericht_1949]](./media/R4531_Korrektionsplan_Ausschnitt.jpg)
+![Correction Plan Proposal for Grossbasel (Detail), Ratschlag 4531 [-@grosser_rat_des_kantons_basel-stadt_bericht_1949]](./media/R4531_Korrektionsplan_Ausschnitt.jpg)
 
-![Correction Plan Proposal for Kleinbasel (Excerpt), Ratschlag 3370 [-@grosser_rat_des_kantons_basel-stadt_ratschlag_1933]](./media/R3370_Korrektionsplan_Ausschnitt.png)
+![Correction Plan Proposal for Kleinbasel (Detail), Ratschlag 3370 [-@grosser_rat_des_kantons_basel-stadt_ratschlag_1933]](./media/R3370_Korrektionsplan_Ausschnitt.png)
 
 :::
 
-- Illustrations:
-  - Korrektionsplan
-  - mermaid: workflow Mehrebenensystem
+The scope of a correction plan was on a city-wide level: To provide a long-term [@regierungsrat_des_kantons_basel-stadt_ratschlag_1933, p. 26], integrated future framework of reference for city development (solely regarding traffic planning, that is). While not addressing individual plots or buildings per se, it is a document operating on a larger scale to show the overall planning objective that was agreed upon. To actually enact the planning decisions that are depicted in the correction plan, the planning authorities then have to transfer the planning objectives to a smaller scale using _Baulinienpläne_.
 
-![Map regarding Baulinienplan 4977, Excerpt. [-@regierungsrat_des_kantons_basel-stadt_baulinienplan_1960], Location: [Hammerstr./Feldbergstr.](https://osm.org/go/0CdsPMmYk--?m=)](./media/Baulinienplan4977_Ausschnitt.png)
+### Baulinienplan
 
-The map, a legal document, is accompanied by a textual resolution with further details on the plan. It includes, among other things, numerical representations of the changes depicted on the map, a list of the plots that are affected by this plan. This document is then legally binding for plot owners.
+![Map regarding Baulinienplan 4977 [Detail, -@regierungsrat_des_kantons_basel-stadt_baulinienplan_1960], Location: [Hammerstr./Feldbergstr.](https://osm.org/go/0CdsPMmYk--?m=)](./media/Baulinienplan4977_Ausschnitt.png)
+
+The map, a legal document, is accompanied by a textual resolution with further details on the plan. It includes, among other things, numerical representations of the changes depicted on the map and a list of the plots that are affected by this plan (including information on each plot's ownership status). This document is then legally binding for authorities and plot owners alike
 
 ::: {layout-ncol=2}
 
@@ -242,7 +252,30 @@ The map, a legal document, is accompanied by a textual resolution with further d
 
 # Schneidergasse 18: Stadthaus
 
-...
+- Scope of 1940s correction plans
+- doubts about feasibility
+
+::: {#lst-correctionlines lst-cap="Correction Lines as proposed by the 1949 plan for Grossbasel"}
+
+```{r}
+
+library(leaflet)
+library(geojsonio)
+
+lines4531b_kpgb_4500_49 <- geojson_sf("data/geodata/correction_lines/4531b_kpgb_4500_49_linien.shp")
+
+map4531b<-leaflet() %>%
+  addTiles()  %>%
+  addProviderTiles("CartoDB.Voyager",options = providerTileOptions(
+    opacity = 0.7
+  )) %>%
+    addPolylines(data=lines4531b_kpgb_4500_49, fillOpacity = 1,weight = 3)
+
+map4531b
+
+```
+
+:::
 
 # Petersgraben 20: Heritage Conservation
 
@@ -281,7 +314,7 @@ The map, a legal document, is accompanied by a textual resolution with further d
 
 ### Results per Polling Place^[without Military and 'Sick'/'Frail' votes]
 
-```{r}
+```{r fig-referendum}
 library(tidyr)
 
 data <- read.csv("./data/1949_referendum_results.csv")
@@ -314,7 +347,7 @@ ggplotly(plot1949)
 
 # Feldbergstrasse: City-Wide Implementation?
 
-```{r}
+```{r map-Feldbergstr31}
 
 if(!require(leaflet)){
     install.packages("leaflet",
@@ -349,7 +382,7 @@ leaflet() %>%
 
 ### Calculating Road Widths
 
-```{mermaid}
+```{mermaid fig-WorkflowWidth}
 flowchart TD
     subgraph Road Network
         A[(City Boundary)] -->|Download from OSM| B[Basel Transport Network]
@@ -384,7 +417,7 @@ flowchart TD
     end
 ```
 
-```{mermaid}
+```{mermaid fig-WorkflowData}
 
 flowchart LR
     A[Federal Statistical Office] -->|EGID| B(Building Footprint)
