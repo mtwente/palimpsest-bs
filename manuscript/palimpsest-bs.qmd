@@ -45,6 +45,22 @@ Standing in front of City Hall/Clothing Store:
 
 - The city is not as old as it seems.
 
+::: {layout-ncol=2}
+
+![[Marktplatz 5](https://osm.org/go/0CdsJzXoq?m=), facing east. June 2024.](./media/Marktplatz5_20240623_195409.jpg)
+
+![Marktplatz 5 with open arcades. Detail of a photo by Werner Friedli [-@friedli_basel_1966].](./media/Marktplatz5_ETH-Bibliothek_LBS_H1-026898_Ausschnitt.png)
+
+:::
+
+## The Urban Fabric of the City Center
+
+Abrissplan nachbilden ab 1859: Basels Entfestigung, siehe [@vinken_zones_2021 p. 87] und Kreis 1995, p. 224.
+Tramèrscher Abrissplan: Grundlage Falknerplan 1875, Vergleich 1993/1875: Basler Altstadt hat 70% verloren, s. Meier 1993, 10.
+
+- Why has so much of the lower part of the old town been torn down?
+  - Talentlastungsstrasse
+
 ```{r abrissplan}
 library(leaflet)
 library(geojsonio)
@@ -72,8 +88,6 @@ bs_buildings
 
 - Concept of City as Palimpsest, Corboz, Morphologie-Buch?
 
-## Tramèrscher Abrissplan
-
 ![Topographic Model of Basel, STA DS BS 9 3370 [@regierungsrat_des_kantons_basel-stadt_ratschlag_1933]](./media/3370_Beilage2_Scan_Topografie.jpg){fig-align="left" width=50% fig-alt="A scanned map showing the topography of Basel."}
 
 - Illustrations:
@@ -81,17 +95,11 @@ bs_buildings
   - Topography
   - Abrissplan
 
-Abrissplan nachbilden ab 1859: Basels Entfestigung, siehe [@vinken_zones_2021 p. 87] und Kreis 1995, p. 224.
-Tramèrscher Abrissplan: Grundlage Falknerplan 1875, Vergleich 1993/1875: Basler Altstadt hat 70% verloren, s. Meier 1993, 10.
-
-"Strictly speaking, Basel's famed Altstadt came into existence as a planning zone" [@vinken_zones_2021, p. 91]
-
-- Why has so much of the lower part of the old town been torn down?
-  - Talentlastungsstrasse
-
-## 20th Century Urban Planning in Basel
+## 20<sup>th</sup> Century Urban Planning in Basel
 
 - traffic problem
+
+As data provided by the Cantonal Statistical Office [-@statistisches_amt_des_kantons_basel-stadt_statistisches_1951; -@statistisches_amt_des_kantons_basel-stadt_statistisches_1961] shows, the number of registered motor vehicles per 1000 inhabitants ...
 
 ```{r car-plot}
 library(ggplot2)
@@ -117,9 +125,12 @@ carplot <- ggplot(vehicles_long,
   ) +
 
   #geom_point() +
-  labs(title = "Vehicles Per 1000 Inhabitants Over Time",
-       color = "Vehicle Type") +
-  theme_minimal()
+  labs(color = "Vehicle Type",
+      xlab = "", ylab = "") +
+  theme_minimal() +
+  theme(axis.title.x = element_blank(),
+        axis.title.y = element_blank())
+
 
 ggplotly(carplot)
 ```
@@ -161,6 +172,12 @@ ggplotly(carplot)
 - idea of Talentlastungsstrasse (see topography)
 - how to implement?
 
+::: {layout-ncol=2}
+![[Rümelinsplatz 1](https://osm.org/go/0CdsJnGmj?m=), facing north. June 2024.](./media/Ruemelinsplatz1_20240623_142351.jpg)
+
+![[Rümelinsplatz 5](https://osm.org/go/0CdsJnGOI?m=), facing south. June 2024.](./media/Ruemelinsplatz5_20240623_142303.jpg)
+:::
+
 ## Correction Plans, Building Lines and Planning Regulations
 
 - introduction into planning regulation
@@ -182,35 +199,31 @@ ggplotly(carplot)
 2. den Stadtverkehr selbst durch den Ausbau und die Ergänzung des bisherigen Straßennetzes zu verbessern,
 3. unhaltbar gewordene Zustände zu sanieren.
 
+::: {layout-ncol=2}
+
+![Correction Plan Proposal for Grossbasel (Excerpt), Ratschlag 4531 [-@grosser_rat_des_kantons_basel-stadt_bericht_1949]](./media/R4531_Korrektionsplan_Ausschnitt.jpg)
+
+![Correction Plan Proposal for Kleinbasel (Excerpt), Ratschlag 3370 [-@grosser_rat_des_kantons_basel-stadt_ratschlag_1933]](./media/R3370_Korrektionsplan_Ausschnitt.png)
+
+:::
+
 - Illustrations:
   - Korrektionsplan
   - mermaid: workflow Mehrebenensystem
 
+![Map regarding Baulinienplan 4977, Excerpt. [-@regierungsrat_des_kantons_basel-stadt_baulinienplan_1960], Location: [Hammerstr./Feldbergstr.](https://osm.org/go/0CdsPMmYk--?m=)](./media/Baulinienplan4977_Ausschnitt.png)
+
+The map, a legal document, is accompanied by a textual resolution with further details on the plan. It includes, among other things, numerical representations of the changes depicted on the map, a list of the plots that are affected by this plan. This document is then legally binding for plot owners.
+
+::: {layout-ncol=2}
+
+![Resolution 1818 regarding Baulinienplan 4977, Excerpt. [-@regierungsrat_des_kantons_basel-stadt_beschluss_1960]](./media/Beschl_000986_Ausschnitt_p1.jpg){width=50%}
+
+![Resolution 1818 regarding Baulinienplan 4977, Excerpt. [-@regierungsrat_des_kantons_basel-stadt_beschluss_1960]](./media/Beschl_000986_Ausschnitt_p2.jpg){width=50%}
+
+:::
+
 ...
-
-```{r}
-#| label: fig-airquality
-#| fig-cap: "Temperature and ozone level."
-#| warning: false
-
-library(ggplot2)
-
-testplot <- ggplot(airquality, aes(Temp, Ozone)) +
-              geom_point() +
-              geom_smooth(method = "loess")
-
-testplot
-
-if(!require(plotly)){
-    install.packages("plotly",
-                     dependencies =TRUE)
-    library(plotly)}
-
-p <- ggplotly(testplot,
-              source = 'h',)
-
-p
-```
 
 # Spiegelhof: Schuhmacherplan
 
@@ -218,6 +231,14 @@ p
 - jump on scale
 - criticism?
   - Schuhmacher selbst: "Im Ratschlag ist ausdrücklich darauf hingewiesen, dass die Altstadt verhältnismässig viel Verkehrsfläche aufweist." [@bernoulli_neuer_1933, p. 352]
+
+::: {layout-ncol=2}
+
+![[Spiegelgasse 6](https://osm.org/go/0CdsMg8AS?m=), facing south. June 2024.](./media/Spiegelgasse6_20240623_141146.jpg)
+
+![[Blumenrain 25](https://osm.org/go/0CdsMOvf6?m=), facing southwest. June 2024.](./media/Blumenrain25_20240623_135654.jpg)
+
+:::
 
 # Schneidergasse 18: Stadthaus
 
@@ -229,6 +250,7 @@ p
 [@huber_architekturfuhrer_2014, p. 227]
 
 - Altstadtschutzzone 1939, unterschiedliche Bedeutungen von Heritage Conservation
+  "Strictly speaking, Basel's famed Altstadt came into existence as a planning zone" [@vinken_zones_2021, p. 91]
 
 - "Bereits 1939 waren die Hügelrücken nahe der Peterskirche und der Leonhardskirche als Altstadtzonen ausgewiesen worden und unterlagen seither einem besonderen Baurecht. Seitdem wurden bei denkmalpflegerisch begleiteten Umbauten fast in jedem Haus historische Konstruktionen und Dekorationsschichten freigelegt und restauriert oder zumindest gesichert.” [@mohle_profanes_2016, p. 103]
 
@@ -418,6 +440,14 @@ spezifisch Aeschenvorstadt: "Die Vorbehalte gegen die von den Behörden vorgespu
   - "1962 stellte ETH-Ingenieur Kurt Leibbrand, auch «Karajan des Verkehrswesens» genannt, den Gesamtverkehrsplan Basel vor. Die Idee: Einen Ring um den Stadtkern herum bauen, der den Verkehr aufsaugt." [@wieland_platz_2022]
   - “Die Diskussionen um den neuen Viadukt wurden bereits vor der Realisierung, vor allem aber danach kontrovers geführt. Aus verkehrsplanerischer Sicht war er zunächst vielleicht ein Gewinn. Städtebaulich stellte er hingegen einen markanten Einschnitt dar und schuf Probleme, die erst im Laufe der Zeit in vollem Umfang sichtbar wurden. So prangerte das ‘Aktionskomitee gegen den Cityring und für ein wohnliches Basel’ das ‘scheussliche Stahlmonument’ an, für das die Elisabethen- und Steinenschanze gerodet werden musste. Insbesondere die Fussverbindung von der Altstadt zum Bahnhof und zum Zoo war wegen der komplexen Verkehrsführung problematisch geworden und wurde von der Bevölkerung gemieden.” [@lenherr_fortwahrendes_nodate, p. 92f.]
 
+::: {layout-ncol=2}
+
+![[Aeschengraben 68](https://osm.org/go/0CdsKSuKY?m=), facing southeast. June 2024.](./media/Aeschenvorstadt68_20240623_143654.jpg)
+
+![[Aeschengraben 68](https://osm.org/go/0CdsKS3hA?m=), facing southeast. June 2024.](./media/Aeschenvorstadt68_20240623_143532.jpg)
+
+:::
+
 ## Current Situation
 
 Kreis 2005, p. 57: "Ironie des Schicksals: Das an der Stelle von Heimatschützern verteidigten Häusern in den Jahren 1954–1957 errichtete 'Drachen-Center' hätte nach dem Willen der staatlichen Denkmalpflege 2005 vor einer mit starken Eingriffen verbundenen Umnutzung geschützt werden sollen. Dieser ehemalige Neubau gilt mittlerweile als exemplarischer Bau eines frühen City-Hauses [...]"
@@ -427,6 +457,14 @@ Kreis 2005, p. 57: "Ironie des Schicksals: Das an der Stelle von Heimatschützer
 - today's use of the urban space gained by facade relocation
 
   - bars, trees, parking, non-lieu?
+
+::: {layout-ncol=2}
+
+![[Feldbergstr. 63](https://osm.org/go/0CdsPBYbL?m=), facing northwest. June 2024.](./media/Feldbergstr63_20240623_131322.jpg)
+
+![[Klybeckstr. 42](https://osm.org/go/0CdsN6Vrv?m=), facing southeast. June 2024.](./media/Klybeckstr42_20240623_130717.jpg)
+
+:::
 
 - the role of men/politicians in this? nature metaphors: "städtebauliche[] Erosion" [@fingerhuth_bauten_1988, p, 188]
 - "it has to be completed now": “Das Korrektionswerk war jetzt so weit fortgeschritten, daß es auch zu Ende geführt werden mußte, obschon sich inzwischen gezeigt hatte, daß der Zweibahnverkehr nicht nötig war und die Verbreiterung noch lange hätte unterbleiben können. Sie bekam indessen erneut einen Sinn durch das 1989 vorgelegte Projekt, ein drittes Tramgeleise in die Vorstadt zu legen.” [@suter_von_1991, p. 25]
@@ -439,3 +477,5 @@ Kreis 2005, p. 57: "Ironie des Schicksals: Das an der Stelle von Heimatschützer
 # Nauentunnel/Heuwaage-Viadukt
 
 Life after the Correction Plans
+
+![[Heuwaage-Viadukt](https://osm.org/go/0CdsIwfLx--?m=), facing southeast. June 2024.](./media/HeuwaageViadukt_20240610_213622.jpg){width=50%}
