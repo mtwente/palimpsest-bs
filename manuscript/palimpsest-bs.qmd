@@ -209,6 +209,11 @@ Correction Plans were used as strategic planning documents on a large scale. Adr
 
 > The correction plan aims to:<br /> 1. relieve the city centre of all unnecessary traffic by expanding well-dimensioned and well-located bypass roads,<br />2. improve urban traffic itself by expanding and supplementing the existing road network,<br />3. reorganise conditions that have become untenable.
 
+How does it work?
+
+- propose new perimeter block outlines, essentially determining road space
+- propose arcades
+
 ::: {layout-ncol=2}
 
 ![Correction Plan Proposal for Grossbasel (Detail), Ratschlag 4531 [-@grosser_rat_des_kantons_basel-stadt_bericht_1949]](./media/R4531_Korrektionsplan_Ausschnitt.jpg)
@@ -261,6 +266,7 @@ The map, a legal document, is accompanied by a textual resolution with further d
 
 library(leaflet)
 library(geojsonio)
+library(tidyr)
 
 lines4531b_kpgb_4500_49 <- geojson_sf("data/geodata/correction_lines/4531b_kpgb_4500_49_linien.shp")
 
@@ -272,7 +278,6 @@ map4531b<-leaflet() %>%
     addPolylines(data=lines4531b_kpgb_4500_49, fillOpacity = 1,weight = 3)
 
 map4531b
-
 ```
 
 :::
@@ -284,6 +289,8 @@ map4531b
 
 - Altstadtschutzzone 1939, unterschiedliche Bedeutungen von Heritage Conservation
   "Strictly speaking, Basel's famed Altstadt came into existence as a planning zone" [@vinken_zones_2021, p. 91]
+
+![1939 Zoning Map of Basel. The the area shaded in purple represents the Schutzzone Altstadt [Detail, -@regierungsrat_des_kantons_basel-stadt_ratschlag_1939]](./media/R3769_Zonenplan_39_Schutzzone.jpg)
 
 - "Bereits 1939 waren die Hügelrücken nahe der Peterskirche und der Leonhardskirche als Altstadtzonen ausgewiesen worden und unterlagen seither einem besonderen Baurecht. Seitdem wurden bei denkmalpflegerisch begleiteten Umbauten fast in jedem Haus historische Konstruktionen und Dekorationsschichten freigelegt und restauriert oder zumindest gesichert.” [@mohle_profanes_2016, p. 103]
 
