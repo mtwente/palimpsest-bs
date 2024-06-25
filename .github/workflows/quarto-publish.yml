@@ -40,6 +40,7 @@ jobs:
             any::plotly
             any::tidyr
             any::leaflet
+            any::geojsonio
 
       - name: Render Quarto Project
         uses: quarto-dev/quarto-actions/render@v2
