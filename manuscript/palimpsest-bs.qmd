@@ -208,27 +208,13 @@ Standing on Rümelinsplatz today, we can nevertheless see traces of the never-co
 
 The situation of Rümelinsplatz today, with relicts of the proposed road visible, presumably led most authors who were writing about Basel's historic city center to argue that after the initial phase of construction between Spiegelhof and Rümelinsplatz, plans for large-scale road constructions were not implemented anymore: Fingerhuth states with a sense of relief: "Practically nothing of the modernisation programme's proposals were realised" [-@fingerhuth_bauten_1988, p. 50]; Russi calls the set back façades at Rümelinsplatz a memorial, commemorating the fact that "Basel just barely escaped from the destruction of its historic center" [-@russi_basler_2022, p. 33]; and Huber describes the partly implementation of the correction plans as rudimentary first "approaches of [the correction plans'] realisation" [-@huber_architekturfuhrer_2014, p. 227]. Zaugg, using the term "fragments" [-@zaugg_stadtentwicklung_2010, p. 160], looks even less for traces of the correction plans other than the axis between Blumenrain and Rümelinsplatz. Also Möhle [-@mohle_profanes_2016, p. 103] focuses on that area alone.
 
-dagegen: Schuhmacherplan prägte Stadtplanung bis in die 1960er-Jahre [@huber_architekturfuhrer_2014, p. 226]
-
-- counter narrative of "city center is old" (mostly marketing)
-- counter narrative of "Korrektionspläne nur ansatzweise umgesetzt"
-
 ## Planning Instruments {#sec-instruments}
-
-- introduction into planning regulation
-
-  Korrektionsplan, Ratschlag 4531:
 
 ### Korrektionsplan
 
 Correction Plans were used as strategic planning documents on a large scale. Adressing traffic engineering solutions was one, if not the main objective, as stated during the plan's development by the cantonal parliamentarians [-@grosser_rat_des_kantons_basel-stadt_bericht_1949, p. 5]:
 
 > The correction plan aims to:<br /> 1. relieve the city centre of all unnecessary traffic by expanding well-dimensioned and well-located bypass roads,<br />2. improve urban traffic itself by expanding and supplementing the existing road network,<br />3. reorganise conditions that have become untenable.
-
-How does it work?
-
-- propose new perimeter block outlines, essentially determining road space
-- propose arcades
 
 ::: {layout-ncol=2}
 
@@ -254,17 +240,11 @@ The map, a legal document, is accompanied by a textual resolution with further d
 
 :::
 
-...
-
 # Spiegelhof: Schuhmacherplan {#sec-spiegelhof}
 
 Bernoulli's critique of Schuhmacher's ideas was only one position in a heated debate triggered by the Schuhmacherplan. Just a few years after its adoption, Basel's cantonal parliament found itself debating successors to Schuhmacher's concept already, as it did not appear to meet the standards of its time anymore; and because the implementation of Schuhmacher's first large-scale project, the construction of the new cantonal bank and cantonal office buildings at Spiegelhof (see [@fig-spiegelhof]) was very controversial – not only because of the radical change in architectural style in comparison to the surroudings, but also because of the jump in scale.
 
-- 1930s
-- jump on scale
-- criticism?
-
-  - Schuhmacher selbst: "Im Ratschlag ist ausdrücklich darauf hingewiesen, dass die Altstadt verhältnismässig viel Verkehrsfläche aufweist." [@bernoulli_neuer_1933, p. 352]
+Schuhmacher himself also noted that the authorities who signed the correction plan into law where aware that "the historic city center has a relative large share of traffic area" [@bernoulli_neuer_1933, p. 352] already.
 
 - Plan gemindert vom grossen Rat, trotzdem finanzielle Überforderung [@huber_architekturfuhrer_2014, p. 227]
 
@@ -332,9 +312,6 @@ map4531b
 :::
 
 # Petersgraben 20: Heritage Conservation {#sec-heritage}
-
-...
-[@huber_architekturfuhrer_2014, p. 227]
 
 - Altstadtschutzzone 1939, unterschiedliche Bedeutungen von Heritage Conservation
   "Strictly speaking, Basel's famed Altstadt came into existence as a planning zone" [@vinken_zones_2021, p. 91]
