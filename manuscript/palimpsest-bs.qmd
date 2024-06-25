@@ -39,7 +39,7 @@ Basel prides itself on being a city of rich architectural culture, with its "wor
 
 Like most cities in Switzerland, present-day Basel was shaped particularly by urban planning decisions made between 1940 and 1970 [@eisinger_stadte_2004], which the office building at Marktplatz 5 is a pointed example for – as it opens up a window to an era of Basel urban planning thought to be long gone: Its location at the pedestrianised market square masks the fact that this building owes its very existence to a project with the aim of construction high-capacity roads through the innermost parts of Basel.
 
-In this paper, we will revisit this and similar projects. We will see how different eras of urban planning echo in the urban fabric of contemporary Basel and, focusing on specific planning proposals related to car-centered planning decisions of the mid-20<sup>th</sup> century, how even abandoned plans have left their mark in Basel.
+In this paper, we will revisit this project and others like it. We will see how different eras of urban planning echo in the urban fabric of contemporary Basel and, focusing on specific planning proposals related to car-centered planning decisions of the mid-20<sup>th</sup> century, how even abandoned plans have left their mark in Basel.
 
 Before delving into any GIS analysis, we will first look at the socio-political circumstances that led to traffic planning becoming a key policy issue in Basel's urban planning at the beginning of the 20<sup>th</sup> century (@sec-context). Then we will quickly dissect the most important aspects of building law and planning regulations (@sec-instruments), before discussing two pre-WW2 plans and their impact (@sec-spiegelhof and @sec-stadthaus). After a change of perspective to built heritage conservation aspects (@sec-heritage) we will then take a look at the available geodata and analyse the overall impact of 20<sup>th</sup> century traffic planning on the contemporary city (@sec-analysis).
 
@@ -51,15 +51,15 @@ The sections are associated with individual buildings and streets that, if read 
 
 # Marktplatz 5: Introduction {#sec-marktplatz5}
 
-Still standing in front of the city hall, we take a closer look at the building at Marktplatz 5. It has a large front window for displaying clothing items to be sold, and a small takeaway stand at its northwestern corner. Comparing today's view with a historical photo taken in 1966 – 14 years after the building was built – reveals that the ground floor, including the front window, was once an open arcade (see @fig-marktplatz5friedli). On its own, this arcade does not have much effect, but the purpose was – in combination with more arcades in the adjacent buildings, to provide a sheltered sidewalk for pedestrians. The space in front of the building that was now freed up was to be converted into an additional lane for motorised traffic and/or parking spaces.
+Still standing in front of the city hall, we take a closer look at the building at Marktplatz 5. It has a large front window for displaying clothing items to be sold, and a small takeaway stand at its northwestern corner. Comparing today's view with a historical photo taken in 1966 – 14 years after the building was erected – reveals that the ground floor, including the front window, was once an open arcade (see @fig-marktplatz5friedli). On its own, this arcade does not have much effect, but the purpose, in combination with more arcades in the adjacent buildings, was to provide a sheltered sidewalk for pedestrians. The space in front of the building that was now freed up was then to be converted into an additional lane for motorised traffic and/or parking spaces.
 
-Because the plan to expand the road in front of the building was dropped and the area is now pedestrianised, the building owners decided to use the open arcade space otherwise – one part was incorporated into the store, and the takeaway stand is housed in a container that was placed inside the former arcade.
+Because the plan to expand the road in front of the building was dropped and the area is now pedestrianised, the building owners decided to use the open arcade space otherwise – today, one part was incorporated into the store, and the takeaway stand is housed in a container that was placed inside the former arcade.
 
-Just by looking at these two buildings, we can recognize three different eras of urban planning:
+It is by just looking at these two buildings, we can recognize three different eras of urban planning:
 
-- The city hall as remnant of Basel before the turn of the 19<sup>th</sup> century
-- The building at Marktplatz 5 with open arcades as result of the focus on car-centered infrastructure since the beginning of the 20<sup>th</sup> century
-- The addition of the ground floor extension at a later date as a sign of planning paradigms shifting away from solely car-focused planning.
+- The city hall as remnant of Basel before the turn of the 19<sup>th</sup> century,
+- the building at Marktplatz 5 with open arcades as result of the focus on car-centered infrastructure since the beginning of the 20<sup>th</sup> century,
+- the addition of the ground floor extension at a later date as a sign of planning paradigms shifting away from solely car-focused planning.
 
 ::: {layout-ncol=2}
 
@@ -69,7 +69,7 @@ Just by looking at these two buildings, we can recognize three different eras of
 
 :::
 
-Using the term coined by Corboz [-@corboz_territorium_2001], we can see the city – resp. the built environment – as a palimpsest: Both the city's larger structures and its individual buildings as ever-changing carriers of meaning [-@corboz_geschichte_2001, p. 58], with emphases on different aspects of urban design in each century, each decade.
+If we look at the city's built environment with a lens like that, we see it – sing the term coined by Corboz [-@corboz_territorium_2001] – as a palimpsest: Both the city's larger structures and its individual buildings as ever-changing carriers of meaning [-@corboz_geschichte_2001, p. 58], with emphases on different ideologies of urban design that materialise in the buidlings decade after decade, century after century.
 
 ## The Urban Fabric of the City Center
 
@@ -77,7 +77,7 @@ Marktplatz 5 is only one example of buildings constructed in the last century th
 
 A similar comparison is depicted in @lst-map, showing how many of the buildings which today stand in the historic city center(s) were built before 1875.^[I chose to set the comparison between today and 1875 because Tramèr [-@meier_basel_1993, p. 11] based his plan on the basis of the 1875 cadastral plan.]
 
-::: {#lst-map lst-cap="Abrissplan"}
+::: {#lst-map lst-cap="Buildings constructed in today's Altstädte before 1875 are highlighted in blue"}
 
 ```{r}
 
@@ -108,11 +108,11 @@ bs_buildings
 
 :::
 
-A quick glance at this map reveals a spatial clustering: Of the buildings that were part of Basel in 1875, most of the ones still remaining today are clustered in the upper parts of Altstadt Grossbasel and between Greifengasse and Lindenberg in Altstadt Kleinbasel. The clustering becomes even more apparent when compared to a topographic map (@fig-relief) of central Basel:
+A quick glance at this map reveals a spatial clustering: Of the buildings that were part of Basel in 1875, most of the ones still remaining today are clustered in the upper parts of Altstadt Grossbasel and between Greifengasse and Lindenberg in Altstadt Kleinbasel. The clustering in Altstadt Grossbasel becomes even more apparent when compared to a topographic map (@fig-relief) of central Basel:
 
 ![Topographic Model of Basel, STA DS BS 9 3370 [@regierungsrat_des_kantons_basel-stadt_ratschlag_1933]](./media/3370_Beilage2_Scan_Topografie.jpg){#fig-relief fig-align="center" width=50% fig-alt="A scanned map showing the topography of Basel."}
 
-Why has so much of the lower part of the old town (also known as _Talstadt_) been torn down? The lower parts of the city center, where the river Birsig used to run before being diverted in a tunnel in 1897 [@vinken_zones_2021, p. 91], house the most important civic and commercial institutions of Basel [@hoflinger_altes_1954, p. 10]. Already at the turn of the century did the narrow valley pose a problem with regard to accessibility. Therefore, the cantonal authorities decided on introducting a large-scale modernisation program for the city center – a Korrektionsplan (e. _correction plan_).
+Why has so much of the lower part of the old town (also known as _Talstadt_) been torn down? The lower parts of the city center, where the river Birsig used to run before being diverted in a tunnel in 1897 [@vinken_zones_2021, p. 91], house the most important civic and commercial institutions of Basel [@hoflinger_altes_1954, p. 10]. Already at the turn of the century did the narrow valley's topography pose a problem with regard to accessibility. Therefore, the cantonal authorities decided on introducting a large-scale modernisation program for the city center – a Korrektionsplan (e. _correction plan_).
 
 Over the years, more plans of this kind saw the light of day:
 
@@ -137,7 +137,6 @@ As mentioned before, traffic was identified as the main problem to solve by mean
 #| column: page-inset-right
 #| echo: false
 #| message: false
-
 
 library(ggplot2)
 library(tidyverse)
@@ -168,7 +167,6 @@ carplot <- ggplot(vehicles_long,
   theme(axis.title.x = element_blank(),
         axis.title.y = element_blank())
 
-
 ggplotly(carplot)
 ```
 
@@ -176,54 +174,44 @@ Other factors also played roles in the efforts to 'modernise' Basel in the early
 
 - 79% of all flats did not have a bathroom,
 - 84% of all flats did not have access to warm water,
-- 64% of all flats did not have access to a laundry room.
+- 64% of all flats did not have access to a laundry room –
 
-Additionally, the construction works following the decision to 'modernise' the city center were a welcome job-creation scheme for the local labour market: The correction plan of 1933 played a pivotal role in the _Arbeitsrappen_ job-creation programme that was created in 1936 [@huber_architekturfuhrer_2014, p. 228].
+which is why the first correction plan also has element of sanitary improvements at the core of its genesis.
 
-While these additional arguments has to be taken into account when investigating the (first) correction plan(s) of the early 1930s, it is still the topic of traffic planning and allocation of space to the private motor vehicle that fuelled the creation of the plan and its subsequent development in the 1940s.
+Additionally, the construction works following the decision to 'modernise' the city center were a welcome job-creation scheme for the local labour market: The correction plan of 1933 played a pivotal role in the _Arbeitsrappen_ job-creation programme that was introduced in 1936 [@huber_architekturfuhrer_2014, p. 228].
 
-### Planning Ahead
-
-According to Hans Bernoulli [-@bernoulli_neuer_1933, p. 350], the proposed correction plan
-
-- "In Basel behilft man sich bis auf den heutigen Tag mit den Strassen und Gassen, die für die Verkehrsansprüche des XI. und XII. Jahrhunderts geschaffen worden sind. Kein Wunder, dass eine solche Altstadt pittoresk, aber so gut wie unbrauchbar ist." [@bernoulli_neuer_1933, p. 350]
-
-- "... denn bei Licht besehen, bedeutet solch ein Plan nicht eine Korrektur, sondern einen Neubau der Altstadt ..."[@bernoulli_neuer_1933, p. 350]
-
-Even though private motor vehicles were not a common phenomenon in Basel before World War II (see @fig-cars), they played a pivotal role in the infrastructure planning efforts by the cantonal authorities.
-
-- topography (map with height lines, scan from old document?), Ratschlag 3370
-- automobiles (stats: number of cars in Basel?), @fig-cars
-
-* different plans/approaches during 20<sup>th</sup> century:
-
-  - erster Korrektionsplan 1900 [@huber_architekturfuhrer_2014, p. 226]
-  - Schuhmacherplan 1930s
-  - Korrektionspläne 40/50s => Focus!
-  - Leibbrandplan/Gegenvorschlag Fachverbände 60s
-
-* counter narrative of "city center is old" (mostly marketing)
-* counter narrative of "Korrektionspläne nur ansatzweise umgesetzt"
-
-  - [@fingerhuth_bauten_1988, p. 50], [@fingerhuth_bauten_1988, p. 52]
-  - "Die Ansätze [!] zur Verwirklichung des Plans zeigen sich besonders einschneidend im Bereich Blumenrain-Spiegelgasse, am Rümelinsplatz und am Barfüsserplatz" [@huber_architekturfuhrer_2014, p. 227]
-  - “Besonders in der Talstadt mussten im 20. Jahrhundert viele Häuser dem Konzept der sogenannten Talentlastungsstrasse weichen, die vom Blumenrain bis zum Barfüsserplatz hätte führen sollen. Die Neuausrichtung und Verbreiterung der Spiegelgasse mit der Kantonalbank und dem Spiegelhof (erbaut 1937–1939) machten hiermit den Anfang, es folgten Neubauten in der Stadthaus-, der Schneider- und der Münzgasse. Erst 1974, ein Jahr vor dem europaweiten Denkmalschutzjahr, wurden die Verbreiterungspläne aufgegeben.” [@mohle_profanes_2016, p. 103]
-  - "Dank dem Abbruch des Vorhabens blieb das Gerbergässli verschont und die verbreiterte Strasse fand am südlichen Platzende ein abruptes Ende. Noch heute mahnt das auffällige Eck beim Rümelinsplatz 1 daran, dass Basel nur knapp der Zerstörung seiner Altstadt entgangen ist." [@russi_basler_2022, p. 33]
-  - "zum Fischmarkt: “Die neuen Zweckbauten sowie die überaus breite Spiegelgasse – Teil einer geplanten, aber nie finalisierten Talentlastungsstrasse – beraubten den Ort nicht nur seiner Ästhetik, sondern auch seiner Nutzfläche.” [@russi_basler_2022, p. 62]
-  - "Ab den 1930er-Jahren wurde das Auto zum Planungsfaktor, sichtbar in den Fragmenten der geplanten Talentlastungsstrasse am Blumenrain um an Fischmarkt, in der Erneuerung der Steinentorstrasse und im Abbruch der alten Aeschenvorstadt" [@zaugg_stadtentwicklung_2010, p. 160]
-
-  dagegen: Schuhmacherplan prägte Stadtplanung bis in die 1960er-Jahre [@huber_architekturfuhrer_2014, p. 226]
+While these additional arguments has to be taken into account when investigating the (first) correction plan(s) of the early 1930s, it is still the topic of traffic planning and allocation of space to the private motor vehicle that mainly fuelled the creation of the plan and its subsequent development in the 1940s – even though private motor vehicles were not a common phenomenon in Basel before World War II (see @fig-cars).
 
 # Rümelinsplatz: Talentlastungsstrasse
 
-- idea of Talentlastungsstrasse (see topography)
-- how to implement?
+In a critique of Schuhmacher's 1930s proposal, Hans Bernoulli deemed the historical city center to be in desperate need for restructuration because "to this day, Basel makes do with the streets and alleyways that were created for the transport requirements of the 11th and 12th centuries. No wonder that such an old town is picturesque, but practically unusable" [-@bernoulli_neuer_1933, p. 350]. But his opinion of the Schuhmacherplan was rather unfavourable still, since "because seen in the light of day, such a plan does not mean a correction, but a new construction of the old city centre" [@bernoulli_neuer_1933, p. 350]. What did the Schuhmacherplan entail, exactly?
+
+The core idea of Schuhmacher was the construction of a so-called _Talentlastungsstrasse_ (e. Valley Bypass Road, see @fig-talentlastung), that would create an alternative road leading from the Rhine at Schifflände and the civic centre around City Hall up the valley onto the plateau with connections to the regional and international traffic arteries (see @fig-transit). While for centuries, the main route between the plateau and the valley was Freie Strasse, it was considered necessary to offer an alternative route to provide for more traffic capacity.
+
+::: {layout-ncol=2}
+
+![Traffic Routes around Basel, Ratschlag 4224 [Detail, @grosser_rat_des_kantons_basel-stadt_ratschlag_1946]](./media/R4224_Hauptstrassen_Plan5716_46-05-23.jpg){#fig-transit}
+
+![Proposed Talentlastungsstrasse, Ratschlag 3433 [Detail, @grosser_rat_des_kantons_basel-stadt_bericht_1934]](./media/3433b_Gesamtbasel_1395_34_Detail.jpg){#fig-talentlastung}
+
+:::
+
+As we will see, the Talentlastungsstrasse became the main object of the big correction proposals to follow in the 20<sup>th</sup> century. The alternative route to Freie Strasse was supposed to start at Blumenrain, run via Fischmarkt south to Rümelinsplatz and along Gerbergässlein and finally joining Barfüsserplatz. As visible in @fig-talentlastung, the proposed road would cut through many of Grossbasel historic buildings. Today, most segments of the route are pedestrian zones.
+
+Standing on Rümelinsplatz today, we can nevertheless see traces of the never-completed Talentlastungsstrasse if we know what we are looking for: Alongside Rümelinsplatz, those buildings constructed in the 20<sup>th</sup> century follow the shape of the square as proposed by Schuhmacher's plan – set back from the façades of the older buildings, as if they were still offering up a few metres of asphalt to the never-finalised Talentlastungsstrasse.
 
 ::: {layout-ncol=2}
 ![[Rümelinsplatz 1](https://osm.org/go/0CdsJnGmj?m=), facing north. June 2024.](./media/Ruemelinsplatz1_20240623_142351.jpg)
 
 ![[Rümelinsplatz 5](https://osm.org/go/0CdsJnGOI?m=), facing south. June 2024.](./media/Ruemelinsplatz5_20240623_142303.jpg)
 :::
+
+The situation of Rümelinsplatz today, with relicts of the proposed road visible, presumably led most authors who were writing about Basel's historic city center to argue that after the initial phase of construction between Spiegelhof and Rümelinsplatz, plans for large-scale road constructions were not implemented anymore: Fingerhuth states with a sense of relief: "Practically nothing of the modernisation programme's proposals were realised" [-@fingerhuth_bauten_1988, p. 50]; Russi calls the set back façades at Rümelinsplatz a memorial, commemorating the fact that "Basel just barely escaped from the destruction of its historic center" [-@russi_basler_2022, p. 33]; and Huber describes the partly implementation of the correction plans as rudimentary first "approaches of [the correction plans'] realisation" [-@huber_architekturfuhrer_2014, p. 227]. Zaugg, using the term "fragments" [-@zaugg_stadtentwicklung_2010, p. 160], looks even less for traces of the correction plans other than the axis between Blumenrain and Rümelinsplatz. Also Möhle [-@mohle_profanes_2016, p. 103] focuses on that area alone.
+
+dagegen: Schuhmacherplan prägte Stadtplanung bis in die 1960er-Jahre [@huber_architekturfuhrer_2014, p. 226]
+
+- counter narrative of "city center is old" (mostly marketing)
+- counter narrative of "Korrektionspläne nur ansatzweise umgesetzt"
 
 ## Planning Instruments {#sec-instruments}
 
@@ -270,6 +258,8 @@ The map, a legal document, is accompanied by a textual resolution with further d
 
 # Spiegelhof: Schuhmacherplan {#sec-spiegelhof}
 
+Bernoulli's critique of Schuhmacher's ideas was only one position in a heated debate triggered by the Schuhmacherplan. Just a few years after its adoption, Basel's cantonal parliament found itself debating successors to Schuhmacher's concept already, as it did not appear to meet the standards of its time anymore; and because the implementation of Schuhmacher's first large-scale project, the construction of the new cantonal bank and cantonal office buildings at Spiegelhof (see [@fig-spiegelhof]) was very controversial – not only because of the radical change in architectural style in comparison to the surroudings, but also because of the jump in scale.
+
 - 1930s
 - jump on scale
 - criticism?
@@ -280,9 +270,9 @@ The map, a legal document, is accompanied by a textual resolution with further d
 
 ::: {layout-ncol=2}
 
-![[Spiegelgasse 6](https://osm.org/go/0CdsMg8AS?m=), facing south. June 2024.](./media/Spiegelgasse6_20240623_141146.jpg)
+![[Spiegelgasse 6](https://osm.org/go/0CdsMg8AS?m=), facing south. June 2024.](./media/Spiegelgasse6_20240623_141146.jpg){#fig-spiegelhof}
 
-![[Blumenrain 25](https://osm.org/go/0CdsMOvf6?m=), facing southwest. June 2024.](./media/Blumenrain25_20240623_135654.jpg)
+![[Blumenrain 25](https://osm.org/go/0CdsMOvf6?m=), facing southwest. June 2024.](./media/Blumenrain25_20240623_135654.jpg){#fig-blumenrain}
 
 :::
 
@@ -457,8 +447,6 @@ leaflet() %>%
 As described above, the correction plans and their impact barely play a role in narratives about Basel's city center. On the contrary: Publications that do mention the plans largely downplay the degree of implementation and focus on the Blumenrain–Rümelinsplatz axis. The aim of this paper is to challenge this notion and to look for traces of these proposals in the historical city center and beyond. To this end, we make use of several data sets that are available with information on Basel's urban fabric today.
 
 ### Data Sources and Description
-
-... mermaid graphs
 
 ### Calculating Distances Between Buildings and Streets
 
