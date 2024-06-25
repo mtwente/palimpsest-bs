@@ -22,8 +22,8 @@ description-meta: |
   "The Urban Fabric as Palimpsest: Tracing Proposed Correction Plans in Basel" is a paper presentation by Moritz Twente for the conference "Historical Arguments and the Digital", held at the University of Luxembourg in June 2024.
 date: 2024-06-25
 bibliography: references.bib
-nocite: |
-  @*
+#nocite: |
+#  @*
 citation:
   type: report
   #doi: FIXME
@@ -35,7 +35,7 @@ number-sections: true
 This document is a work in progress. Check back soon for more content.
 :::
 
-Basel prides itself as a city of rich architectural culture, with its "world-renowned historical city center"^[In the case of Basel, "Historical City Center" refers to both Altstadt Grossbasel on the left bank of the Rhine and Altstadt Kleinbasel on the right.] [@huber_architekturfuhrer_2014] having a front-row seat in marketing brochures, tourist publications, and architecture guides as well. Painted in bright red colour, Basel's City Hall is one example for this type of built heritage. But standing on the market square, visitors might notice the building next to City Hall: The office building at Markplatz 5 (see @fig-marktplatz5mt), built in 1952, stands out against most of the buildings around the square, and makes for an especially stark contrast to the intricatly decorated walls next door.
+Basel prides itself on being a city of rich architectural culture, with its "world-renowned historical city center"^[In the case of Basel, "Historical City Center" refers to both Altstadt Grossbasel on the left bank of the Rhine and Altstadt Kleinbasel on the right.] [@huber_architekturfuhrer_2014] having a front-row seat in marketing brochures, tourist publications, and architecture guides as well. Painted in bright red colour, Basel's City Hall is one example for this type of built heritage. But standing on the market square, visitors might notice the building next to City Hall: The office building at Markplatz 5 (see @fig-marktplatz5mt), built in 1952, stands out against most of the buildings around the square, and makes for an especially stark contrast to the intricatly decorated walls next door.
 
 Like most cities in Switzerland, present-day Basel was shaped particularly by urban planning decisions made between 1940 and 1970 [@eisinger_stadte_2004], which the office building at Marktplatz 5 is a pointed example for – as it opens up a window to an era of Basel urban planning thought to be long gone: Its location at the pedestrianised market square masks the fact that this building owes its very existence to a project with the aim of construction high-capacity roads through the innermost parts of Basel.
 
@@ -51,9 +51,15 @@ The sections are associated with individual buildings and streets that, if read 
 
 # Marktplatz 5: Introduction {#sec-marktplatz5}
 
-Standing in front of City Hall/Clothing Store:
+Still standing in front of the city hall, we take a closer look at the building at Marktplatz 5. It has a large front window for displaying clothing items to be sold, and a small takeaway stand at its northwestern corner. Comparing today's view with a historical photo taken in 1966 – 14 years after the building was built – reveals that the ground floor, including the front window, was once an open arcade (see @fig-marktplatz5friedli). On its own, this arcade does not have much effect, but the purpose was – in combination with more arcades in the adjacent buildings, to provide a sheltered sidewalk for pedestrians. The space in front of the building that was now freed up was to be converted into an additional lane for motorised traffic and/or parking spaces.
 
-- The city is not as old as it seems.
+Because the plan to expand the road in front of the building was dropped and the area is now pedestrianised, the building owners decided to use the open arcade space otherwise – one part was incorporated into the store, and the takeaway stand is housed in a container that was placed inside the former arcade.
+
+Just by looking at these two buildings, we can recognize three different eras of urban planning:
+
+- The city hall as remnant of Basel before the turn of the 19<sup>th</sup> century
+- The building at Marktplatz 5 with open arcades as result of the focus on car-centered infrastructure since the beginning of the 20<sup>th</sup> century
+- The addition of the ground floor extension at a later date as a sign of planning paradigms shifting away from solely car-focused planning.
 
 ::: {layout-ncol=2}
 
@@ -63,15 +69,13 @@ Standing in front of City Hall/Clothing Store:
 
 :::
 
+Using the term coined by Corboz [-@corboz_territorium_2001], we can see the city – resp. the built environment – as a palimpsest: Both the city's larger structures and its individual buildings as ever-changing carriers of meaning [-@corboz_geschichte_2001, p. 58], with emphases on different aspects of urban design in each century, each decade.
+
 ## The Urban Fabric of the City Center
 
-Abrissplan nachbilden ab 1859: Basels Entfestigung, siehe [@vinken_zones_2021 p. 87] und Kreis 1995, p. 224.
-Tramèrscher Abrissplan: Grundlage Falknerplan 1875, Vergleich 1993/1875: Basler Altstadt hat 70% verloren, s. Meier 1993, 10.
+Marktplatz 5 is only one example of buildings constructed in the last century that illustrates the relatively young age of large parts of the so-called historic city center of Basel. In 1993, Stephan Tramèr made a hand-drawn map comparing the inventory of buildings on an 1865 cadastral plan with the buildings standing at the time – his conclusion: Between 1865 and 1993, around 70% of the urban fabric had been replaced by new buildings [-@meier_basel_1993, p. 10].
 
-- Why has so much of the lower part of the old town been torn down?
-  - Talentlastungsstrasse
-
-In 1993, Stephan Tramèr made a hand-drawn map comparing the inventory of buildings on an 1865 cadastral plan with the buildings standing at the time – his conclusion: Between 1865 and 1993, around 70% of the urban fabric had been replaced by new buildings [@meier_basel_1993, p. 10]. A similar comparison is depicted in @lst-map which shows how many of the buildings which today stand in the historic city center(s) were built before 1875.
+A similar comparison is depicted in @lst-map, showing how many of the buildings which today stand in the historic city center(s) were built before 1875.^[I chose to set the comparison between today and 1875 because Tramèr [-@meier_basel_1993, p. 11] based his plan on the basis of the 1875 cadastral plan.]
 
 ::: {#lst-map lst-cap="Abrissplan"}
 
@@ -104,15 +108,28 @@ bs_buildings
 
 :::
 
-- Concept of City as Palimpsest, Corboz, Morphologie-Buch?
+A quick glance at this map reveals a spatial clustering: Of the buildings that were part of Basel in 1875, most of the ones still remaining today are clustered in the upper parts of Altstadt Grossbasel and between Greifengasse and Lindenberg in Altstadt Kleinbasel. The clustering becomes even more apparent when compared to a topographic map (@fig-relief) of central Basel:
 
-![Topographic Model of Basel, STA DS BS 9 3370 [@regierungsrat_des_kantons_basel-stadt_ratschlag_1933]](./media/3370_Beilage2_Scan_Topografie.jpg){fig-align="left" width=50% fig-alt="A scanned map showing the topography of Basel."}
+![Topographic Model of Basel, STA DS BS 9 3370 [@regierungsrat_des_kantons_basel-stadt_ratschlag_1933]](./media/3370_Beilage2_Scan_Topografie.jpg){#fig-relief fig-align="center" width=50% fig-alt="A scanned map showing the topography of Basel."}
+
+Why has so much of the lower part of the old town (also known as _Talstadt_) been torn down? The lower parts of the city center, where the river Birsig used to run before being diverted in a tunnel in 1897 [@vinken_zones_2021, p. 91], house the most important civic and commercial institutions of Basel [@hoflinger_altes_1954, p. 10]. Already at the turn of the century did the narrow valley pose a problem with regard to accessibility. Therefore, the cantonal authorities decided on introducting a large-scale modernisation program for the city center – a Korrektionsplan (e. _correction plan_).
+
+Over the years, more plans of this kind saw the light of day:
+
+```{mermaid}
+timeline
+  1933 : Schuhmacherplan
+  1946 : Correction Plan Kleinbasel
+  1949 : Correction Plan Grossbasel
+  1958 : Comprehensive Traffic Plan (Leibbrandplan)
+  1958 : Counter-Proposal to Leibbrandplan
+```
+
+Before taking a look at the content of the first plan, Schuhmacherplan, and its successors, we will expand on the planning problems Basel faced at the beginning of the 20<sup>th</sup> century.
 
 ## 20<sup>th</sup> Century Urban Planning in Basel {#sec-context}
 
-- traffic problem
-
-As data provided by the Cantonal Statistical Office [-@statistisches_amt_des_kantons_basel-stadt_statistisches_1951; -@statistisches_amt_des_kantons_basel-stadt_statistisches_1961] shows, the number of registered motor vehicles per 1000 inhabitants ...
+As mentioned before, traffic was identified as the main problem to solve by means of the Korrektionsplan. Data provided by the Cantonal Statistical Office [-@statistisches_amt_des_kantons_basel-stadt_statistisches_1951; -@statistisches_amt_des_kantons_basel-stadt_statistisches_1961] shows the number of registered motor vehicles in Basel compared to the numbers of registered motorcycles and registered bicycles, each per 1000 inhabitants (@fig-cars). When cantonal authorities decided on enacting the first plans in the early 1930s, there were barely any motorised vehicles in Basel at all:
 
 ```{r}
 #| label: fig-cars
@@ -155,21 +172,28 @@ carplot <- ggplot(vehicles_long,
 ggplotly(carplot)
 ```
 
-- growth (increase of population)
-- sanitary reasons (picture of Birsig?), Birsig was open until 1897 (@vinken_zones_2021, p. 91)
-  - "Die systematische Untersuchung ergab, dass 79% der Wohnungen über kein Bad, 84% über kein Warmwasser und 64% über keine Waschküche verfügten" [@huber_architekturfuhrer_2014, p. 228]
-- topography (map with height lines, scan from old document?), Ratschlag 3370
-- automobiles (stats: number of cars in Basel?), @fig-cars
-- Arbeitsrappen, Arbeitsbeschaffungsmassnahme:
-  - "Der Arbeitsrappen, 1936 eingeführt, beruhte auf der Solidarität der Arbeitenden mit den Arbeitslosen und gab dem Staat die notwendigen Mittel für ein grossangelegtes Beschäftigungsprogramm. Der Sanierung der Altstadt kam dabei vorrangige Bedeutung zu" [@huber_architekturfuhrer_2014, p. 228]
+Other factors also played roles in the efforts to 'modernise' Basel in the early 20<sup>th</sup> century. As Basel's population grew, a systematic review in [@huber_architekturfuhrer_2014, p. 228] discovered that
 
-Even though private motor vehicle were not a common phenomenon in Basel before World War II (see @fig-cars), they played a pivotal role in the infrastructure planning efforts by the cantonal authorities.
+- 79% of all flats did not have a bathroom,
+- 84% of all flats did not have access to warm water,
+- 64% of all flats did not have access to a laundry room.
 
-- "In Basel behilft man sich bis auf den heutigen Tag mit den Strassen und Gassen, die für die Verkehrsansprüche des XI. und XII. Jahrhunderts geschaffen worden sind. Kein Wunder, dass eine solche Altstadt pittoresk, aber so gut wie unbrauchbar ist." [@bernoulli_neuer_1933, p. 350]
+Additionally, the construction works following the decision to 'modernise' the city center were a welcome job-creation scheme for the local labour market: The correction plan of 1933 played a pivotal role in the _Arbeitsrappen_ job-creation programme that was created in 1936 [@huber_architekturfuhrer_2014, p. 228].
+
+While these additional arguments has to be taken into account when investigating the (first) correction plan(s) of the early 1930s, it is still the topic of traffic planning and allocation of space to the private motor vehicle that fuelled the creation of the plan and its subsequent development in the 1940s.
 
 ### Planning Ahead
 
+According to Hans Bernoulli [-@bernoulli_neuer_1933, p. 350], the proposed correction plan
+
+- "In Basel behilft man sich bis auf den heutigen Tag mit den Strassen und Gassen, die für die Verkehrsansprüche des XI. und XII. Jahrhunderts geschaffen worden sind. Kein Wunder, dass eine solche Altstadt pittoresk, aber so gut wie unbrauchbar ist." [@bernoulli_neuer_1933, p. 350]
+
 - "... denn bei Licht besehen, bedeutet solch ein Plan nicht eine Korrektur, sondern einen Neubau der Altstadt ..."[@bernoulli_neuer_1933, p. 350]
+
+Even though private motor vehicles were not a common phenomenon in Basel before World War II (see @fig-cars), they played a pivotal role in the infrastructure planning efforts by the cantonal authorities.
+
+- topography (map with height lines, scan from old document?), Ratschlag 3370
+- automobiles (stats: number of cars in Basel?), @fig-cars
 
 * different plans/approaches during 20<sup>th</sup> century:
 
@@ -177,15 +201,6 @@ Even though private motor vehicle were not a common phenomenon in Basel before W
   - Schuhmacherplan 1930s
   - Korrektionspläne 40/50s => Focus!
   - Leibbrandplan/Gegenvorschlag Fachverbände 60s
-
-  ```{mermaid fig-timeline}
-  timeline
-    1933 : Schuhmacherplan
-    1946 : Korrektionsplan Kleinbasel
-    1949 : Korrektionsplan Grossbasel
-    1958 : Gesamtverkehrsplan (Leibbrandplan)
-    1958 : Gegenvorschlag
-  ```
 
 * counter narrative of "city center is old" (mostly marketing)
 * counter narrative of "Korrektionspläne nur ansatzweise umgesetzt"
@@ -282,7 +297,7 @@ The map, a legal document, is accompanied by a textual resolution with further d
 
 ::: {#lst-correctionlines lst-cap="Correction Lines as proposed by the 1949 plan for Grossbasel"}
 
-```{r}
+```{r map-correction-lines}
 
 library(leaflet)
 library(geojsonio)
@@ -350,7 +365,9 @@ map4531b
 
   - "The Schutzzonen Altstadt, however, were, although they were designated as protection zones, were [sic] likewise planning zones, and conservation legislation in the proper sense was not established until 1977" [@vinken_zones_2021, p. 92]
 
-  Kostenaspekt der Unterschutzstellung: Kreis 2005 p. 54
+  Kostenaspekt der Unterschutzstellung: [@kreis_schicksal_2005, p. 54]
+
+  spezifisch Aeschenvorstadt: "Die Vorbehalte gegen die von den Behörden vorgespurte Erweiterung der Aeschen hatten in den vier Jahren zwischen 1949 und 1953 stark zugenommen. Dem stand allerdings eine gewisse Schlussstrichstimmung entgegen. 1949 hatten noch alle grossen Parteien den Korrektionsplan gutgeheissen. 1953 waren nur noch die Radikalen und Sozialdemokraten für die Durchsetzung der ursprünglichen Ordnung, die Liberalen gaben die Nein-Parole heraus, und die übrigen (die Katholische Volkspartei, die Evangelische Volkspartei, die Bürger- und Gewerbepartei, der Landesring und die PdA) beschlossen Stimmfreigabe. Der Vorstand des Heimatschutzes unterstütze 1953 das Komitee, 1949 hatte er aus Rücksicht auf die internen Befürworter des Korrektionsplanes auf eine Ja-Parole verzichtet und das Komitee nur nachträglich finanziell unterstützt." [@kreis_schicksal_2005, p. 57]
 
 # Spitalstrasse: Unhappy Doctors
 
@@ -425,7 +442,7 @@ leaflet() %>%
 - Verlangsamungsgründe:
 
   - 2. Weltkrieg
-  - "Der Ausbruch des Zweiten Weltkriegs verhinderte zunächst eine Weiterprojektierung. Danach waren es die ernüchternden Erkenntnisse aus der Umsetzung des Korrektionsplans, die lediglich partiell erfolgt war, was zu einem vorläufigen Verzicht führte. Insbesondere der hohe finanzielle Aufwand und die Belastung der ansässigen Bevölkerung durch die umfangreichen und langanhaltenden Bauarbeiten wurden als kritisch beurteilt; aber auch ein zunehmendes denkmalschützerisches Bewusstsein stellte solch einschneidende Vorhaben in Frage" [@lenherr_fortwahrendes_nodate, p. 92]
+  - "Der Ausbruch des Zweiten Weltkriegs verhinderte zunächst eine Weiterprojektierung. Danach waren es die ernüchternden Erkenntnisse aus der Umsetzung des Korrektionsplans, die lediglich partiell erfolgt war, was zu einem vorläufigen Verzicht führte. Insbesondere der hohe finanzielle Aufwand und die Belastung der ansässigen Bevölkerung durch die umfangreichen und langanhaltenden Bauarbeiten wurden als kritisch beurteilt; aber auch ein zunehmendes denkmalschützerisches Bewusstsein stellte solch einschneidende Vorhaben in Frage" [@lenherr_fortwahrendes_2022, p. 92]
 
   - Kleinbasel plan was already put in place earlier, resp. it took longer to finish the Grossbasel plan, reasons given in Ratschlag 4172: "Kleinbasel bietet einer Korrektion wegen seines klaren Aufbaues weniger Schwierigkeiten als Grossbasel. Die vorhandenen Hauptstrassen liegen alle zweckmässig. Auf Durchbrüche oder neue Strassen kann infolgedessen vollständig verzichtet werden. Es genügt eine allmähliche, durch Baulinien zu sichernde Anpassung der vorhandenen Strassen an die Erfordernisse des zukünftigen Verkehrs. Dabei ist es auch möglich, den mittelalterlichen Kern, soweit er nicht sanierungsbedürftig ist, weitgehend zu erhalten." (p. 1)
 
@@ -445,7 +462,7 @@ As described above, the correction plans and their impact barely play a role in 
 
 ### Calculating Distances Between Buildings and Streets
 
-The planning approach proposed by the correction plans' authors was to make more space available for vehicles, i.e. to widen those roads that were deemed necessary to guarantee a steady flow of (car) traffic. The cheapest way to achieve this – in the already built-up districts of the inner city and closer suburbs – was essentially to move the Baulinie further away from the existing roads in order to free up space for additional lanes and/or parking. Therefore, investigating the degree of the correction plans' implementation essentially boils down to looking for roads that are wider than others.
+The planning approach proposed by the correction plans' authors was to make more space available for vehicles, i.e. to widen those roads that were deemed necessary to guarantee a steady flow of (car) traffic. The cheapest way to achieve this – in the already built-up districts of the inner city and closer suburbs – was essentially to move the Baulinie further away from the existing roads [@kreis_schicksal_2005, p. 54] in order to free up space for additional lanes and/or parking. Therefore, investigating the degree of the correction plans' implementation essentially boils down to looking for roads that are wider than others.
 
 But road width alone is no feasible indicator for this research task: As pointed out by the literature, the correction plans never saw _full_ implementation, which means that only in a very few places – e.g. at Petersgraben or Aeschenvorstadt – we actually see roads that were widened. And since the automotive city has been retired as a planning paradigm by now, it is even less likely that any additional space accommodated for through traffic is actually used as such. Instead, the lanes have been kept at their original width and the additional space is used for bicycle stands, trash collection containers (at Petersgraben), outdoor seating for restaurants (at Aeschenvorstadt), etc.
 
@@ -571,6 +588,8 @@ flowchart TD
 
 # Aeschenvorstadt 68: Last Man Standing {#sec-aeschenvorstadt}
 
+The Aeschenvorstadt is arguably the last street where measures proposed by the correction plans were implemented. Plot construction plans on the basis of the 1940s correction plans were still being issued, when in 1953 a group of citizens managed to launch a contested referendum on the correction plan that propsed the demolition of the western side of the road [@suter_von_1991, p. 25]. And even though reservations against the road expansion at Aeschenvorstadt had increased considerably in the years before the referendum and most political parties did not support the implementation of the road expansion anymore [@kreis_schicksal_2005, p. 57], the voters^[Only men at the time: In Basel-Stadt, cantonal voting rights for women were introduced in 1966 [@crain_merz_grosse_2021]], narrowly approved the plans, essentially paving the road for the demolition of Aeschenvorstadt.
+
 - Aeschenvorstadt: last implemented policies from Korrektionsplan
   - why so late still? Kreis 2005 zu **Eigentümerstruktur**: "Vielleicht waren für diese Variante [Alternativorschlag anstelle Aeschenverbreiterung] die in solchen Fällen stets sehr wichtigen Besitzverhältnisse weniger günstig, das heisst: Der Besitz der Aeschenparzellen lag in Händen von Leuten, die über grosse Nähe zu den Behörden verfügten." (p. 58), s. auch:
     - Das Gebiet um den Andreasplatz blieb ausgespart und war 1949 Gegenstand eines Wettbewerbs mit dem Ziel, den Marktplatz an die Schneidergasse zu verlegen (1. Preis: Bräunig, Leu, Dürig). [@huber_architekturfuhrer_2014, p. 229]
@@ -582,8 +601,6 @@ flowchart TD
 “Bei der Schleifung der beiden letztgenannten meinten die seither ebenfalls untergegangenen ‘Basler Nachrichten’: ‘Kommende Generationen werden dieses Zerstörungswerk nie begreifen können.” [@suter_von_1991, p. 25]
 
 tides are turning:
-
-spezifisch Aeschenvorstadt: "Die Vorbehalte gegen die von den Behörden vorgespurte Erweiterung der Aeschen hatten in den vier Jahren zwischen 1949 und 1953 stark zugenommen. Dem stand allerdings eine gewisse Schlussstrichstimmung entgegen. 1949 hatten noch alle grossen Parteien den Korrektionsplan gutgeheissen. 1953 waren nur noch die Radikalen und Sozialdemokraten für die Durchsetzung der ursprünglichen Ordnung, die Liberalen gaben die Nein-Parole heraus, und die übrigen (die Katholische Volkspartei, die Evangelische Volkspartei, die Bürger- und Gewerbepartei, der Landesring und die PdA) beschlossen Stimmfreigabe. Der Vorstand des Heimatschutzes unterstütze 1953 das Komitee, 1949 hatte er aus Rücksicht auf die internen Befürworter des Korrektionsplanes auf eine Ja-Parole verzichtet und das Komitee nur nachträglich finanziell unterstützt." Kreis 2005, p. 57
 
 "Selbst Sanierer - vielleicht gerade sie – führten das Wort von den 'notwendigen Opfern' im Munde. Weil man bei anderen Teilen der Altstadt für deren Erhaltung eintrat, glaubte man in diesem Fall das 'Opfer' den Freunden des alten Basel zumuten zu können." (Kreis 2005, p. 58)
 
@@ -613,7 +630,7 @@ spezifisch Aeschenvorstadt: "Die Vorbehalte gegen die von den Behörden vorgespu
     "Nun entwickelte man auch neue Lösungen für die Parkprobleme. Die 1956/60 erbaute Storchen-Garage (die ursprünglich unterirdisch bis zum Spalentor hätte ausgedehnt werden sollen), ist ein anachronistisches Relikt aus der Vor-Cityring-Ära. Das 1956/58 erbaute Autosilo an der Steinentorstrasse (es war das erste vollautomatisierte Parkhaus der Welt) wurde wieder aufgehoben, als von 1968 an in den Fundamenten des Heuwaage-Viaduktes neue Abstellmöglichkeiten zur Verfügung standen. Das erste Stück einer Fussgänger-City wurde jedoch erst 1972 geschaffen" [@kreis_goldene_2000, p. 276]
   - “Bereits 50 Jahre später stand die nächste Umgestaltung an, denn nun verfolgten die Behörden ihren Plan einer Autobahn mitten durch die Innenstadt. Das vom ETH-Ingenieur – und Nazi-Kriegsverbrecher – Kurt Leibbrand entwickelte Projekt sollte den Stadtkern entlasten, in dem die angrenzenden Parallelstrassen zu mehrspurigen, möglichst gerade verlaufenden Verkehrsadern ausgebaut werden [@russi_basler_2022, p. 33]
   - "1962 stellte ETH-Ingenieur Kurt Leibbrand, auch «Karajan des Verkehrswesens» genannt, den Gesamtverkehrsplan Basel vor. Die Idee: Einen Ring um den Stadtkern herum bauen, der den Verkehr aufsaugt." [@wieland_platz_2022]
-  - “Die Diskussionen um den neuen Viadukt wurden bereits vor der Realisierung, vor allem aber danach kontrovers geführt. Aus verkehrsplanerischer Sicht war er zunächst vielleicht ein Gewinn. Städtebaulich stellte er hingegen einen markanten Einschnitt dar und schuf Probleme, die erst im Laufe der Zeit in vollem Umfang sichtbar wurden. So prangerte das ‘Aktionskomitee gegen den Cityring und für ein wohnliches Basel’ das ‘scheussliche Stahlmonument’ an, für das die Elisabethen- und Steinenschanze gerodet werden musste. Insbesondere die Fussverbindung von der Altstadt zum Bahnhof und zum Zoo war wegen der komplexen Verkehrsführung problematisch geworden und wurde von der Bevölkerung gemieden.” [@lenherr_fortwahrendes_nodate, p. 92f.]
+  - “Die Diskussionen um den neuen Viadukt wurden bereits vor der Realisierung, vor allem aber danach kontrovers geführt. Aus verkehrsplanerischer Sicht war er zunächst vielleicht ein Gewinn. Städtebaulich stellte er hingegen einen markanten Einschnitt dar und schuf Probleme, die erst im Laufe der Zeit in vollem Umfang sichtbar wurden. So prangerte das ‘Aktionskomitee gegen den Cityring und für ein wohnliches Basel’ das ‘scheussliche Stahlmonument’ an, für das die Elisabethen- und Steinenschanze gerodet werden musste. Insbesondere die Fussverbindung von der Altstadt zum Bahnhof und zum Zoo war wegen der komplexen Verkehrsführung problematisch geworden und wurde von der Bevölkerung gemieden.” [@lenherr_fortwahrendes_2022, p. 92f.]
 
 ::: {layout-ncol=2}
 
